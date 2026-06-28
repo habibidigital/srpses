@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>About Us — Shri Ram Public School Shiksha Samiti</title>
+<meta name="description" content="About Shri Ram Public School Shiksha Samiti — A registered educational society dedicated to quality, affordable, activity-based education in Karahi, Fatehpur Sikri, Agra, Uttar Pradesh.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --saffron:#FF6B00;--saffron-light:#FF8C33;--saffron-pale:#FFF4EC;--saffron-deep:#D95800;
+  --navy:#0D2B5E;--navy-light:#1A3F80;--navy-pale:#E8EDF6;
+  --green:#1A6B35;--green-light:#2A9B50;--green-pale:#E8F5EC;
+  --gold:#C8940A;--gold-pale:#FEF9EA;
+  --white:#FFFFFF;--gray-50:#F8F9FA;--gray-100:#F0F2F5;
+  --gray-200:#E2E6EA;--gray-400:#9AA3AE;--gray-600:#555F6B;--gray-800:#222831;
+  --shadow-sm:0 2px 8px rgba(13,43,94,0.08);--shadow-md:0 8px 32px rgba(13,43,94,0.13);--shadow-lg:0 20px 60px rgba(13,43,94,0.18);
+  --radius:12px;--radius-lg:20px;--radius-xl:28px;
+}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;color:var(--gray-800);background:var(--white);overflow-x:hidden;font-size:16px;}
+h1,h2,h3,h4{font-family:'Playfair Display',serif;line-height:1.2;}
+a{text-decoration:none;color:inherit;}
+img{max-width:100%;height:auto;display:block;}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(32px);}to{opacity:1;transform:translateY(0);}}
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+@keyframes floatY{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(255,107,0,0.4);}70%{box-shadow:0 0 0 12px rgba(255,107,0,0);}}
+
+.reveal{opacity:0;transform:translateY(28px);transition:opacity 0.7s ease,transform 0.7s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.reveal-left{opacity:0;transform:translateX(-36px);transition:opacity 0.7s ease,transform 0.7s ease;}
+.reveal-left.visible{opacity:1;transform:translateX(0);}
+.reveal-right{opacity:0;transform:translateX(36px);transition:opacity 0.7s ease,transform 0.7s ease;}
+.reveal-right.visible{opacity:1;transform:translateX(0);}
+.reveal-scale{opacity:0;transform:scale(0.9);transition:opacity 0.7s ease,transform 0.7s ease;}
+.reveal-scale.visible{opacity:1;transform:scale(1);}
+.delay-1{transition-delay:0.1s!important;}
+.delay-2{transition-delay:0.2s!important;}
+.delay-3{transition-delay:0.3s!important;}
+.delay-4{transition-delay:0.4s!important;}
+.delay-5{transition-delay:0.5s!important;}
+
+/* ── TOP BAR ── */
+.topbar{background:var(--navy);color:rgba(255,255,255,0.8);font-size:12px;padding:6px 0;}
+.topbar-inner{max-width:1200px;margin:0 auto;padding:0 clamp(16px,4vw,24px);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:4px;}
+.topbar a{color:rgba(255,255,255,0.8);transition:color 0.2s;}
+.topbar a:hover{color:var(--saffron-light);}
+.topbar-left,.topbar-right{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+
+/* ── HEADER ── */
+.header{position:sticky;top:0;z-index:1000;background:var(--white);border-bottom:1px solid var(--gray-200);box-shadow:var(--shadow-sm);transition:box-shadow 0.3s ease;}
+.header.scrolled{box-shadow:var(--shadow-md);}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 clamp(16px,4vw,24px);display:flex;align-items:center;justify-content:space-between;height:clamp(60px,10vw,72px);}
+.logo{display:flex;align-items:center;gap:clamp(10px,2vw,14px);min-width:0;}
+.logo-emblem{width:clamp(44px,8vw,56px);height:clamp(44px,8vw,56px);border-radius:50%;flex-shrink:0;background:linear-gradient(135deg,var(--saffron),var(--navy));display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:clamp(16px,3vw,22px);font-weight:700;color:white;box-shadow:0 4px 16px rgba(255,107,0,0.3);overflow:hidden;}
+.logo-emblem img{width:100%;height:100%;object-fit:cover;border-radius:50%;}
+.logo-text{line-height:1.2;min-width:0;}
+.logo-text h1{font-size:clamp(12px,2.5vw,15px);color:var(--navy);font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.logo-text span{font-size:clamp(10px,2vw,11px);color:var(--gray-600);font-family:'Inter',sans-serif;font-weight:400;}
+.nav-links{display:flex;align-items:center;gap:2px;}
+
+/* Plain nav links */
+.nav-links > a{
+  padding:clamp(6px,1.5vw,8px) clamp(8px,2vw,14px);
+  border-radius:8px;font-size:14px;font-weight:500;
+  color:var(--gray-800);transition:all 0.2s ease;
+}
+.nav-links > a:hover{background:var(--saffron-pale);color:var(--saffron);}
+.nav-links > a.active{color:var(--saffron);background:var(--saffron-pale);}
+
+/* ---- DROPDOWN WRAPPER ---- */
+.nav-dropdown{position:relative;display:flex;align-items:center;}
+.nav-dropdown > .nav-drop-trigger{
+  display:flex;align-items:center;gap:5px;
+  padding:clamp(6px,1.5vw,8px) clamp(8px,2vw,14px);
+  border-radius:8px;font-size:14px;font-weight:500;
+  color:var(--gray-800);transition:all 0.2s ease;cursor:pointer;
+  border:none;background:none;font-family:'Inter',sans-serif;
+  white-space:nowrap;
+}
+.nav-dropdown > .nav-drop-trigger:hover,
+.nav-dropdown:hover > .nav-drop-trigger{background:var(--saffron-pale);color:var(--saffron);}
+.drop-caret{font-size:9px;transition:transform 0.25s ease;}
+.nav-dropdown:hover .drop-caret{transform:rotate(180deg);}
+
+/* ---- DROPDOWN PANEL ---- */
+.drop-panel{
+  position:absolute;top:calc(100% + 10px);left:0;
+  min-width:230px;background:var(--white);
+  border-radius:14px;border:1px solid var(--gray-200);
+  box-shadow:0 16px 48px rgba(13,43,94,0.16);
+  padding:8px;
+  opacity:0;visibility:hidden;pointer-events:none;
+  transform:translateY(-8px);
+  transition:opacity 0.2s ease,transform 0.2s ease,visibility 0.2s ease;
+  z-index:200;
+}
+.nav-dropdown:hover .drop-panel,
+.nav-dropdown:focus-within .drop-panel{
+  opacity:1;visibility:visible;pointer-events:all;transform:translateY(0);
+}
+.drop-panel::before{
+  content:'';position:absolute;top:-6px;left:20px;
+  width:12px;height:12px;background:var(--white);
+  border-left:1px solid var(--gray-200);border-top:1px solid var(--gray-200);
+  transform:rotate(45deg);border-radius:2px 0 0 0;
+}
+.drop-panel-header{
+  font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--gray-400);padding:6px 12px 4px;margin-bottom:2px;
+}
+.drop-item{
+  display:flex;align-items:center;gap:10px;
+  padding:10px 12px;border-radius:10px;
+  font-size:13px;font-weight:500;color:var(--gray-800);
+  transition:background 0.18s,color 0.18s;cursor:pointer;
+}
+.drop-item:hover{background:var(--saffron-pale);color:var(--saffron);}
+.drop-item-icon{
+  width:32px;height:32px;border-radius:8px;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;font-size:15px;
+  background:var(--gray-100);transition:background 0.18s;
+}
+.drop-item:hover .drop-item-icon{background:rgba(255,107,0,0.12);}
+.drop-item-title{font-weight:600;line-height:1.2;}
+.drop-item-sub{font-size:11px;color:var(--gray-400);margin-top:1px;font-weight:400;}
+.drop-divider{height:1px;background:var(--gray-100);margin:6px 4px;}
+
+/* CTA buttons */
+.nav-cta{background:var(--saffron);color:white!important;padding:clamp(8px,1.5vw,10px) clamp(14px,2.5vw,20px);border-radius:8px;font-size:14px;font-weight:600;transition:all 0.2s ease;margin-left:8px;box-shadow:0 4px 12px rgba(255,107,0,0.3);}
+.nav-cta:hover{background:var(--saffron-light)!important;transform:translateY(-1px);}
+.nav-donate{background:var(--navy);color:white!important;padding:clamp(8px,1.5vw,10px) clamp(14px,2.5vw,20px);border-radius:8px;font-size:14px;font-weight:600;transition:all 0.2s ease;margin-left:8px;}
+.nav-donate:hover{background:var(--navy-light)!important;transform:translateY(-1px);}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;border:none;background:none;}
+.hamburger span{display:block;width:24px;height:2px;background:var(--navy);transition:all 0.3s;border-radius:2px;}
+
+/* ── MOBILE MENU ── */
+.mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:2000;background:var(--white);overflow-y:auto;}
+.mobile-menu.open{display:flex;flex-direction:column;animation:fadeIn 0.2s ease;}
+.mobile-menu-header{display:flex;justify-content:space-between;align-items:center;padding:clamp(16px,4vw,24px);border-bottom:1px solid var(--gray-100);}
+.mobile-close{font-size:28px;cursor:pointer;color:var(--gray-800);background:none;border:none;line-height:1;}
+.mobile-nav-links{padding:clamp(12px,3vw,16px);display:flex;flex-direction:column;gap:4px;}
+.mobile-nav-links > a,
+.mobile-nav-links > .mob-drop-wrap > .mob-drop-btn{
+  display:flex;align-items:center;gap:12px;
+  padding:clamp(14px,3.5vw,18px) clamp(16px,4vw,20px);
+  font-size:clamp(15px,3.5vw,17px);font-weight:500;
+  border-radius:12px;color:var(--gray-800);
+  transition:background 0.2s,color 0.2s;
+  width:100%;border:none;background:none;font-family:'Inter',sans-serif;cursor:pointer;text-align:left;
+}
+.mobile-nav-links > a:hover,
+.mobile-nav-links > .mob-drop-wrap > .mob-drop-btn:hover{background:var(--saffron-pale);color:var(--saffron);}
+.mob-drop-btn{justify-content:space-between;}
+.mob-drop-btn .mob-caret{font-size:11px;transition:transform 0.25s;}
+.mob-drop-btn.open .mob-caret{transform:rotate(180deg);}
+.mob-drop-list{
+  display:none;flex-direction:column;gap:2px;
+  padding:6px 10px 10px 20px;
+  border-left:2px solid var(--saffron-pale);
+  margin:2px 16px 8px 16px;border-radius:0 0 8px 8px;
+}
+.mob-drop-list.open{display:flex;}
+.mob-drop-list a{
+  display:flex;align-items:center;gap:10px;
+  padding:10px 12px;font-size:14px;font-weight:500;
+  color:var(--gray-800);border-radius:8px;transition:background 0.18s,color 0.18s;
+}
+.mob-drop-list a:hover{background:var(--saffron-pale);color:var(--saffron);}
+.mob-drop-list a span{font-size:16px;}
+.mobile-nav-links a.cta-mobile{background:var(--saffron);color:white;margin-top:12px;text-align:center;justify-content:center;}
+.mobile-nav-links a.donate-mobile{background:var(--navy);color:white;text-align:center;justify-content:center;}
+
+/* ── PAGE HERO ── */
+.page-hero{background:var(--navy);position:relative;overflow:hidden;padding:clamp(60px,10vw,100px) 0 clamp(80px,12vw,130px);}
+.page-hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=1600&q=80') center/cover no-repeat;opacity:0.07;}
+.page-hero-grad{position:absolute;inset:0;background:linear-gradient(135deg,rgba(13,43,94,0.98) 0%,rgba(13,43,94,0.85) 60%,rgba(255,107,0,0.15) 100%);}
+.hero-orb1{position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(255,107,0,0.12) 0%,transparent 70%);top:-100px;right:-80px;}
+.hero-orb2{position:absolute;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,0.04) 0%,transparent 70%);bottom:-80px;left:-60px;}
+.page-hero-inner{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:0 clamp(16px,4vw,24px);display:grid;grid-template-columns:1fr auto;align-items:center;gap:40px;}
+.breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,0.5);margin-bottom:16px;}
+.breadcrumb a{color:rgba(255,255,255,0.5);transition:color 0.2s;}
+.breadcrumb a:hover{color:var(--saffron-light);}
+.breadcrumb span{color:var(--saffron-light);}
+.page-hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,107,0,0.15);border:1px solid rgba(255,107,0,0.35);color:var(--saffron-light);padding:6px 16px;border-radius:50px;font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:16px;animation:fadeUp 0.6s ease 0.1s both;}
+.page-hero h2{font-size:clamp(28px,6vw,52px);color:white;line-height:1.15;font-weight:700;animation:fadeUp 0.6s ease 0.2s both;}
+.page-hero h2 span{color:var(--saffron-light);}
+.page-hero-sub{font-size:clamp(14px,2.5vw,17px);color:rgba(255,255,255,0.6);line-height:1.8;margin-top:16px;max-width:580px;animation:fadeUp 0.6s ease 0.3s both;}
+.page-hero-side{display:flex;flex-direction:column;gap:14px;animation:fadeUp 0.6s ease 0.35s both;}
+.quick-stat{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:18px 22px;text-align:center;min-width:120px;backdrop-filter:blur(8px);}
+.quick-stat .qs-num{font-family:'Playfair Display',serif;font-size:clamp(24px,4vw,32px);font-weight:700;color:var(--saffron-light);}
+.quick-stat .qs-lbl{font-size:11px;color:rgba(255,255,255,0.45);margin-top:4px;line-height:1.3;}
+.page-hero-wave{position:absolute;bottom:0;left:0;right:0;z-index:2;line-height:0;}
+.page-hero-wave svg{display:block;width:100%;height:clamp(48px,7vw,80px);}
+
+/* ── LAYOUT ── */
+.container{max-width:1200px;margin:0 auto;padding:0 clamp(16px,4vw,24px);}
+.section{padding:clamp(60px,9vw,100px) 0;}
+.section-alt{background:var(--gray-50);}
+.section-label{display:inline-block;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--saffron);background:var(--saffron-pale);padding:5px 14px;border-radius:50px;margin-bottom:10px;}
+.section-title{font-size:clamp(24px,4.5vw,38px);color:var(--navy);line-height:1.2;margin-bottom:12px;}
+.section-sub{font-size:15px;color:var(--gray-600);line-height:1.8;max-width:560px;}
+.title-line{width:48px;height:4px;background:var(--saffron);border-radius:2px;margin:12px 0 20px;}
+
+/* ── STORY ── */
+.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,7vw,80px);align-items:center;}
+.story-img-wrap{position:relative;}
+.story-img-slot{width:100%;aspect-ratio:4/3;border-radius:var(--radius-xl);background:linear-gradient(135deg,var(--navy-pale),#dbe5f5);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;overflow:hidden;border:2px dashed var(--gray-200);}
+.story-img-slot img{width:100%;height:100%;object-fit:cover;border-radius:var(--radius-xl);}
+.story-floating-badge{position:absolute;bottom:-18px;right:-18px;background:var(--saffron);color:white;border-radius:var(--radius-lg);padding:18px 22px;text-align:center;box-shadow:var(--shadow-lg);animation:floatY 3.5s ease-in-out infinite;}
+.sfb-num{font-family:'Playfair Display',serif;font-size:32px;font-weight:700;line-height:1;}
+.sfb-txt{font-size:11px;opacity:0.88;margin-top:4px;}
+.story-accent-box{position:absolute;top:-16px;left:-16px;width:72px;height:72px;border-radius:50%;background:var(--navy-pale);border:4px solid white;display:flex;align-items:center;justify-content:center;font-size:28px;}
+.story-para{font-size:15px;color:var(--gray-600);line-height:1.85;margin-bottom:14px;}
+.story-para strong{color:var(--navy);}
+.reg-info{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px;}
+.reg-chip{display:flex;align-items:center;gap:8px;background:var(--navy);color:white;border-radius:10px;padding:10px 16px;font-size:13px;font-weight:500;}
+.reg-chip i{color:var(--saffron-light);}
+
+/* ── MISSION BANNER ── */
+.mission-banner{background:linear-gradient(135deg,var(--saffron) 0%,var(--saffron-deep) 100%);color:white;border-radius:var(--radius-xl);padding:clamp(36px,6vw,60px) clamp(24px,5vw,60px);position:relative;overflow:hidden;margin:clamp(40px,7vw,80px) 0;}
+.mb-orb{position:absolute;width:320px;height:320px;border-radius:50%;background:rgba(255,255,255,0.06);top:-80px;right:-60px;}
+.mb-orb2{position:absolute;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,0.04);bottom:-60px;left:40px;}
+.mission-banner-inner{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr 1fr;gap:clamp(20px,4vw,40px);align-items:start;}
+.mb-divider{width:1px;background:rgba(255,255,255,0.2);align-self:stretch;}
+.mb-icon{font-size:28px;margin-bottom:12px;}
+.mb-item h3{font-size:clamp(18px,3vw,22px);margin-bottom:10px;}
+.mb-item p{font-size:14px;opacity:0.85;line-height:1.8;}
+.mb-highlight{display:inline-block;background:rgba(255,255,255,0.15);border-radius:8px;padding:4px 12px;font-weight:600;margin-top:8px;font-size:13px;}
+
+/* ── FACILITIES ── */
+.facilities-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,3vw,24px);}
+.fac-card{background:var(--white);border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--gray-200);transition:all 0.35s ease;box-shadow:var(--shadow-sm);}
+.fac-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);border-color:transparent;}
+.fac-img-slot{width:100%;height:clamp(160px,18vw,220px);background:linear-gradient(135deg,var(--navy),var(--navy-light));display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;overflow:hidden;position:relative;}
+.fac-img-slot img{width:100%;height:100%;object-fit:cover;}
+.fac-img-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(13,43,94,0.7),transparent);display:flex;align-items:flex-end;padding:16px;}
+.fac-img-tag{background:var(--saffron);color:white;font-size:11px;font-weight:700;padding:4px 10px;border-radius:6px;text-transform:uppercase;letter-spacing:0.06em;}
+.fac-icon-wrap{width:56px;height:56px;border-radius:14px;background:rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;font-size:26px;}
+.fac-body{padding:clamp(16px,3vw,24px);}
+.fac-body h3{font-size:clamp(15px,2.5vw,18px);color:var(--navy);margin-bottom:8px;}
+.fac-body p{font-size:13px;color:var(--gray-600);line-height:1.75;}
+.fac-features{margin-top:14px;display:flex;flex-direction:column;gap:6px;}
+.fac-feat{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--gray-700);}
+.fac-feat::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--saffron);flex-shrink:0;}
+
+/* ── TRANSPORT ── */
+.transport-strip{background:var(--navy);border-radius:var(--radius-xl);padding:clamp(28px,5vw,48px) clamp(24px,5vw,48px);display:grid;grid-template-columns:auto 1fr auto;gap:clamp(24px,4vw,48px);align-items:center;margin:clamp(24px,4vw,40px) 0;}
+.ts-icon{font-size:clamp(48px,8vw,72px);animation:floatY 3s ease-in-out infinite;}
+.ts-content h3{font-family:'Playfair Display',serif;font-size:clamp(20px,3.5vw,28px);color:white;margin-bottom:8px;}
+.ts-content p{font-size:14px;color:rgba(255,255,255,0.6);line-height:1.75;}
+.ts-features{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;}
+.ts-tag{background:rgba(255,107,0,0.15);border:1px solid rgba(255,107,0,0.3);color:var(--saffron-light);padding:5px 12px;border-radius:50px;font-size:12px;font-weight:600;}
+.ts-btn{background:var(--saffron);color:white;padding:14px 24px;border-radius:12px;font-size:14px;font-weight:600;white-space:nowrap;transition:all 0.2s;box-shadow:0 6px 20px rgba(255,107,0,0.4);animation:pulse 2.5s ease-in-out infinite;}
+.ts-btn:hover{background:var(--saffron-light);transform:translateY(-2px);}
+
+/* ── LEARNING ── */
+.learning-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,7vw,80px);align-items:center;}
+.learning-visual{display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,2vw,16px);}
+.lv-card{border-radius:var(--radius-lg);overflow:hidden;position:relative;}
+.lv-card:first-child{grid-row:span 2;}
+.lv-img-slot{width:100%;height:100%;min-height:clamp(160px,22vw,280px);background:linear-gradient(135deg,var(--saffron-pale),#fde8d4);display:flex;align-items:center;justify-content:center;font-size:40px;overflow:hidden;position:relative;}
+.lv-img-slot img{width:100%;height:100%;object-fit:cover;}
+.lv-label{position:absolute;bottom:10px;left:10px;right:10px;background:rgba(13,43,94,0.85);color:white;font-size:11px;font-weight:600;padding:5px 10px;border-radius:6px;text-align:center;backdrop-filter:blur(4px);}
+.approach-list{display:flex;flex-direction:column;gap:clamp(14px,2.5vw,20px);}
+.ap-item{display:flex;gap:16px;align-items:flex-start;}
+.ap-icon{width:48px;height:48px;border-radius:12px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:20px;}
+.ap-icon.orange{background:var(--saffron-pale);}
+.ap-icon.navy{background:var(--navy-pale);}
+.ap-icon.green{background:var(--green-pale);}
+.ap-icon.gold{background:var(--gold-pale);}
+.ap-item h4{font-size:clamp(14px,2.2vw,16px);color:var(--navy);margin-bottom:5px;}
+.ap-item p{font-size:13px;color:var(--gray-600);line-height:1.7;}
+
+/* ── FACULTY ── */
+.faculty-section{background:linear-gradient(135deg,#F5F0FF 0%,#FFF4EC 55%,#EEF4FF 100%);}
+.faculty-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(14px,2.5vw,22px);}
+.faculty-card{background:var(--white);border-radius:var(--radius-lg);padding:clamp(20px,3.5vw,28px) clamp(14px,2.5vw,20px);text-align:center;border:1px solid var(--gray-200);transition:all 0.35s ease;position:relative;overflow:hidden;}
+.faculty-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--saffron);transform:scaleX(0);transition:transform 0.3s ease;}
+.faculty-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-md);}
+.faculty-card:hover::after{transform:scaleX(1);}
+.faculty-avatar{width:clamp(64px,10vw,80px);height:clamp(64px,10vw,80px);border-radius:50%;margin:0 auto 14px;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:clamp(20px,3.5vw,28px);font-weight:700;color:white;}
+.faculty-card h4{font-size:clamp(13px,2.2vw,15px);color:var(--navy);margin-bottom:4px;}
+.faculty-card .f-role{font-size:12px;color:var(--saffron);font-weight:600;text-transform:uppercase;letter-spacing:0.05em;}
+.faculty-card .f-dept{font-size:12px;color:var(--gray-400);margin-top:4px;}
+.faculty-card .f-exp{font-size:11px;color:var(--gray-600);margin-top:8px;background:var(--gray-100);border-radius:50px;padding:3px 10px;display:inline-block;}
+
+/* ── VALUES ── */
+.values-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(14px,2.5vw,22px);}
+.val-card{background:var(--white);border-radius:var(--radius-lg);padding:clamp(22px,4vw,32px) clamp(16px,3vw,24px);border:1px solid var(--gray-200);transition:all 0.35s ease;position:relative;overflow:hidden;}
+.val-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-md);}
+.val-num{font-family:'Playfair Display',serif;font-size:clamp(48px,8vw,72px);font-weight:800;line-height:1;color:var(--gray-100);margin-bottom:-8px;position:relative;z-index:0;}
+.val-icon{font-size:28px;margin-bottom:12px;position:relative;z-index:1;}
+.val-card h3{font-size:clamp(15px,2.5vw,18px);color:var(--navy);margin-bottom:8px;position:relative;z-index:1;}
+.val-card p{font-size:13px;color:var(--gray-600);line-height:1.75;position:relative;z-index:1;}
+
+/* ── ITI ── */
+.iti-section{background:var(--navy);color:white;position:relative;overflow:hidden;}
+.iti-orb{position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(255,107,0,0.1),transparent 70%);top:-150px;right:-150px;}
+.iti-inner{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,7vw,80px);align-items:center;}
+.iti-trades{display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,2vw,16px);margin-top:24px;}
+.iti-trade{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:clamp(14px,2.5vw,20px);transition:all 0.3s;}
+.iti-trade:hover{background:rgba(255,107,0,0.12);border-color:rgba(255,107,0,0.3);}
+.iti-trade-icon{font-size:24px;margin-bottom:8px;}
+.iti-trade h4{font-size:14px;color:white;margin-bottom:4px;}
+.iti-trade p{font-size:12px;color:rgba(255,255,255,0.5);line-height:1.6;}
+.iti-trade .duration{display:inline-block;background:rgba(255,107,0,0.15);color:var(--saffron-light);font-size:10px;font-weight:700;padding:2px 8px;border-radius:50px;margin-top:6px;text-transform:uppercase;letter-spacing:0.05em;}
+.iti-visual{position:relative;}
+.iti-img-slot{width:100%;aspect-ratio:4/3;border-radius:var(--radius-xl);background:rgba(255,255,255,0.05);border:1px dashed rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;overflow:hidden;}
+.iti-img-slot img{width:100%;height:100%;object-fit:cover;border-radius:var(--radius-xl);}
+.iti-badge{position:absolute;top:-16px;left:-16px;background:var(--saffron);color:white;border-radius:var(--radius);padding:16px 20px;text-align:center;box-shadow:var(--shadow-md);}
+.iti-badge .ib-num{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;}
+.iti-badge .ib-txt{font-size:10px;opacity:0.85;margin-top:2px;}
+
+/* ── ACHIEVEMENTS ── */
+.achievements-section{background:linear-gradient(135deg,var(--saffron) 0%,var(--saffron-deep) 100%);padding:clamp(60px,9vw,100px) 0;color:white;position:relative;overflow:hidden;}
+.ach-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=1200&q=40') center/cover;opacity:0.08;}
+.ach-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(16px,3vw,24px);position:relative;z-index:2;}
+.ach-card{background:rgba(255,255,255,0.12);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.2);border-radius:var(--radius-lg);padding:clamp(22px,4vw,32px) clamp(14px,2.5vw,22px);text-align:center;transition:all 0.3s;}
+.ach-card:hover{background:rgba(255,255,255,0.18);transform:translateY(-4px);}
+.ach-num{font-family:'Playfair Display',serif;font-size:clamp(36px,6vw,52px);font-weight:700;line-height:1;}
+.ach-unit{font-size:clamp(18px,3vw,24px);}
+.ach-lbl{font-size:13px;opacity:0.75;margin-top:8px;line-height:1.4;}
+
+/* ── CTA ── */
+.cta-section{background:var(--gray-50);padding:clamp(60px,9vw,100px) 0;}
+.cta-box{background:var(--navy);border-radius:var(--radius-xl);padding:clamp(40px,7vw,72px) clamp(24px,5vw,64px);text-align:center;position:relative;overflow:hidden;}
+.cta-orb{position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(255,107,0,0.15),transparent 70%);top:-100px;left:50%;transform:translateX(-50%);}
+.cta-box h2{font-size:clamp(24px,5vw,40px);color:white;margin-bottom:16px;position:relative;z-index:1;}
+.cta-box p{font-size:clamp(14px,2.5vw,17px);color:rgba(255,255,255,0.6);line-height:1.8;max-width:560px;margin:0 auto 32px;position:relative;z-index:1;}
+.cta-buttons{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;position:relative;z-index:1;}
+.btn-cta-primary{background:var(--saffron);color:white;padding:14px 32px;border-radius:12px;font-size:15px;font-weight:600;transition:all 0.25s;box-shadow:0 8px 24px rgba(255,107,0,0.4);}
+.btn-cta-primary:hover{background:var(--saffron-light);transform:translateY(-2px);}
+.btn-cta-outline{background:transparent;color:white;padding:14px 32px;border-radius:12px;font-size:15px;font-weight:600;border:1.5px solid rgba(255,255,255,0.3);transition:all 0.25s;}
+.btn-cta-outline:hover{background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.6);}
+
+.page-footer-note{background:var(--navy);color:rgba(255,255,255,0.5);text-align:center;padding:16px;font-size:12px;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .nav-links,.nav-cta,.nav-donate{display:none!important;}
+  .hamburger{display:flex!important;}
+  .page-hero-inner{grid-template-columns:1fr;}
+  .page-hero-side{flex-direction:row;gap:12px;}
+  .story-grid,.learning-grid,.iti-inner{grid-template-columns:1fr;}
+  .mission-banner-inner{grid-template-columns:1fr;}
+  .mb-divider{display:none;}
+  .facilities-grid{grid-template-columns:1fr 1fr;}
+  .faculty-grid{grid-template-columns:1fr 1fr;}
+  .values-grid{grid-template-columns:1fr 1fr;}
+  .ach-grid{grid-template-columns:1fr 1fr;}
+  .transport-strip{grid-template-columns:1fr;text-align:center;}
+  .ts-icon{font-size:48px;}
+  .ts-btn{align-self:center;}
+}
+@media(max-width:600px){
+  .facilities-grid{grid-template-columns:1fr;}
+  .faculty-grid{grid-template-columns:1fr 1fr;}
+  .values-grid{grid-template-columns:1fr 1fr;}
+  .ach-grid{grid-template-columns:1fr 1fr;}
+  .learning-visual{grid-template-columns:1fr;}
+  .lv-card:first-child{grid-row:auto;}
+  .iti-trades{grid-template-columns:1fr;}
+  .topbar-right{display:none;}
+}
+@media(max-width:440px){
+  .faculty-grid,.values-grid,.ach-grid{grid-template-columns:1fr;}
+  .page-hero-side{flex-direction:column;align-items:flex-start;}
+}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-left">
+      <span>📍 Karahi, Fatehpur Sikri, Agra — 283110</span>
+    </div>
+    <div class="topbar-right">
+      <a href="tel:9997658330">📞 +91 9997658330</a>
+      <a href="mailto:srpses@gmail.com">✉ srpses@gmail.com</a>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER — index.html wala full dropdown navbar -->
+<header class="header" id="header">
+  <div class="nav-inner">
+    <a href="index.html" class="logo" aria-label="Go to Home">
+      <div class="logo-emblem">
+        <img src="images/logo.png" alt="Shri Ram Public School Logo" onerror="this.parentElement.textContent='SR'">
+      </div>
+      <div class="logo-text">
+        <h1>Shri Ram Public School</h1>
+        <span style="font-size:12px;">Shiksha Samiti - Karahi</span>
+      </div>
+    </a>
+
+    <nav class="nav-links">
+      <a href="about.html" class="active">About Us</a>
+
+      <!-- Infrastructure dropdown -->
+      <div class="nav-dropdown">
+        <button class="nav-drop-trigger" aria-haspopup="true" aria-expanded="false">
+          Infrastructure <i class="fas fa-chevron-down drop-caret"></i>
+        </button>
+        <div class="drop-panel">
+          <div class="drop-panel-header">Our Facilities</div>
+          <a class="drop-item" href="infrastructure.html#computer-lab">
+            <div class="drop-item-icon">💻</div>
+            <div class="drop-item-text">
+              <div class="drop-item-title">Computer Lab</div>
+              <div class="drop-item-sub">30+ modern systems</div>
+            </div>
+          </a>
+          <a class="drop-item" href="infrastructure.html#science-lab">
+            <div class="drop-item-icon">🔬</div>
+            <div class="drop-item-text">
+              <div class="drop-item-title">Science Lab</div>
+              <div class="drop-item-sub">Physics, Chemistry & Biology</div>
+            </div>
+          </a>
+          <a class="drop-item" href="infrastructure.html#dance-music">
+            <div class="drop-item-icon">🎭</div>
+            <div class="drop-item-text">
+              <div class="drop-item-title">Dance & Music Hall</div>
+              <div class="drop-item-sub">Cultural activities centre</div>
+            </div>
+          </a>
+          <a class="drop-item" href="infrastructure.html#playground">
+            <div class="drop-item-icon">⚽</div>
+            <div class="drop-item-text">
+              <div class="drop-item-title">Playground</div>
+              <div class="drop-item-sub">Cricket, Football & Athletics</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <a href="gallery.html">Gallery</a>
+
+      <!-- Schemes / Programs dropdown -->
+      <div class="nav-dropdown">
+        <button class="nav-drop-trigger" aria-haspopup="true" aria-expanded="false">
+          Schemes &amp; Programs <i class="fas fa-chevron-down drop-caret"></i>
+        </button>
+        <div class="drop-panel">
+          <div class="drop-panel-header">Government Programs</div>
+          <a class="drop-item" href="schemes.html#nsdc">
+            <div class="drop-item-icon">🏛</div>
+            <div class="drop-item-text">
+              <div class="drop-item-title">NSDC Programme</div>
+              <div class="drop-item-sub">National Skill Development Corp.</div>
+            </div>
+          </a>
+          <a class="drop-item" href="schemes.html#upsdm">
+            <div class="drop-item-icon">🌐</div>
+            <div class="drop-item-text">
+              <div class="drop-item-title">UPSDM Programme</div>
+              <div class="drop-item-sub">UP Skill Dev. Mission</div>
+            </div>
+          </a>
+          <div class="drop-divider"></div>
+          <div class="drop-panel-header">Vocational Certification</div>
+          <a class="drop-item" href="schemes.html#ncvt">
+            <div class="drop-item-icon">📜</div>
+            <div class="drop-item-text">
+              <div class="drop-item-title">NCVT</div>
+              <div class="drop-item-sub">National Council for Voc. Training</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <a href="contact.html">Contact</a>
+      <a href="donate.html" class="nav-donate">Donate</a>
+      <a href="apply-now.html" class="nav-cta">Apply Now</a>
+    </nav>
+
+    <button class="hamburger" id="hamburger" onclick="openMenu()" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- MOBILE MENU — index.html wala with dropdowns -->
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true">
+  <div class="mobile-menu-header">
+    <a href="index.html" class="logo" onclick="closeMenu()" aria-label="Go to Home">
+      <div class="logo-emblem" style="width:44px;height:44px;font-size:16px;flex-shrink:0;">SR</div>
+      <div class="logo-text"><h1>Shri Ram Public School</h1><span>Shiksha Samiti</span></div>
+    </a>
+    <button class="mobile-close" onclick="closeMenu()">✕</button>
+  </div>
+  <div class="mobile-nav-links">
+    <a href="about.html" onclick="closeMenu()">ℹ️ About Us</a>
+
+    <!-- Infrastructure mobile dropdown -->
+    <div class="mob-drop-wrap">
+      <button class="mob-drop-btn" onclick="toggleMobDrop(this)">
+        <span>🏗️ Infrastructure</span>
+        <i class="fas fa-chevron-down mob-caret"></i>
+      </button>
+      <div class="mob-drop-list">
+        <a href="infrastructure.html#computer-lab" onclick="closeMenu()"><span>💻</span> Computer Lab</a>
+        <a href="infrastructure.html#science-lab" onclick="closeMenu()"><span>🔬</span> Science Lab</a>
+        <a href="infrastructure.html#dance-music" onclick="closeMenu()"><span>🎭</span> Dance & Music Hall</a>
+        <a href="infrastructure.html#playground" onclick="closeMenu()"><span>⚽</span> Playground</a>
+      </div>
+    </div>
+
+    <a href="gallery.html" onclick="closeMenu()">🖼️ Gallery</a>
+
+    <!-- Schemes mobile dropdown -->
+    <div class="mob-drop-wrap">
+      <button class="mob-drop-btn" onclick="toggleMobDrop(this)">
+        <span>📋 Schemes &amp; Programs</span>
+        <i class="fas fa-chevron-down mob-caret"></i>
+      </button>
+      <div class="mob-drop-list">
+        <a href="schemes.html#nsdc" onclick="closeMenu()"><span>🏛</span> NSDC Programme</a>
+        <a href="schemes.html#upsdm" onclick="closeMenu()"><span>🌐</span> UPSDM Programme</a>
+        <a href="schemes.html#ncvt" onclick="closeMenu()"><span>📜</span> NCVT</a>
+      </div>
+    </div>
+
+    <a href="contact.html" onclick="closeMenu()">📞 Contact</a>
+    <a href="donate.html" onclick="closeMenu()" class="donate-mobile">🤝 Donate</a>
+    <a href="apply-now.html" onclick="closeMenu()" class="cta-mobile">✅ Apply Now</a>
+  </div>
+  <div style="padding:20px 16px;margin-top:auto;border-top:1px solid var(--gray-100);">
+    <p style="font-size:13px;color:var(--gray-400);text-align:center;">📞 <a href="tel:9997658330" style="color:var(--saffron);font-weight:600;">+91 9997658330</a></p>
+  </div>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-grad"></div>
+  <div class="hero-orb1"></div>
+  <div class="hero-orb2"></div>
+  <div class="page-hero-inner container">
+    <div>
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <i class="fa fa-chevron-right" style="font-size:9px;"></i>
+        <span>About Us</span>
+      </div>
+      <div class="page-hero-badge">🏛 Est. 2012 · Registered Educational Society</div>
+      <h2>Our Story, Our <span>Mission</span></h2>
+      <p class="page-hero-sub">Bringing quality, affordable, activity-based education to the children of Karahi, Fatehpur Sikri and surrounding villages of Agra — one child at a time, since 2012.</p>
+    </div>
+    <div class="page-hero-side">
+      <div class="quick-stat">
+        <div class="qs-num">24<span style="font-size:0.6em">+</span></div>
+        <div class="qs-lbl">Years of<br>Service</div>
+      </div>
+      <div class="quick-stat">
+        <div class="qs-num">3</div>
+        <div class="qs-lbl">Institutions<br>Running</div>
+      </div>
+      <div class="quick-stat">
+        <div class="qs-num">1200<span style="font-size:0.55em">+</span></div>
+        <div class="qs-lbl">Students<br>Enrolled</div>
+      </div>
+    </div>
+  </div>
+  <div class="page-hero-wave">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,40 C360,80 1080,0 1440,50 L1440,80 L0,80 Z" fill="white"/>
+    </svg>
+  </div>
+</section>
+
+<!-- OUR STORY -->
+<section class="section" id="story">
+  <div class="container">
+    <div class="story-grid">
+      <div class="story-img-wrap reveal-left">
+        <div class="story-img-slot">
+          <img src="images/s2.jpeg" alt="Shri Ram Public School Building" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+          <div style="display:none;flex-direction:column;align-items:center;gap:8px;color:var(--gray-400);">
+            <span style="font-size:48px;">🏫</span>
+            <span style="font-size:12px;color:var(--gray-400);font-weight:500;">School Building Photo</span>
+          </div>
+        </div>
+        <div class="story-floating-badge">
+          <div class="sfb-num">2012</div>
+          <div class="sfb-txt">Founded</div>
+        </div>
+        <div class="story-accent-box">🏛</div>
+      </div>
+      <div class="reveal-right">
+        <span class="section-label">Our Story</span>
+        <h2 class="section-title">Who We Are</h2>
+        <div class="title-line"></div>
+        <p class="story-para"><strong>Shri Ram Public School Shiksha Samiti</strong> is a non-profit educational society registered under the Societies Registration Act, 1860 in the state of Uttar Pradesh, headquartered in Karahi, Fatehpur Sikri, Agra.</p>
+        <p class="story-para">Founded by the late visionary <strong>Mrs. Prakshi Devi</strong> and <strong>Mr. Vidhiyaram</strong>, our society was born from one simple belief — that every child in rural Agra deserves the same quality of education as those in the cities, at a price every family can afford.</p>
+        <p class="story-para">From a single school with a handful of students to a network of three thriving institutions — including an ITI for vocational training — we have quietly transformed the educational landscape of our region over the past two decades.</p>
+        <div class="reg-info">
+          <div class="reg-chip"><i class="fa fa-certificate"></i> Govt. Recognised</div>
+          <div class="reg-chip"><i class="fa fa-book"></i> CBSE &amp; UP Board</div>
+          <div class="reg-chip"><i class="fa fa-hand-holding-heart"></i> 12A &amp; 80G Certified</div>
+          <div class="reg-chip"><i class="fa fa-gavel"></i> Societies Act, 1860</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION BANNER -->
+<section style="padding:0 0 clamp(60px,9vw,100px);">
+  <div class="container">
+    <div class="mission-banner reveal">
+      <div class="mb-orb"></div>
+      <div class="mb-orb2"></div>
+      <div class="mission-banner-inner">
+        <div class="mb-item">
+          <div class="mb-icon">🔭</div>
+          <h3>Our Vision</h3>
+          <p>To be the most trusted educational society in Agra district — where every child's potential is recognised, nurtured, and transformed into a source of national pride.</p>
+        </div>
+        <div class="mb-divider"></div>
+        <div class="mb-item">
+          <div class="mb-icon">🎯</div>
+          <h3>Our Mission</h3>
+          <p>To deliver the <strong style="color:white;">cheapest yet the highest-quality education</strong> possible — ensuring no child is ever turned away from learning because of financial barriers.</p>
+          <span class="mb-highlight">Quality Education For All</span>
+        </div>
+        <div class="mb-divider"></div>
+        <div class="mb-item">
+          <div class="mb-icon">⚖️</div>
+          <h3>Our Values</h3>
+          <p>Integrity, transparency, community service, and unwavering dedication to each student's growth — academically, morally, and as a human being.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FACILITIES -->
+<section class="section section-alt" id="facilities">
+  <div class="container">
+    <div class="section-head reveal" style="text-align:center;">
+      <span class="section-label">World-Class Facilities</span>
+      <h2 class="section-title" style="text-align:center;">Everything a Student Needs</h2>
+      <div class="title-line" style="margin:12px auto;"></div>
+      <p class="section-sub" style="text-align:center;margin:0 auto;">Our campuses are equipped with modern infrastructure designed to support every dimension of learning — academic, technical, creative, and physical.</p>
+    </div>
+    <div class="facilities-grid">
+      <div class="fac-card reveal delay-1">
+        <div class="fac-img-slot">
+          <img src="images/computer-lab.jpg" alt="Computer Lab" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#1A3F80,#0D2B5E)';">
+          <div class="fac-img-overlay"><span class="fac-img-tag">💻 Computer Lab</span></div>
+          <div class="fac-icon-wrap" style="position:absolute;"><span style="font-size:36px;">💻</span></div>
+        </div>
+        <div class="fac-body">
+          <h3>Computer Laboratory</h3>
+          <p>A fully equipped computer lab with modern desktops, high-speed internet, and licensed software — introducing students to the digital world from an early age.</p>
+          <div class="fac-features">
+            <div class="fac-feat">30+ Desktop Computers</div>
+            <div class="fac-feat">High-Speed Broadband Internet</div>
+            <div class="fac-feat">Digital Literacy from Class 3</div>
+            <div class="fac-feat">MS Office, Coding & Tally</div>
+          </div>
+        </div>
+      </div>
+      <div class="fac-card reveal delay-2">
+        <div class="fac-img-slot">
+          <img src="images/science-lab.jpg" alt="Science Lab" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#1A6B35,#0D5030)';">
+          <div class="fac-img-overlay"><span class="fac-img-tag">🔬 Science Lab</span></div>
+          <div class="fac-icon-wrap" style="position:absolute;"><span style="font-size:36px;">🔬</span></div>
+        </div>
+        <div class="fac-body">
+          <h3>Science Laboratory</h3>
+          <p>Separate Physics, Chemistry, and Biology labs with all apparatus and safety equipment — turning theory into hands-on discovery every day.</p>
+          <div class="fac-features">
+            <div class="fac-feat">Physics, Chemistry & Biology Labs</div>
+            <div class="fac-feat">CBSE / UP Board Approved Equipment</div>
+            <div class="fac-feat">Regular Practical Classes</div>
+            <div class="fac-feat">Safety Gear & First Aid Provided</div>
+          </div>
+        </div>
+      </div>
+      <div class="fac-card reveal delay-3">
+        <div class="fac-img-slot">
+          <img src="images/library.jpg" alt="Library" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#C8940A,#8B6500)';">
+          <div class="fac-img-overlay"><span class="fac-img-tag">📚 Library</span></div>
+          <div class="fac-icon-wrap" style="position:absolute;"><span style="font-size:36px;">📚</span></div>
+        </div>
+        <div class="fac-body">
+          <h3>Library & Reading Room</h3>
+          <p>A calm, well-stocked library housing thousands of books — textbooks, reference materials, encyclopaedias, newspapers, and a dedicated reading room.</p>
+          <div class="fac-features">
+            <div class="fac-feat">5,000+ Books & Journals</div>
+            <div class="fac-feat">Daily Newspapers & Magazines</div>
+            <div class="fac-feat">Dedicated Reading Hall</div>
+            <div class="fac-feat">Competitive Exam Section</div>
+          </div>
+        </div>
+      </div>
+      <div class="fac-card reveal delay-1">
+        <div class="fac-img-slot">
+          <img src="images/sports.jpg" alt="Sports Ground" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#2A5E1A,#1A3F80)';">
+          <div class="fac-img-overlay"><span class="fac-img-tag">⚽ Sports</span></div>
+          <div class="fac-icon-wrap" style="position:absolute;"><span style="font-size:36px;">⚽</span></div>
+        </div>
+        <div class="fac-body">
+          <h3>Sports Ground & Activities</h3>
+          <p>A large open ground for cricket, football, volleyball, and athletics — because we believe physical fitness is as important as academic achievement.</p>
+          <div class="fac-features">
+            <div class="fac-feat">Cricket, Football, Volleyball</div>
+            <div class="fac-feat">Annual Sports Day Event</div>
+            <div class="fac-feat">Professional PT Instructors</div>
+            <div class="fac-feat">District-Level Competition Training</div>
+          </div>
+        </div>
+      </div>
+      <div class="fac-card reveal delay-2">
+        <div class="fac-img-slot">
+          <img src="images/smart-class.jpg" alt="Smart Classroom" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#5B3A9E,#1A3F80)';">
+          <div class="fac-img-overlay"><span class="fac-img-tag">📺 Smart Class</span></div>
+          <div class="fac-icon-wrap" style="position:absolute;"><span style="font-size:36px;">📺</span></div>
+        </div>
+        <div class="fac-body">
+          <h3>Smart Classrooms</h3>
+          <p>Interactive smart boards, projectors, and digital content in select classrooms — making difficult concepts simple, engaging, and visually memorable.</p>
+          <div class="fac-features">
+            <div class="fac-feat">Smart Board & Projectors</div>
+            <div class="fac-feat">Digital Course Content</div>
+            <div class="fac-feat">Audio-Visual Learning</div>
+            <div class="fac-feat">Recorded Revision Lessons</div>
+          </div>
+        </div>
+      </div>
+      <div class="fac-card reveal delay-3">
+        <div class="fac-img-slot">
+          <img src="images/campus.jpg" alt="Safe Campus" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#B33A00,#6B1A00)';">
+          <div class="fac-img-overlay"><span class="fac-img-tag">🔒 Safe Campus</span></div>
+          <div class="fac-icon-wrap" style="position:absolute;"><span style="font-size:36px;">🛡️</span></div>
+        </div>
+        <div class="fac-body">
+          <h3>Safe & Clean Campus</h3>
+          <p>CCTV-monitored, clean, and child-safe premises with separate facilities for girls and boys, clean drinking water, and a fully functional medical room.</p>
+          <div class="fac-features">
+            <div class="fac-feat">24/7 CCTV Surveillance</div>
+            <div class="fac-feat">Separate Facilities for Girls</div>
+            <div class="fac-feat">RO Drinking Water</div>
+            <div class="fac-feat">First Aid & Medical Room</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="transport-strip reveal">
+      <div class="ts-icon">🚌</div>
+      <div class="ts-content">
+        <h3>School Bus Service — Door-to-Door Safety</h3>
+        <p>We operate a fleet of well-maintained school buses covering Karahi, Fatehpur Sikri, and surrounding villages — so no child is ever too far from quality education. All buses are fitted with GPS tracking and accompanied by trained attendants.</p>
+        <div class="ts-features">
+          <span class="ts-tag">🗺 GPS-Tracked Buses</span>
+          <span class="ts-tag">👩 Trained Female Attendants</span>
+          <span class="ts-tag">📍 15+ Village Routes</span>
+          <span class="ts-tag">🔒 Safe & On-Time</span>
+        </div>
+      </div>
+      <a href="contact.html" class="ts-btn">Enquire About Bus Route →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ACTIVITY-BASED LEARNING -->
+<section class="section" id="learning">
+  <div class="container">
+    <div class="learning-grid">
+      <div class="reveal-left">
+        <span class="section-label">Our Approach</span>
+        <h2 class="section-title">Activity-Based<br>Learning</h2>
+        <div class="title-line"></div>
+        <p style="font-size:15px;color:var(--gray-600);line-height:1.85;margin-bottom:28px;">We go beyond chalk-and-talk. At Shri Ram Public School, learning happens through doing — experiments, group projects, cultural activities, debates, field visits, and hands-on workshops that make every concept stick.</p>
+        <div class="approach-list">
+          <div class="ap-item reveal delay-1">
+            <div class="ap-icon orange">🧪</div>
+            <div>
+              <h4>Practical Science & Math</h4>
+              <p>Every chapter is backed by a lab practical or real-world activity — students see, touch, and understand, not just memorise.</p>
+            </div>
+          </div>
+          <div class="ap-item reveal delay-2">
+            <div class="ap-icon navy">🎨</div>
+            <div>
+              <h4>Arts, Crafts & Cultural Events</h4>
+              <p>Drawing, painting, drama, dance, and annual cultural festivals bring creativity and confidence to every student.</p>
+            </div>
+          </div>
+          <div class="ap-item reveal delay-3">
+            <div class="ap-icon green">🗣</div>
+            <div>
+              <h4>Debate, Quiz & Public Speaking</h4>
+              <p>Regular inter-class competitions, debates, and quizzes build communication skills and critical thinking from a young age.</p>
+            </div>
+          </div>
+          <div class="ap-item reveal delay-4">
+            <div class="ap-icon gold">🌍</div>
+            <div>
+              <h4>Field Trips & Educational Tours</h4>
+              <p>Learning outside the classroom — visits to historical monuments, science centres, and industrial sites make education come alive.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="learning-visual reveal-right">
+        <div class="lv-card">
+          <div class="lv-img-slot">
+            <img src="images/activity1.jpg" alt="Students in Activity" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div style="display:none;width:100%;height:100%;align-items:center;justify-content:center;font-size:48px;background:var(--saffron-pale);">🎨</div>
+            <div class="lv-label">Activity-Based Learning</div>
+          </div>
+        </div>
+        <div class="lv-card">
+          <div class="lv-img-slot" style="min-height:clamp(120px,16vw,180px);">
+            <img src="images/activity2.jpg" alt="Sports Activity" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div style="display:none;width:100%;height:100%;align-items:center;justify-content:center;font-size:36px;background:var(--green-pale);">⚽</div>
+            <div class="lv-label">Sports & Fitness</div>
+          </div>
+        </div>
+        <div class="lv-card">
+          <div class="lv-img-slot" style="min-height:clamp(120px,16vw,180px);">
+            <img src="images/activity3.jpg" alt="Science Practical" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div style="display:none;width:100%;height:100%;align-items:center;justify-content:center;font-size:36px;background:var(--navy-pale);">🔬</div>
+            <div class="lv-label">Science Practicals</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FACULTY -->
+<section class="section faculty-section" id="faculty">
+  <div class="container">
+    <div class="section-head reveal" style="text-align:center;">
+      <span class="section-label">Our Team</span>
+      <h2 class="section-title" style="text-align:center;">Experienced & Dedicated Faculty</h2>
+      <div class="title-line" style="margin:12px auto;"></div>
+      <p class="section-sub" style="text-align:center;margin:0 auto;">60+ qualified teachers — B.Ed., M.Ed., and subject specialists — who treat every student as their own child.</p>
+    </div>
+    <div class="faculty-grid">
+      <div class="faculty-card reveal delay-1">
+        <div class="faculty-avatar" style="background:linear-gradient(135deg,var(--saffron),var(--saffron-deep))">P</div>
+        <h4>Principal</h4>
+        <div class="f-role">Academic Head</div>
+        <div class="f-dept">Overall School Management</div>
+        <span class="f-exp">20+ Years Experience</span>
+      </div>
+      <div class="faculty-card reveal delay-2">
+        <div class="faculty-avatar" style="background:linear-gradient(135deg,var(--navy),var(--navy-light))">S</div>
+        <h4>Science Department</h4>
+        <div class="f-role">Senior Faculty</div>
+        <div class="f-dept">Physics · Chemistry · Biology</div>
+        <span class="f-exp">M.Sc. + B.Ed. Qualified</span>
+      </div>
+      <div class="faculty-card reveal delay-3">
+        <div class="faculty-avatar" style="background:linear-gradient(135deg,var(--green),var(--green-light))">M</div>
+        <h4>Mathematics Faculty</h4>
+        <div class="f-role">Senior Faculty</div>
+        <div class="f-dept">Maths · Statistics</div>
+        <span class="f-exp">IIT-Trained Methods</span>
+      </div>
+      <div class="faculty-card reveal delay-4">
+        <div class="faculty-avatar" style="background:linear-gradient(135deg,var(--gold),#8B6500)">E</div>
+        <h4>English Faculty</h4>
+        <div class="f-role">Language Department</div>
+        <div class="f-dept">English · Hindi · Sanskrit</div>
+        <span class="f-exp">M.A. + B.Ed. Certified</span>
+      </div>
+      <div class="faculty-card reveal delay-1">
+        <div class="faculty-avatar" style="background:linear-gradient(135deg,#6B3A9E,#3C3489)">C</div>
+        <h4>Computer Faculty</h4>
+        <div class="f-role">IT Department</div>
+        <div class="f-dept">Computer Science · Coding</div>
+        <span class="f-exp">MCA / BCA Certified</span>
+      </div>
+      <div class="faculty-card reveal delay-2">
+        <div class="faculty-avatar" style="background:linear-gradient(135deg,#B33A00,#7A2800)">SS</div>
+        <h4>Social Science</h4>
+        <div class="f-role">Humanities Dept.</div>
+        <div class="f-dept">History · Geography · Civics</div>
+        <span class="f-exp">10+ Years Experience</span>
+      </div>
+      <div class="faculty-card reveal delay-3">
+        <div class="faculty-avatar" style="background:linear-gradient(135deg,#1A6B35,#0D5030)">PT</div>
+        <h4>Physical Education</h4>
+        <div class="f-role">Sports & Fitness</div>
+        <div class="f-dept">Sports · NCC · Yoga</div>
+        <span class="f-exp">Certified P.T. Instructor</span>
+      </div>
+      <div class="faculty-card reveal delay-4">
+        <div class="faculty-avatar" style="background:linear-gradient(135deg,#C8940A,#6B4F00)">AR</div>
+        <h4>Arts & Culture</h4>
+        <div class="f-role">Creative Dept.</div>
+        <div class="f-dept">Drawing · Craft · Music</div>
+        <span class="f-exp">Fine Arts Graduate</span>
+      </div>
+    </div>
+    <div class="reveal" style="margin-top:clamp(28px,5vw,48px);background:var(--white);border-radius:var(--radius-lg);padding:clamp(20px,4vw,36px);border:1px solid var(--gray-200);display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center;">
+      <div><div style="font-family:'Playfair Display',serif;font-size:clamp(28px,5vw,40px);font-weight:700;color:var(--saffron);">60+</div><div style="font-size:13px;color:var(--gray-600);margin-top:4px;">Total Teaching Staff</div></div>
+      <div><div style="font-family:'Playfair Display',serif;font-size:clamp(28px,5vw,40px);font-weight:700;color:var(--navy);">100%</div><div style="font-size:13px;color:var(--gray-600);margin-top:4px;">B.Ed./M.Ed. Certified</div></div>
+      <div><div style="font-family:'Playfair Display',serif;font-size:clamp(28px,5vw,40px);font-weight:700;color:var(--green);">15+</div><div style="font-size:13px;color:var(--gray-600);margin-top:4px;">Avg. Years Experience</div></div>
+      <div><div style="font-family:'Playfair Display',serif;font-size:clamp(28px,5vw,40px);font-weight:700;color:var(--gold);">5</div><div style="font-size:13px;color:var(--gray-600);margin-top:4px;">Departments</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ITI SECTION -->
+<section class="section iti-section" id="iti">
+  <div class="iti-orb"></div>
+  <div class="container">
+    <div class="iti-inner">
+      <div class="reveal-left">
+        <span class="section-label" style="background:rgba(255,107,0,0.15);color:var(--saffron-light);">Vocational Education</span>
+        <h2 class="section-title" style="color:white;">Shri Ram ITI —<br>Skills for Life</h2>
+        <div class="title-line"></div>
+        <p style="font-size:15px;color:rgba(255,255,255,0.65);line-height:1.85;margin-bottom:8px;">Our Industrial Training Institute offers government-recognised NCVT and SCVT affiliated trades — equipping young people with practical, job-ready skills at minimal cost.</p>
+        <p style="font-size:15px;color:rgba(255,255,255,0.65);line-height:1.85;margin-bottom:24px;">Every trade comes with a fully equipped workshop, industry-standard tools, and regular visits from working professionals — because we believe practical education must mirror real work.</p>
+        <div class="iti-trades">
+          <div class="iti-trade"><div class="iti-trade-icon">⚡</div><h4>Electrician</h4><p>Wiring, panels, industrial circuits & electrical safety</p><span class="duration">2 Year Trade</span></div>
+          <div class="iti-trade"><div class="iti-trade-icon">🔧</div><h4>Fitter</h4><p>Machining, fitting, assembly & workshop practice</p><span class="duration">2 Year Trade</span></div>
+          <div class="iti-trade"><div class="iti-trade-icon">🖥</div><h4>COPA</h4><p>Computer operations, programming & office automation</p><span class="duration">1 Year Trade</span></div>
+          <div class="iti-trade"><div class="iti-trade-icon">🔩</div><h4>Welder</h4><p>Arc, MIG, TIG welding & cutting operations</p><span class="duration">1 Year Trade</span></div>
+        </div>
+      </div>
+      <div class="iti-visual reveal-right">
+        <div class="iti-badge"><div class="ib-num">NCVT</div><div class="ib-txt">Affiliated</div></div>
+        <div class="iti-img-slot">
+          <img src="images/n5.jpeg" alt="Shri Ram ITI Workshop" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+          <div style="display:none;flex-direction:column;align-items:center;gap:10px;color:rgba(255,255,255,0.3);"><span style="font-size:56px;">🏭</span><span style="font-size:13px;">ITI Workshop Photo</span></div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px;">
+          <div style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:16px;text-align:center;"><div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--saffron-light);">4+</div><div style="font-size:12px;color:rgba(255,255,255,0.5);margin-top:4px;">Trades Offered</div></div>
+          <div style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:16px;text-align:center;"><div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--saffron-light);">SCVT</div><div style="font-size:12px;color:rgba(255,255,255,0.5);margin-top:4px;">Also Affiliated</div></div>
+          <div style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:16px;text-align:center;"><div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--saffron-light);">100%</div><div style="font-size:12px;color:rgba(255,255,255,0.5);margin-top:4px;">Tool-Based Learning</div></div>
+          <div style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:16px;text-align:center;"><div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--saffron-light);">Govt.</div><div style="font-size:12px;color:rgba(255,255,255,0.5);margin-top:4px;">Recognised Cert.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="section section-alt" id="values">
+  <div class="container">
+    <div class="section-head reveal" style="text-align:center;">
+      <span class="section-label">What Drives Us</span>
+      <h2 class="section-title" style="text-align:center;">Our Core Values</h2>
+      <div class="title-line" style="margin:12px auto;"></div>
+    </div>
+    <div class="values-grid">
+      <div class="val-card reveal delay-1"><div class="val-num">01</div><div class="val-icon">🤝</div><h3>Affordability</h3><p>We are committed to providing the cheapest education without sacrificing quality. No child should be left behind because of financial constraints.</p></div>
+      <div class="val-card reveal delay-2"><div class="val-num">02</div><div class="val-icon">🌟</div><h3>Excellence</h3><p>Consistent academic results, trained faculty, and modern infrastructure ensure we deliver the best — every single year, for every single student.</p></div>
+      <div class="val-card reveal delay-3"><div class="val-num">03</div><div class="val-icon">🌱</div><h3>Holistic Growth</h3><p>We nurture the body, mind, and spirit — sports, arts, discipline, and moral values are as important to us as board marks.</p></div>
+      <div class="val-card reveal delay-4"><div class="val-num">04</div><div class="val-icon">🏘</div><h3>Community</h3><p>Rooted in the villages of Agra, we serve our local community first — creating educated, responsible citizens who give back to their roots.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section class="achievements-section" id="achievements">
+  <div class="ach-bg"></div>
+  <div class="container">
+    <div style="text-align:center;margin-bottom:clamp(36px,6vw,56px);position:relative;z-index:2;">
+      <span style="display:inline-block;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.6);background:rgba(255,255,255,0.12);padding:5px 14px;border-radius:50px;margin-bottom:10px;">Our Track Record</span>
+      <h2 style="font-size:clamp(24px,4.5vw,38px);color:white;line-height:1.2;">Numbers That Speak</h2>
+    </div>
+    <div class="ach-grid">
+      <div class="ach-card reveal delay-1"><div class="ach-num"><span class="count-up" data-target="1200">0</span><span class="ach-unit">+</span></div><div class="ach-lbl">Students Currently<br>Enrolled</div></div>
+      <div class="ach-card reveal delay-2"><div class="ach-num"><span class="count-up" data-target="98">0</span><span class="ach-unit">%</span></div><div class="ach-lbl">Board Exam<br>Pass Rate 2024</div></div>
+      <div class="ach-card reveal delay-3"><div class="ach-num"><span class="count-up" data-target="60">0</span><span class="ach-unit">+</span></div><div class="ach-lbl">Qualified<br>Teaching Staff</div></div>
+      <div class="ach-card reveal delay-4"><div class="ach-num"><span class="count-up" data-target="24">0</span><span class="ach-unit">+</span></div><div class="ach-lbl">Years of<br>Excellence</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-box reveal">
+      <div class="cta-orb"></div>
+      <h2>Ready to Join the Shri Ram Family?</h2>
+      <p>Admissions are open for Session 2025–26. Give your child the gift of quality education at the most affordable fees in the region. Limited seats — apply today.</p>
+      <div class="cta-buttons">
+        <a href="apply-now.html" class="btn-cta-primary">✅ Apply Now — Session 2025–26</a>
+        <a href="contact.html" class="btn-cta-outline">📞 Talk to Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="footer-component.js"></script>
+
+<div class="page-footer-note">
+  © 2025 Shri Ram Public School Shiksha Samiti, Karahi, Fatehpur Sikri, Agra, U.P. · Reg. No.: as per Societies Registration Act, 1860
+</div>
+
+<script>
+/* Mobile menu */
+function openMenu(){document.getElementById('mobileMenu').classList.add('open');document.body.style.overflow='hidden';}
+function closeMenu(){document.getElementById('mobileMenu').classList.remove('open');document.body.style.overflow='';}
+document.getElementById('mobileMenu').addEventListener('click',function(e){if(e.target===this)closeMenu();});
+
+/* Mobile accordion dropdowns */
+function toggleMobDrop(btn){
+  const list=btn.nextElementSibling;
+  const isOpen=list.classList.contains('open');
+  document.querySelectorAll('.mob-drop-list').forEach(l=>l.classList.remove('open'));
+  document.querySelectorAll('.mob-drop-btn').forEach(b=>b.classList.remove('open'));
+  if(!isOpen){list.classList.add('open');btn.classList.add('open');}
+}
+
+/* Header scroll */
+window.addEventListener('scroll',()=>{
+  document.getElementById('header').classList.toggle('scrolled',window.scrollY>60);
+},{passive:true});
+
+/* Scroll reveal */
+const revealObserver=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});
+},{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale').forEach(el=>revealObserver.observe(el));
+
+/* Count up */
+const countObserver=new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(!entry.isIntersecting)return;
+    const el=entry.target;
+    const target=parseInt(el.dataset.target);
+    let current=0;
+    const step=Math.max(1,Math.ceil(target/60));
+    const timer=setInterval(()=>{
+      current=Math.min(current+step,target);
+      el.textContent=current.toLocaleString();
+      if(current>=target)clearInterval(timer);
+    },20);
+    countObserver.unobserve(el);
+  });
+},{threshold:0.5});
+document.querySelectorAll('.count-up').forEach(el=>countObserver.observe(el));
+
+/* Close on Escape */
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape'){
+    document.querySelectorAll('.mob-drop-list').forEach(l=>l.classList.remove('open'));
+    document.querySelectorAll('.mob-drop-btn').forEach(b=>b.classList.remove('open'));
+  }
+});
+</script>
+</body>
+</html>
