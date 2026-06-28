@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Shri Ram Public School Shiksha Samiti - Karahi, Fatehpur Sikri, Agra</title>
+<meta name="description" content="Shri Ram Public School Shiksha Samiti - A registered educational society dedicated to quality education in Karahi, Fatehpur Sikri, Agra, Uttar Pradesh.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --saffron:#FF6B00;--saffron-light:#FF8C33;--saffron-pale:#FFF4EC;
+  --navy:#0D2B5E;--navy-light:#1A3F80;
+  --green:#1A6B35;--green-light:#2A9B50;--gold:#C8940A;
+  --white:#FFFFFF;--gray-50:#F8F9FA;--gray-100:#F0F2F5;
+  --gray-200:#E2E6EA;--gray-400:#9AA3AE;--gray-600:#555F6B;--gray-800:#222831;
+  --shadow-sm:0 2px 8px rgba(13,43,94,0.08);--shadow-md:0 8px 32px rgba(13,43,94,0.12);
+  --radius:12px;--radius-lg:20px;
+  --text-xs:clamp(10px,2vw,12px);--text-sm:clamp(12px,2.5vw,14px);
+  --text-base:clamp(14px,3vw,16px);--text-lg:clamp(16px,3.5vw,18px);
+  --text-xl:clamp(18px,4vw,22px);--text-2xl:clamp(20px,4.5vw,26px);
+  --text-3xl:clamp(24px,5vw,36px);--text-4xl:clamp(28px,6vw,48px);
+  --text-hero:clamp(28px,7vw,54px);
+  --space-xs:clamp(8px,2vw,12px);--space-sm:clamp(12px,3vw,20px);
+  --space-md:clamp(20px,4vw,32px);--space-lg:clamp(32px,5vw,56px);--space-xl:clamp(48px,7vw,80px);
+}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;color:var(--gray-800);background:var(--white);overflow-x:hidden;font-size:var(--text-base);}
+h1,h2,h3,h4{font-family:'Playfair Display',serif;line-height:1.2;}
+a{text-decoration:none;color:inherit;}
+img{max-width:100%;height:auto;display:block;}
+button{font-family:'Inter',sans-serif;}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+@keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+@keyframes dropdownIn{from{opacity:0;transform:translateY(-8px);}to{opacity:1;transform:translateY(0);}}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.65s ease,transform 0.65s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.reveal-left{opacity:0;transform:translateX(-30px);transition:opacity 0.65s ease,transform 0.65s ease;}
+.reveal-left.visible{opacity:1;transform:translateX(0);}
+.reveal-right{opacity:0;transform:translateX(30px);transition:opacity 0.65s ease,transform 0.65s ease;}
+.reveal-right.visible{opacity:1;transform:translateX(0);}
+
+/* TOP BAR */
+.topbar{background:var(--navy);color:rgba(255,255,255,0.8);font-size:var(--text-xs);padding:6px 0;}
+.topbar-inner{max-width:1200px;margin:0 auto;padding:0 clamp(16px,4vw,24px);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:4px;}
+.topbar a{color:rgba(255,255,255,0.8);transition:color 0.2s;}
+.topbar a:hover{color:var(--saffron-light);}
+.topbar-left,.topbar-right{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+
+/* ======== HEADER & NAV ======== */
+.header{position:sticky;top:0;z-index:1000;background:var(--white);border-bottom:1px solid var(--gray-200);box-shadow:var(--shadow-sm);transition:box-shadow 0.3s ease;}
+.header.scrolled{box-shadow:var(--shadow-md);}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 clamp(16px,4vw,24px);display:flex;align-items:center;justify-content:space-between;height:clamp(60px,10vw,72px);}
+.logo{display:flex;align-items:center;gap:clamp(10px,2vw,14px);min-width:0;}
+.logo-emblem{width:clamp(44px,8vw,56px);height:clamp(44px,8vw,56px);border-radius:50%;flex-shrink:0;background:linear-gradient(135deg,var(--saffron),var(--navy));display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:clamp(16px,3vw,22px);font-weight:700;color:white;box-shadow:0 4px 16px rgba(255,107,0,0.3);overflow:hidden;}
+.logo-emblem img{width:100%;height:100%;object-fit:cover;border-radius:50%;}
+.logo-text{line-height:1.2;min-width:0;}
+.logo-text h1{font-size:clamp(12px,2.5vw,15px);color:var(--navy);font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.logo-text span{font-size:clamp(10px,2vw,11px);color:var(--gray-600);font-family:'Inter',sans-serif;font-weight:400;}
+.nav-links{display:flex;align-items:center;gap:2px;}
+
+/* Plain nav links */
+.nav-links > a{
+  padding:clamp(6px,1.5vw,8px) clamp(8px,2vw,14px);
+  border-radius:8px;font-size:var(--text-sm);font-weight:500;
+  color:var(--gray-800);transition:all 0.2s ease;
+}
+.nav-links > a:hover{background:var(--saffron-pale);color:var(--saffron);}
+.nav-links > a.active{color:var(--saffron);}
+
+/* ---- DROPDOWN WRAPPER ---- */
+.nav-dropdown{position:relative;display:flex;align-items:center;}
+.nav-dropdown > .nav-drop-trigger{
+  display:flex;align-items:center;gap:5px;
+  padding:clamp(6px,1.5vw,8px) clamp(8px,2vw,14px);
+  border-radius:8px;font-size:var(--text-sm);font-weight:500;
+  color:var(--gray-800);transition:all 0.2s ease;cursor:pointer;
+  border:none;background:none;font-family:'Inter',sans-serif;
+  white-space:nowrap;
+}
+.nav-dropdown > .nav-drop-trigger:hover,
+.nav-dropdown:hover > .nav-drop-trigger{background:var(--saffron-pale);color:var(--saffron);}
+.nav-drop-trigger .drop-caret{font-size:9px;transition:transform 0.25s ease;}
+.nav-dropdown:hover .drop-caret{transform:rotate(180deg);}
+
+/* ---- DROPDOWN PANEL ---- */
+.drop-panel{
+  position:absolute;top:calc(100% + 10px);left:0;
+  min-width:230px;background:var(--white);
+  border-radius:14px;border:1px solid var(--gray-200);
+  box-shadow:0 16px 48px rgba(13,43,94,0.16);
+  padding:8px;
+  opacity:0;visibility:hidden;pointer-events:none;
+  transform:translateY(-8px);
+  transition:opacity 0.2s ease,transform 0.2s ease,visibility 0.2s ease;
+  z-index:200;
+}
+.nav-dropdown:hover .drop-panel,
+.nav-dropdown:focus-within .drop-panel{
+  opacity:1;visibility:visible;pointer-events:all;transform:translateY(0);
+}
+.drop-panel::before{
+  content:'';position:absolute;top:-6px;left:20px;
+  width:12px;height:12px;background:var(--white);
+  border-left:1px solid var(--gray-200);border-top:1px solid var(--gray-200);
+  transform:rotate(45deg);border-radius:2px 0 0 0;
+}
+.drop-panel-header{
+  font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--gray-400);padding:6px 12px 4px;margin-bottom:2px;
+}
+.drop-item{
+  display:flex;align-items:center;gap:10px;
+  padding:10px 12px;border-radius:10px;
+  font-size:13px;font-weight:500;color:var(--gray-800);
+  transition:background 0.18s,color 0.18s;cursor:pointer;
+}
+.drop-item:hover{background:var(--saffron-pale);color:var(--saffron);}
+.drop-item-icon{
+  width:32px;height:32px;border-radius:8px;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;font-size:15px;
+  background:var(--gray-100);transition:background 0.18s;
+}
+.drop-item:hover .drop-item-icon{background:rgba(255,107,0,0.12);}
+.drop-item-text{}
+.drop-item-title{font-weight:600;line-height:1.2;}
+.drop-item-sub{font-size:11px;color:var(--gray-400);margin-top:1px;font-weight:400;}
+.drop-divider{height:1px;background:var(--gray-100);margin:6px 4px;}
+
+/* CTA buttons */
+.nav-cta{background:var(--saffron);color:white!important;padding:clamp(8px,1.5vw,10px) clamp(14px,2.5vw,20px);border-radius:8px;font-size:var(--text-sm);font-weight:600;transition:all 0.2s ease;margin-left:8px;box-shadow:0 4px 12px rgba(255,107,0,0.3);}
+.nav-cta:hover{background:var(--saffron-light)!important;transform:translateY(-1px);}
+.nav-donate{background:var(--navy);color:white!important;padding:clamp(8px,1.5vw,10px) clamp(14px,2.5vw,20px);border-radius:8px;font-size:var(--text-sm);font-weight:600;transition:all 0.2s ease;margin-left:8px;}
+.nav-donate:hover{background:var(--navy-light)!important;transform:translateY(-1px);}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;border:none;background:none;}
+.hamburger span{display:block;width:24px;height:2px;background:var(--navy);transition:all 0.3s;border-radius:2px;}
+
+/* ======== MOBILE MENU ======== */
+.mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:2000;background:var(--white);overflow-y:auto;}
+.mobile-menu.open{display:flex;flex-direction:column;animation:fadeIn 0.2s ease;}
+.mobile-menu-header{display:flex;justify-content:space-between;align-items:center;padding:clamp(16px,4vw,24px);border-bottom:1px solid var(--gray-100);}
+.mobile-close{font-size:28px;cursor:pointer;color:var(--gray-800);background:none;border:none;line-height:1;}
+.mobile-nav-links{padding:clamp(12px,3vw,16px);display:flex;flex-direction:column;gap:4px;}
+.mobile-nav-links > a,.mobile-nav-links > .mob-drop-wrap > .mob-drop-btn{
+  display:flex;align-items:center;gap:12px;
+  padding:clamp(14px,3.5vw,18px) clamp(16px,4vw,20px);
+  font-size:clamp(15px,3.5vw,17px);font-weight:500;
+  border-radius:12px;color:var(--gray-800);
+  transition:background 0.2s,color 0.2s;
+  width:100%;border:none;background:none;font-family:'Inter',sans-serif;cursor:pointer;text-align:left;
+}
+.mobile-nav-links > a:hover,
+.mobile-nav-links > .mob-drop-wrap > .mob-drop-btn:hover{background:var(--saffron-pale);color:var(--saffron);}
+.mob-drop-btn{justify-content:space-between;}
+.mob-drop-btn .mob-caret{font-size:11px;transition:transform 0.25s;}
+.mob-drop-btn.open .mob-caret{transform:rotate(180deg);}
+.mob-drop-list{
+  display:none;flex-direction:column;gap:2px;
+  padding:6px 10px 10px 20px;
+  border-left:2px solid var(--saffron-pale);
+  margin:2px 16px 8px 16px;border-radius:0 0 8px 8px;
+}
+.mob-drop-list.open{display:flex;}
+.mob-drop-list a{
+  display:flex;align-items:center;gap:10px;
+  padding:10px 12px;font-size:14px;font-weight:500;
+  color:var(--gray-800);border-radius:8px;transition:background 0.18s,color 0.18s;
+}
+.mob-drop-list a:hover{background:var(--saffron-pale);color:var(--saffron);}
+.mob-drop-list a span{font-size:16px;}
+.mobile-nav-links a.cta-mobile{background:var(--saffron);color:white;margin-top:12px;text-align:center;justify-content:center;}
+.mobile-nav-links a.donate-mobile{background:var(--navy);color:white;text-align:center;justify-content:center;}
+
+/* HERO */
+.hero{min-height:clamp(500px,88vh,900px);background:var(--navy);position:relative;overflow:hidden;display:flex;align-items:center;}
+.hero-bg{position:absolute;inset:0;z-index:0;background:url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=1600&q=80') center/cover no-repeat;opacity:0.15;}
+.hero-decor{position:absolute;inset:0;z-index:1;background:linear-gradient(135deg,rgba(13,43,94,0.97) 0%,rgba(13,43,94,0.8) 60%,rgba(255,107,0,0.12) 100%);}
+.hero-content{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:clamp(48px,8vw,80px) clamp(16px,4vw,24px);display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,60px);align-items:center;width:100%;}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,107,0,0.15);border:1px solid rgba(255,107,0,0.3);color:var(--saffron-light);padding:clamp(5px,1.5vw,7px) clamp(10px,2vw,14px);border-radius:50px;font-size:var(--text-xs);font-weight:600;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:clamp(12px,2vw,20px);animation:fadeUp 0.6s ease 0.1s both;}
+.hero-title{font-size:var(--text-hero);color:white;line-height:1.15;font-weight:700;animation:fadeUp 0.6s ease 0.2s both;margin-bottom:8px;}
+.hero-title span{color:var(--saffron-light);}
+.hero-subtitle{font-family:'Inter',sans-serif;font-size:clamp(13px,2.5vw,16px);color:rgba(255,255,255,0.65);font-weight:400;margin:clamp(12px,2vw,16px) 0 clamp(20px,3vw,32px);line-height:1.75;animation:fadeUp 0.6s ease 0.3s both;}
+.hero-buttons{display:flex;gap:clamp(10px,2vw,14px);flex-wrap:wrap;animation:fadeUp 0.6s ease 0.4s both;}
+.btn-primary{background:var(--saffron);color:white;padding:clamp(10px,2vw,14px) clamp(18px,3vw,28px);border-radius:10px;font-size:clamp(13px,2.5vw,15px);font-weight:600;transition:all 0.25s ease;box-shadow:0 6px 20px rgba(255,107,0,0.4);white-space:nowrap;}
+.btn-primary:hover{background:var(--saffron-light);transform:translateY(-2px);}
+.btn-outline{background:transparent;color:white;padding:clamp(10px,2vw,14px) clamp(18px,3vw,28px);border-radius:10px;font-size:clamp(13px,2.5vw,15px);font-weight:600;border:1.5px solid rgba(255,255,255,0.35);transition:all 0.25s ease;white-space:nowrap;}
+.btn-outline:hover{background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.6);}
+.hero-card{background:rgba(255,255,255,0.06);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.12);border-radius:var(--radius-lg);padding:clamp(20px,4vw,32px);animation:fadeUp 0.7s ease 0.3s both;}
+.hero-card h3{font-size:clamp(15px,3vw,18px);color:white;margin-bottom:clamp(14px,3vw,20px);}
+.hero-stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(10px,2vw,16px);}
+.hero-stat{background:rgba(255,255,255,0.05);border-radius:var(--radius);padding:clamp(14px,3vw,20px) clamp(10px,2vw,16px);text-align:center;border:1px solid rgba(255,255,255,0.08);}
+.hero-stat .num{font-family:'Playfair Display',serif;font-size:clamp(24px,5vw,32px);font-weight:700;color:var(--saffron-light);line-height:1;}
+.hero-stat .lbl{font-size:clamp(10px,2vw,12px);color:rgba(255,255,255,0.5);margin-top:6px;line-height:1.3;}
+
+/* MARQUEE */
+.marquee-strip{background:var(--saffron);color:white;padding:clamp(8px,2vw,10px) 0;overflow:hidden;font-size:var(--text-sm);font-weight:500;}
+.marquee-inner{display:flex;white-space:nowrap;animation:marquee 25s linear infinite;}
+.marquee-item{padding:0 clamp(24px,5vw,40px);flex-shrink:0;}
+
+/* SECTION */
+.section{padding:var(--space-xl) 0;}
+.section-alt{background:var(--gray-50);}
+.container{max-width:1200px;margin:0 auto;padding:0 clamp(16px,4vw,24px);}
+.section-label{display:inline-block;font-size:var(--text-xs);font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--saffron);background:var(--saffron-pale);padding:5px 14px;border-radius:50px;margin-bottom:10px;}
+.section-title{font-size:var(--text-3xl);color:var(--navy);line-height:1.2;margin-bottom:12px;}
+.section-sub{font-size:var(--text-base);color:var(--gray-600);line-height:1.75;max-width:560px;}
+.section-head{margin-bottom:clamp(36px,6vw,56px);}
+.title-line{width:48px;height:4px;background:var(--saffron);border-radius:2px;margin:12px 0 16px;}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,64px);align-items:center;}
+.about-image-wrap{position:relative;}
+.about-img-placeholder{width:100%;aspect-ratio:4/3;border-radius:var(--radius-lg);background:linear-gradient(135deg,#e8f4fd,#d4e8fa);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;}
+.about-badge{position:absolute;bottom:clamp(-16px,-3vw,-20px);right:clamp(-12px,-2vw,-20px);background:var(--saffron);color:white;border-radius:var(--radius);padding:clamp(14px,2.5vw,20px) clamp(16px,3vw,24px);text-align:center;box-shadow:var(--shadow-md);}
+.about-badge .big{font-family:'Playfair Display',serif;font-size:clamp(24px,5vw,36px);font-weight:700;}
+.about-badge .sm{font-size:var(--text-xs);opacity:0.85;}
+.about-para{font-size:var(--text-base);color:var(--gray-600);line-height:1.8;margin-bottom:14px;}
+.about-features{display:grid;grid-template-columns:1fr 1fr;gap:clamp(8px,2vw,12px);margin:clamp(20px,4vw,28px) 0;}
+.about-feat{display:flex;align-items:center;gap:10px;font-size:var(--text-sm);color:var(--gray-800);font-weight:500;}
+.feat-dot{width:8px;height:8px;border-radius:50%;background:var(--saffron);flex-shrink:0;}
+.reg-box{background:var(--navy);color:white;border-radius:var(--radius);padding:clamp(14px,3vw,20px) clamp(16px,3vw,24px);margin-top:clamp(20px,4vw,28px);}
+.reg-box .reg-label{font-size:var(--text-xs);color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;}
+.reg-box .reg-num{font-family:'Playfair Display',serif;font-size:var(--text-lg);font-weight:600;color:var(--saffron-light);}
+
+/* STATS */
+.stats-section{background:var(--navy);color:white;padding:clamp(40px,7vw,64px) 0;}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(16px,3vw,32px);}
+.stat-card{text-align:center;}
+.stat-card .number{font-family:'Playfair Display',serif;font-size:clamp(32px,6vw,48px);font-weight:700;color:var(--saffron-light);line-height:1;}
+.stat-card .unit{font-size:clamp(18px,3.5vw,24px);}
+.stat-card .label{font-size:var(--text-sm);color:rgba(255,255,255,0.5);margin-top:8px;}
+
+/* EDUCATION SECTION */
+.edu-section{background:linear-gradient(135deg,#F5F0FF 0%,#FFF4EC 55%,#EEF4FF 100%);padding:clamp(56px,9vw,100px) 0 0 0;overflow:hidden;position:relative;}
+.edu-inner{max-width:1200px;margin:0 auto;padding:0 clamp(16px,4vw,32px);display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,7vw,80px);align-items:center;}
+.edu-label{display:inline-block;font-size:clamp(10px,2vw,12px);font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#FF6B00;background:#FFF4EC;border:1px solid rgba(255,107,0,0.2);padding:5px 16px;border-radius:50px;margin-bottom:14px;}
+.edu-title{font-family:'Playfair Display',serif;font-size:clamp(26px,5vw,44px);color:#0D2B5E;line-height:1.2;margin-bottom:4px;}
+.edu-title span{color:#FF6B00;}
+.edu-line{width:52px;height:4px;background:linear-gradient(90deg,#FF6B00,#FFB347);border-radius:2px;margin:14px 0 18px;}
+.edu-para{font-size:clamp(14px,2.5vw,16px);color:#555F6B;line-height:1.85;margin-bottom:14px;}
+.edu-pillars{display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,2vw,18px);margin-top:clamp(22px,4vw,32px);}
+.edu-pillar{display:flex;align-items:flex-start;gap:12px;background:white;border-radius:14px;padding:clamp(14px,2.5vw,18px);border:1px solid rgba(13,43,94,0.08);box-shadow:0 2px 12px rgba(13,43,94,0.06);transition:transform 0.2s,box-shadow 0.2s;}
+.edu-pillar:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(13,43,94,0.1);}
+.pillar-icon{font-size:clamp(20px,3vw,26px);flex-shrink:0;margin-top:2px;}
+.edu-pillar h4{font-family:'Playfair Display',serif;font-size:clamp(13px,2.2vw,15px);color:#0D2B5E;margin-bottom:4px;}
+.edu-pillar p{font-size:clamp(11px,1.8vw,13px);color:#9AA3AE;line-height:1.5;margin:0;}
+.edu-text{padding-bottom:clamp(40px,6vw,64px);}
+.edu-visual{position:relative;display:flex;align-items:flex-end;justify-content:center;min-height:clamp(320px,48vw,480px);}
+.edu-bg-circle{position:absolute;width:clamp(280px,45vw,460px);height:clamp(280px,45vw,460px);border-radius:50%;background:linear-gradient(135deg,rgba(255,107,0,0.13),rgba(13,43,94,0.09));bottom:0;left:50%;transform:translateX(-50%);}
+.edu-bg-circle2{position:absolute;width:clamp(160px,26vw,260px);height:clamp(160px,26vw,260px);border-radius:50%;background:linear-gradient(135deg,rgba(13,43,94,0.06),rgba(255,107,0,0.05));top:20px;right:0;}
+.edu-img-wrap{position:relative;z-index:2;display:flex;align-items:flex-end;justify-content:center;}
+.edu-img{width:clamp(260px,140vw,540px);height:auto;object-fit:contain;filter:drop-shadow(0 20px 50px rgba(13,43,94,0.2));position:relative;z-index:2;}
+.edu-wave{position:relative;line-height:0;margin-top:-2px;background:transparent;}
+.edu-wave svg{display:block;width:100%;height:clamp(50px,7vw,80px);}
+
+/* VISION MISSION */
+.vm-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,3vw,24px);}
+.vm-card{background:var(--white);border-radius:var(--radius-lg);padding:clamp(22px,4vw,36px) clamp(18px,3vw,28px);border:1px solid var(--gray-200);transition:all 0.3s ease;position:relative;overflow:hidden;}
+.vm-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--saffron);}
+.vm-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);border-color:transparent;}
+.vm-icon{width:52px;height:52px;border-radius:14px;background:var(--saffron-pale);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:clamp(14px,3vw,20px);}
+.vm-card h3{font-size:var(--text-xl);color:var(--navy);margin-bottom:10px;}
+.vm-card p{font-size:var(--text-sm);color:var(--gray-600);line-height:1.8;}
+
+/* SCHOOLS */
+.schools-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:clamp(16px,3vw,28px);}
+.school-card{background:var(--white);border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--gray-200);transition:all 0.3s ease;box-shadow:var(--shadow-sm);}
+.school-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);}
+.school-img{width:100%;height:clamp(140px,20vw,200px);object-fit:cover;background:linear-gradient(135deg,#1A3F80,#0D2B5E);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.3);font-size:clamp(36px,7vw,48px);}
+.school-body{padding:clamp(16px,3vw,24px);}
+.school-body h3{font-size:var(--text-lg);color:var(--navy);margin-bottom:8px;}
+.school-body p{font-size:var(--text-sm);color:var(--gray-600);line-height:1.7;margin-bottom:14px;}
+.school-tags{display:flex;gap:8px;flex-wrap:wrap;}
+.tag{font-size:var(--text-xs);font-weight:600;padding:4px 10px;border-radius:50px;background:var(--saffron-pale);color:var(--saffron);}
+.tag.green{background:#E8F5EC;color:var(--green);}
+.tag.navy{background:#E8EDF6;color:var(--navy);}
+
+/* COMMITTEE */
+.committee-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:clamp(14px,3vw,24px);}
+.member-card{background:var(--white);border-radius:var(--radius-lg);padding:clamp(20px,4vw,28px) clamp(14px,3vw,20px);text-align:center;border:1px solid var(--gray-200);transition:all 0.3s ease;}
+.member-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);}
+.member-avatar{width:clamp(56px,10vw,72px);height:clamp(56px,10vw,72px);border-radius:50%;margin:0 auto clamp(12px,2.5vw,16px);background:linear-gradient(135deg,var(--saffron),var(--navy));display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:clamp(18px,3.5vw,24px);font-weight:700;color:white;}
+.member-card h4{font-size:var(--text-base);color:var(--navy);margin-bottom:4px;}
+.member-card .role{font-size:var(--text-xs);color:var(--saffron);font-weight:600;text-transform:uppercase;letter-spacing:0.05em;}
+.member-card .dept{font-size:var(--text-sm);color:var(--gray-600);margin-top:4px;}
+.president-card{border:2px solid var(--saffron);position:relative;}
+.president-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--saffron);color:white;font-size:var(--text-xs);font-weight:600;padding:3px 14px;border-radius:50px;white-space:nowrap;}
+
+/* NEWS */
+.news-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:clamp(16px,3vw,24px);}
+.news-card{background:var(--white);border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--gray-200);transition:all 0.3s ease;}
+.news-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);}
+.news-date-strip{background:var(--navy);color:white;padding:clamp(10px,2vw,12px) clamp(14px,3vw,20px);display:flex;align-items:center;gap:10px;font-size:var(--text-xs);}
+.news-date-num{font-family:'Playfair Display',serif;font-size:clamp(18px,3.5vw,22px);font-weight:700;color:var(--saffron-light);margin-right:4px;}
+.news-body{padding:clamp(16px,3vw,20px);}
+.news-type{font-size:var(--text-xs);font-weight:600;color:var(--saffron);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:8px;}
+.news-body h3{font-size:var(--text-base);color:var(--navy);line-height:1.4;margin-bottom:10px;}
+.news-body p{font-size:var(--text-sm);color:var(--gray-600);line-height:1.7;}
+.news-link{display:inline-flex;align-items:center;gap:4px;font-size:var(--text-sm);font-weight:600;color:var(--saffron);margin-top:12px;}
+
+/* RESPONSIVE */
+@media(max-width:1024px){.footer-main{grid-template-columns:1fr 1fr;}}
+@media(max-width:900px){
+  .hero-content{grid-template-columns:1fr;}
+  .about-grid{grid-template-columns:1fr;}
+  .stats-grid{grid-template-columns:repeat(2,1fr);}
+  .vm-grid{grid-template-columns:1fr 1fr;}
+  .edu-inner{grid-template-columns:1fr;}
+  .edu-visual{min-height:clamp(280px,60vw,380px);order:-1;}
+  .edu-img{width:clamp(200px,55vw,320px);}
+}
+@media(max-width:768px){
+  .nav-links,.nav-cta,.nav-donate{display:none!important;}
+  .hamburger{display:flex!important;}
+  .topbar-inner{flex-direction:column;align-items:flex-start;gap:2px;}
+}
+@media(max-width:480px){
+  .topbar-right{display:none;}
+  .stats-grid{grid-template-columns:1fr 1fr;}
+  .edu-pillars{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-left">
+      <span>📍 Karahi, Fatehpur Sikri, Agra — 283110</span>
+      <span style="color:rgba(255,255,255,0.3)">|</span>
+    </div>
+    <div class="topbar-right">
+      <a href="tel:9997658330">📞 +91 9997658330</a>
+      <a href="mailto:srpses@gmail.com">✉ srpses@gmail.com</a>
+    </div>
+  </div>
+</div>
+
+<header class="header" id="header">
+  <div class="nav-inner">
+    <a href="index.html" class="logo" aria-label="Go to Home">
+      <div class="logo-emblem">
+        <img src="images/logo.png" alt="Shri Ram Public School Logo" onerror="this.parentElement.textContent='SR'">
+      </div>
+      <div class="logo-text">
+        <h1>Shri Ram Public School</h1>
+        <span style="font-size:12px;">Shiksha Samiti - Karahi</span>
+      </div>
+    </a>
+
+    <nav class="nav-links">
+      <a href="about.html">About Us</a>
+
+      <!-- Infrastructure dropdown -->
+      <div class="nav-dropdown">
+        <button class="nav-drop-trigger" aria-haspopup="true" aria-expanded="false">
+          Infrastructure <i class="fas fa-chevron-down drop-caret"></i>
+        </button>
+        <div class="drop-panel">
+          <div class="drop-panel-header">Our Facilities</div>
+          <a class="drop-item" href="infrastructure.html#computer-lab">
+            <div class="drop-item-icon">💻</div>
+            <div class="drop-item-text">
+              <div class="drop-item-title">Computer Lab</div>
+              <div class="drop-item-sub">30+ modern systems</div>
+            </div>
+          </a>
+          <a class="drop-item" href="infrastructure.html#science-lab">
+            <div class="drop-item-icon">🔬</div>
+            <div class="drop-item-text">
+              <div class="drop-item-title">Science Lab</div>
+              <div class="drop-item-sub">Physics, Chemistry & Biology</div>
+            </div>
+          </a>
+          <a class="drop-item" href="infrastructure.html#dance-music">
+            <div class="drop-item-icon">🎭</div>
+            <div class="drop-item-text">
+              <div class="drop-item-title">Dance & Music Hall</div>
+              <div class="drop-item-sub">Cultural activities centre</div>
+            </div>
+          </a>
+          <a class="drop-item" href="infrastructure.html#playground">
+            <div class="drop-item-icon">⚽</div>
+            <div class="drop-item-text">
+              <div class="drop-item-title">Playground</div>
+              <div class="drop-item-sub">Cricket, Football & Athletics</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <a href="gallery.html">Gallery</a>
+
+      <!-- Schemes / Programs dropdown -->
+      <div class="nav-dropdown">
+        <button class="nav-drop-trigger" aria-haspopup="true" aria-expanded="false">
+          Schemes &amp; Programs <i class="fas fa-chevron-down drop-caret"></i>
+        </button>
+        <div class="drop-panel">
+          <div class="drop-panel-header">Government Programs</div>
+          <a class="drop-item" href="schemes.html#nsdc">
+            <div class="drop-item-icon">🏛</div>
+            <div class="drop-item-text">
+              <div class="drop-item-title">NSDC Programme</div>
+              <div class="drop-item-sub">National Skill Development Corp.</div>
+            </div>
+          </a>
+          <a class="drop-item" href="schemes.html#upsdm">
+            <div class="drop-item-icon">🌐</div>
+            <div class="drop-item-text">
+              <div class="drop-item-title">UPSDM Programme</div>
+              <div class="drop-item-sub">UP Skill Dev. Mission</div>
+            </div>
+          </a>
+          <div class="drop-divider"></div>
+          <div class="drop-panel-header">Vocational Certification</div>
+          <a class="drop-item" href="schemes.html#ncvt">
+            <div class="drop-item-icon">📜</div>
+            <div class="drop-item-text">
+              <div class="drop-item-title">NCVT</div>
+              <div class="drop-item-sub">National Council for Voc. Training</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <a href="contact.html">Contact</a>
+      <a href="donate.html" class="nav-donate">Donate</a>
+      <a href="apply-now.html" class="nav-cta">Apply Now</a>
+    </nav>
+
+    <button class="hamburger" id="hamburger" onclick="openMenu()" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true">
+  <div class="mobile-menu-header">
+    <a href="index.html" class="logo" onclick="closeMenu()" aria-label="Go to Home">
+      <div class="logo-emblem" style="width:44px;height:44px;font-size:16px;flex-shrink:0;">SR</div>
+      <div class="logo-text"><h1>Shri Ram Public School</h1><span>Shiksha Samiti</span></div>
+    </a>
+    <button class="mobile-close" onclick="closeMenu()">✕</button>
+  </div>
+  <div class="mobile-nav-links">
+    <a href="about.html" onclick="closeMenu()">ℹ️ About Us</a>
+
+    <!-- Infrastructure mobile dropdown -->
+    <div class="mob-drop-wrap">
+      <button class="mob-drop-btn" onclick="toggleMobDrop(this)">
+        <span>🏗️ Infrastructure</span>
+        <i class="fas fa-chevron-down mob-caret"></i>
+      </button>
+      <div class="mob-drop-list">
+        <a href="infrastructure.html#computer-lab" onclick="closeMenu()"><span>💻</span> Computer Lab</a>
+        <a href="infrastructure.html#science-lab" onclick="closeMenu()"><span>🔬</span> Science Lab</a>
+        <a href="infrastructure.html#dance-music" onclick="closeMenu()"><span>🎭</span> Dance & Music Hall</a>
+        <a href="infrastructure.html#playground" onclick="closeMenu()"><span>⚽</span> Playground</a>
+      </div>
+    </div>
+
+    <a href="gallery.html" onclick="closeMenu()">🖼️ Gallery</a>
+
+    <!-- Schemes mobile dropdown -->
+    <div class="mob-drop-wrap">
+      <button class="mob-drop-btn" onclick="toggleMobDrop(this)">
+        <span>📋 Schemes &amp; Programs</span>
+        <i class="fas fa-chevron-down mob-caret"></i>
+      </button>
+      <div class="mob-drop-list">
+        <a href="schemes.html#nsdc" onclick="closeMenu()"><span>🏛</span> NSDC Programme</a>
+        <a href="schemes.html#upsdm" onclick="closeMenu()"><span>🌐</span> UPSDM Programme</a>
+        <a href="schemes.html#ncvt" onclick="closeMenu()"><span>📜</span> NCVT</a>
+      </div>
+    </div>
+
+    <a href="contact.html" onclick="closeMenu()">📞 Contact</a>
+    <a href="donate.html" onclick="closeMenu()" class="donate-mobile">🤝 Donate</a>
+    <a href="apply-now.html" onclick="closeMenu()" class="cta-mobile">✅ Apply Now</a>
+  </div>
+  <div style="padding:20px 16px;margin-top:auto;border-top:1px solid var(--gray-100);">
+    <p style="font-size:13px;color:var(--gray-400);text-align:center;">📞 <a href="tel:9997658330" style="color:var(--saffron);font-weight:600;">+91 9997658330</a></p>
+  </div>
+</div>
+
+<!-- ===== REST OF PAGE (unchanged) ===== -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-decor"></div>
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="hero-badge">🏛 Registered Educational Society — U.P.</div>
+      <h2 class="hero-title">Shri Ram Public School<br><span>Shiksha Samiti</span></h2>
+      <p class="hero-subtitle">A registered educational society committed to providing quality, value-based education to children of Karahi, Fatehpur Sikri, Agra and surrounding regions of Uttar Pradesh.</p>
+      <div class="hero-buttons">
+        <a href="#about" class="btn-primary">Explore Society</a>
+        <a href="contact.html" class="btn-outline">Get In Touch</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <h3>Society at a Glance</h3>
+      <div class="hero-stat-grid">
+        <div class="hero-stat"><div class="num">24<span style="font-size:0.6em">+</span></div><div class="lbl">Years of Service</div></div>
+        <div class="hero-stat"><div class="num">3</div><div class="lbl">Institutions</div></div>
+        <div class="hero-stat"><div class="num">1200<span style="font-size:0.6em">+</span></div><div class="lbl">Students Enrolled</div></div>
+        <div class="hero-stat"><div class="num">60<span style="font-size:0.6em">+</span></div><div class="lbl">Teaching Staff</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee-strip">
+  <div class="marquee-inner">
+    <span class="marquee-item">📢 Admission Open 2025–26 — Classes Nursery to XII</span>
+    <span class="marquee-item">🏆 Board Results 2024 — 98% Pass Rate</span>
+    <span class="marquee-item">📋 Annual General Meeting Scheduled — All Members Invited</span>
+    <span class="marquee-item">🎓 Scholarship Available for Meritorious Students</span>
+    <span class="marquee-item">📢 Admission Open 2025–26 — Classes Nursery to XII</span>
+    <span class="marquee-item">🏆 Board Results 2024 — 98% Pass Rate</span>
+    <span class="marquee-item">📋 Annual General Meeting Scheduled — All Members Invited</span>
+    <span class="marquee-item">🎓 Scholarship Available for Meritorious Students</span>
+  </div>
+</div>
+
+<section class="section" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image-wrap reveal-left">
+        <div class="about-img-placeholder">
+          <img src="images/s2.jpeg" alt="School Building" style="width:100%;height:auto;border-radius:var(--radius-lg);object-fit:cover;">
+        </div>
+        <div class="about-badge"><div class="big">2012</div><div class="sm">Established</div></div>
+      </div>
+      <div class="about-content reveal-right">
+        <span class="section-label">About Our Society</span>
+        <h2 class="section-title">Committed to Shaping<br>Tomorrow's Leaders</h2>
+        <div class="title-line"></div>
+        <p class="about-para"><strong>Shri Ram Public School Shiksha Samiti</strong>, registered under the Societies Registration Act, 1860 in the state of Uttar Pradesh, is a non-profit educational society headquartered in Karahi, Fatehpur Sikri, Agra.</p>
+        <p class="about-para">Founded with the noble vision of bringing quality education to the doorstep of every child in rural and semi-urban Agra, our society has grown from a single institution to a network of schools serving thousands of students.</p>
+        <div class="about-features">
+          <div class="about-feat"><div class="feat-dot"></div> Government Recognised</div>
+          <div class="about-feat"><div class="feat-dot"></div> CBSE / UP Board Affiliated</div>
+          <div class="about-feat"><div class="feat-dot"></div> Certified Teaching Staff</div>
+          <div class="about-feat"><div class="feat-dot"></div> Annual Audit Compliant</div>
+          <div class="about-feat"><div class="feat-dot"></div> 12A &amp; 80G Registered</div>
+          <div class="about-feat"><div class="feat-dot"></div> Scholarship Programs</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="stats-section">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-card reveal"><div class="number"><span class="count-up" data-target="1200">0</span><span class="unit">+</span></div><div class="label">Students Enrolled</div></div>
+      <div class="stat-card reveal"><div class="number"><span class="count-up" data-target="60">0</span><span class="unit">+</span></div><div class="label">Qualified Teachers</div></div>
+      <div class="stat-card reveal"><div class="number"><span class="count-up" data-target="92">0</span><span class="unit">%</span></div><div class="label">Pass Rate 2024</div></div>
+      <div class="stat-card reveal"><div class="number"><span class="count-up" data-target="24">0</span><span class="unit">+</span></div><div class="label">Years of Excellence</div></div>
+    </div>
+  </div>
+</div>
+
+<section class="edu-section" id="education">
+  <div class="edu-inner">
+    <div class="edu-text reveal-left">
+      <span class="edu-label">Our Educational Philosophy</span>
+      <h2 class="edu-title">Every Child Holds<br><span>Unlimited Potential</span></h2>
+      <div class="edu-line"></div>
+      <p class="edu-para">At Shri Ram Public School Shiksha Samiti, we firmly believe that education must go beyond the boundaries of textbooks. We are committed to recognising the unique talent hidden within every child, nurturing it, and shaping them into a pride of the nation.</p>
+      <p class="edu-para">The schools under our society place special emphasis on academic excellence alongside moral values, social responsibility, and national character building — because for us, education is not merely a means of employment, but the art of living a complete and purposeful life.</p>
+      <div class="edu-pillars">
+        <div class="edu-pillar"><div class="pillar-icon">📖</div><div><h4>Quality Education</h4><p>Teaching through modern methods by experienced and dedicated faculty</p></div></div>
+        <div class="edu-pillar"><div class="pillar-icon">🌱</div><div><h4>Holistic Development</h4><p>A beautiful blend of sports, arts, culture, and discipline</p></div></div>
+        <div class="edu-pillar"><div class="pillar-icon">🤝</div><div><h4>Inclusive Education</h4><p>Equal opportunities for every child from rural and urban backgrounds</p></div></div>
+        <div class="edu-pillar"><div class="pillar-icon">🏆</div><div><h4>A Bright Future</h4><p>Scholarships and career guidance to pave the path to success</p></div></div>
+      </div>
+    </div>
+    <div class="edu-visual reveal-right">
+      <div class="edu-bg-circle"></div>
+      <div class="edu-bg-circle2"></div>
+      <div class="edu-img-wrap">
+        <img src="images/student.png" alt="Shri Ram Public School Students" class="edu-img">
+      </div>
+    </div>
+  </div>
+  <div class="edu-wave">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,0 C360,80 1080,80 1440,0 L1440,80 L0,80 Z" fill="#FF6B00"/>
+    </svg>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head reveal" style="text-align:center;">
+      <span class="section-label">Our Foundation</span>
+      <h2 class="section-title">Vision, Mission &amp; Values</h2>
+      <div class="title-line" style="margin:12px auto 0;"></div>
+    </div>
+    <div class="vm-grid">
+      <div class="vm-card reveal"><div class="vm-icon">🔭</div><h3>Our Vision</h3><p>To become the most trusted educational society in Agra district, nurturing every child's potential through holistic education that combines academic excellence with moral values and community responsibility.</p></div>
+      <div class="vm-card reveal"><div class="vm-icon">🎯</div><h3>Our Mission</h3><p>To provide accessible, affordable, and high-quality education to children of rural and semi-urban Agra. To develop institutions that are centres of learning, character-building, and national pride.</p></div>
+      <div class="vm-card reveal"><div class="vm-icon">⚖️</div><h3>Our Values</h3><p>Integrity, transparency, and dedication form the foundation of our society. We believe in inclusive education, community service, respect for all, and accountability in every action we take.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="schools">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-label">Our Institutions</span>
+      <h2 class="section-title">Schools Under the Society</h2>
+      <div class="title-line"></div>
+      <p class="section-sub">Every institution upholds the highest standards of education, safety, and student development.</p>
+    </div>
+    <div class="schools-grid">
+      <div class="school-card reveal">
+        <img src="images/s3.jpeg" alt="S.R. Public High School" class="school-img">
+        <div class="school-body">
+          <h3>S.R. Public High School</h3>
+          <p>Our flagship institution at Karahi, Fatehpur Sikri, offering Classes Nursery to Class 10. Modern infrastructure with computer lab, science labs, and library.</p>
+          <div class="school-tags"><span class="tag">Nursery – Class 10</span><span class="tag navy">CBSE Board</span><span class="tag green">Co-Ed</span></div>
+        </div>
+      </div>
+      <div class="school-card reveal">
+        <img src="images/s1.jpeg" alt="Shri Ram Inter College" class="school-img">
+        <div class="school-body">
+          <h3>Shri Ram Inter College</h3>
+          <p>Offering Nursery to Class 12 with Arts, Science, and Commerce streams under UP Board. Experienced faculty with a focus on board exam excellence.</p>
+          <div class="school-tags"><span class="tag">Nursery – Class 12</span><span class="tag navy">UP Board</span><span class="tag green">Co-Ed</span></div>
+        </div>
+      </div>
+      <div class="school-card reveal">
+        <img src="images/s6.jpeg" alt="Shri Ram ITI" class="school-img">
+        <div class="school-body">
+          <h3>Shri Ram ITI</h3>
+          <p>An Industrial Training Institute offering vocational trades like Electrician, Fitter, and more. 1–2 year NCVT/SCVT affiliated courses for skill development.</p>
+          <div class="school-tags"><span class="tag">Vocational Training</span><span class="tag navy">NCVT / SCVT</span><span class="tag green">Co-Ed</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="committee">
+  <div class="container">
+    <div class="section-head reveal" style="text-align:center;">
+      <span class="section-label">Leadership</span>
+      <h2 class="section-title">Managing Committee</h2>
+      <div class="title-line" style="margin:12px auto 0;"></div>
+    </div>
+    <div class="committee-grid">
+      <div class="member-card president-card reveal"><div class="president-badge">⭐ Co-Founder</div><div class="member-avatar">V</div><h4>Mr. Vidhiyaram</h4><div class="role">Co-Founder</div><div class="dept">Shri Ram Public School Shiksha Samiti</div></div>
+      <div class="member-card president-card reveal"><div class="president-badge">⭐ Co-Founder</div><div class="member-avatar">P</div><h4>Late Mrs. Prakshi Devi</h4><div class="role">Co-Founder</div><div class="dept">Shri Ram Public School Shiksha Samiti</div></div>
+      <div class="member-card reveal"><img src="images/d1.png" alt="Mr. Devendra Singh" class="member-avatar" style="border-radius:50%;width:72px;height:72px;object-fit:cover;"><h4>Mr. Devendra Singh</h4><div class="role">Secretary</div><div class="dept">Shri Ram Public School Shiksha Samiti</div></div>
+      <div class="member-card reveal"><div class="member-avatar" style="background:linear-gradient(135deg,#C8940A,#854F0B)">JS</div><h4>Mr. Jantar Singh</h4><div class="role">President</div><div class="dept">Shri Ram Public School Shiksha Samiti</div></div>
+      <div class="member-card reveal"><div class="member-avatar" style="background:linear-gradient(135deg,#1A3F80,#0D2B5E)">NS</div><h4>Mr. Narmada Singh</h4><div class="role">Vice President</div><div class="dept">Shri Ram Public School Shiksha Samiti</div></div>
+      <div class="member-card reveal"><img src="images/b1.png" alt="Mr. Bablu Singh" class="member-avatar" style="border-radius:50%;width:72px;height:72px;object-fit:cover;"><h4>Mr. Bablu Singh</h4><div class="role">Director</div><div class="dept">Shri Ram Public School Shiksha Samiti</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="news">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-label">Latest Updates</span>
+      <h2 class="section-title">News &amp; Notices</h2>
+      <div class="title-line"></div>
+    </div>
+    <div class="news-grid">
+      <div class="news-card reveal">
+        <div class="news-date-strip"><span class="news-date-num">01</span> June 2025 | Official Notice</div>
+        <div class="news-body"><div class="news-type">🎓 Admission</div><h3>Admissions Open for Session 2025–26</h3><p>Registrations are now open for all classes from Nursery to Class XII. Limited seats available. Apply early to secure admission.</p><a href="apply-now.html" class="news-link">Apply Now →</a></div>
+      </div>
+      <div class="news-card reveal">
+        <div class="news-date-strip"><span class="news-date-num">15</span> May 2025 | Result</div>
+        <div class="news-body"><div class="news-type">🏆 Achievement</div><h3>Board Exam 2024 — 98% Pass Rate Achieved</h3><p>Our students excelled in UP Board and CBSE examinations 2024, achieving a remarkable 98% pass rate and producing 5 district toppers.</p><a href="#" class="news-link">Read More →</a></div>
+      </div>
+      <div class="news-card reveal">
+        <div class="news-date-strip"><span class="news-date-num">10</span> Apr 2025 | Notice</div>
+        <div class="news-body"><div class="news-type">📋 Meeting</div><h3>Annual General Meeting — Society Members</h3><p>The Annual General Meeting of Shri Ram Public School Shiksha Samiti will be held. All registered members are requested to attend.</p><a href="#" class="news-link">View Notice →</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding:0;background:var(--gray-50);">
+  <div style="max-width:1200px;margin:0 auto;padding:clamp(40px,7vw,64px) clamp(16px,4vw,24px);">
+    <div style="margin-bottom:clamp(24px,4vw,36px);">
+      <span style="display:inline-block;font-size:clamp(10px,2vw,12px);font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--saffron);background:var(--saffron-pale);padding:5px 14px;border-radius:50px;margin-bottom:10px;">Our Location</span>
+      <h2 style="font-family:'Playfair Display',serif;font-size:var(--text-3xl);color:var(--navy);line-height:1.2;margin-bottom:8px;">Find Us on the Map</h2>
+      <div style="width:48px;height:4px;background:var(--saffron);border-radius:2px;margin:8px 0 0;"></div>
+    </div>
+    <div style="border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-md);border:1px solid var(--gray-200);height:clamp(280px,45vw,460px);">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d456806.4628765755!2d77.0201539!3d27.1277438!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397396e4ee8069b7%3A0x858bc0ea2842e9a3!2sShri%20Ram%20inter%20college!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" width="100%" height="100%" style="border:0;display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Shri Ram Public School Karahi Location"></iframe>
+    </div>
+    <div style="display:flex;gap:clamp(12px,3vw,20px);margin-top:clamp(16px,3vw,24px);flex-wrap:wrap;">
+      <a href="https://maps.app.goo.gl/GXxgwbJ4NpRVB7gE9" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;background:var(--saffron);color:white;padding:clamp(10px,2vw,13px) clamp(18px,3vw,26px);border-radius:10px;font-size:var(--text-sm);font-weight:600;box-shadow:0 4px 14px rgba(255,107,0,0.3);">📍 Get Directions</a>
+      <a href="https://wa.me/919997658330" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;background:white;color:var(--navy);border:1.5px solid var(--gray-200);padding:clamp(10px,2vw,13px) clamp(18px,3vw,26px);border-radius:10px;font-size:var(--text-sm);font-weight:600;">💬 WhatsApp Us</a>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="footer-component.js"></script>
+
+<script>
+/* Mobile menu */
+function openMenu(){document.getElementById('mobileMenu').classList.add('open');document.body.style.overflow='hidden';}
+function closeMenu(){document.getElementById('mobileMenu').classList.remove('open');document.body.style.overflow='';}
+document.getElementById('mobileMenu').addEventListener('click',function(e){if(e.target===this)closeMenu();});
+
+/* Mobile accordion dropdowns */
+function toggleMobDrop(btn){
+  const list=btn.nextElementSibling;
+  const isOpen=list.classList.contains('open');
+  // close all
+  document.querySelectorAll('.mob-drop-list').forEach(l=>l.classList.remove('open'));
+  document.querySelectorAll('.mob-drop-btn').forEach(b=>b.classList.remove('open'));
+  if(!isOpen){list.classList.add('open');btn.classList.add('open');}
+}
+
+/* Header scroll */
+window.addEventListener('scroll',()=>{
+  document.getElementById('header').classList.toggle('scrolled',window.scrollY>60);
+},{passive:true});
+
+/* Scroll reveal */
+const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el=>observer.observe(el));
+
+/* Count up */
+const countObserver=new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(!entry.isIntersecting)return;
+    const el=entry.target;const target=parseInt(el.dataset.target);
+    let current=0;const step=Math.max(1,Math.ceil(target/60));
+    const timer=setInterval(()=>{current=Math.min(current+step,target);el.textContent=current.toLocaleString();if(current>=target)clearInterval(timer);},20);
+    countObserver.unobserve(el);
+  });
+},{threshold:0.5});
+document.querySelectorAll('.count-up').forEach(el=>countObserver.observe(el));
+
+/* Close dropdowns on outside click */
+document.addEventListener('click',function(e){
+  if(!e.target.closest('.nav-dropdown'))return;
+});
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape'){
+    document.querySelectorAll('.mob-drop-list').forEach(l=>l.classList.remove('open'));
+    document.querySelectorAll('.mob-drop-btn').forEach(b=>b.classList.remove('open'));
+  }
+});
+</script>
+</body>
+</html>
