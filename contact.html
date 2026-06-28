@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Contact Us — Shri Ram Public School Shiksha Samiti</title>
+<meta name="description" content="Contact Shri Ram Public School Shiksha Samiti — Karahi, Fatehpur Sikri, Agra. Phone, email, WhatsApp and location details.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --saffron: #FF6B00; --saffron-light: #FF8C33; --saffron-pale: #FFF4EC;
+  --navy: #0D2B5E; --navy-light: #1A3F80;
+  --green: #1A6B35; --green-light: #2A9B50;
+  --gold: #C8940A;
+  --white: #FFFFFF; --gray-50: #F8F9FA; --gray-100: #F0F2F5;
+  --gray-200: #E2E6EA; --gray-400: #9AA3AE; --gray-600: #555F6B; --gray-800: #222831;
+  --shadow-sm: 0 2px 8px rgba(13,43,94,0.08); --shadow-md: 0 8px 32px rgba(13,43,94,0.12);
+  --radius: 12px; --radius-lg: 20px;
+  --text-xs: clamp(10px,2vw,12px); --text-sm: clamp(12px,2.5vw,14px);
+  --text-base: clamp(14px,3vw,16px); --text-lg: clamp(16px,3.5vw,18px);
+  --text-xl: clamp(18px,4vw,22px); --text-2xl: clamp(20px,4.5vw,26px);
+  --text-3xl: clamp(24px,5vw,36px); --text-4xl: clamp(28px,6vw,48px);
+  --space-xl: clamp(48px,7vw,80px);
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; color: var(--gray-800); background: var(--white); overflow-x: hidden; font-size: var(--text-base); }
+h1,h2,h3,h4 { font-family: 'Playfair Display', serif; line-height: 1.2; }
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; height: auto; display: block; }
+button { font-family: 'Inter', sans-serif; }
+
+@keyframes fadeUp { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+.reveal { opacity:0; transform:translateY(24px); transition: opacity 0.65s ease, transform 0.65s ease; }
+.reveal.visible { opacity:1; transform:translateY(0); }
+.reveal-left { opacity:0; transform:translateX(-30px); transition: opacity 0.65s ease, transform 0.65s ease; }
+.reveal-left.visible { opacity:1; transform:translateX(0); }
+.reveal-right { opacity:0; transform:translateX(30px); transition: opacity 0.65s ease, transform 0.65s ease; }
+.reveal-right.visible { opacity:1; transform:translateX(0); }
+
+/* TOP BAR */
+.topbar { background: var(--navy); color: rgba(255,255,255,0.8); font-size: var(--text-xs); padding: 6px 0; }
+.topbar-inner { max-width: 1200px; margin: 0 auto; padding: 0 clamp(16px,4vw,24px); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 4px; }
+.topbar a { color: rgba(255,255,255,0.8); transition: color 0.2s; }
+.topbar a:hover { color: var(--saffron-light); }
+.topbar-left, .topbar-right { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+
+/* ======== HEADER & NAV ======== */
+.header { position: sticky; top: 0; z-index: 1000; background: var(--white); border-bottom: 1px solid var(--gray-200); box-shadow: var(--shadow-sm); transition: box-shadow 0.3s ease; }
+.header.scrolled { box-shadow: var(--shadow-md); }
+.nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 clamp(16px,4vw,24px); display: flex; align-items: center; justify-content: space-between; height: clamp(60px,10vw,72px); }
+.logo { display: flex; align-items: center; gap: clamp(10px,2vw,14px); min-width: 0; }
+.logo-emblem { width: clamp(44px,8vw,56px); height: clamp(44px,8vw,56px); border-radius: 50%; flex-shrink: 0; background: linear-gradient(135deg, var(--saffron), var(--navy)); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: clamp(16px,3vw,22px); font-weight: 700; color: white; box-shadow: 0 4px 16px rgba(255,107,0,0.3); overflow: hidden; }
+.logo-emblem img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+.logo-text { line-height: 1.2; min-width: 0; }
+.logo-text h1 { font-size: clamp(12px,2.5vw,15px); color: var(--navy); font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.logo-text span { font-size: clamp(10px,2vw,11px); color: var(--gray-600); font-family: 'Inter', sans-serif; font-weight: 400; }
+.nav-links { display: flex; align-items: center; gap: 2px; }
+
+/* Plain nav links */
+.nav-links > a {
+  padding: clamp(6px,1.5vw,8px) clamp(8px,2vw,14px);
+  border-radius: 8px; font-size: var(--text-sm); font-weight: 500;
+  color: var(--gray-800); transition: all 0.2s ease;
+}
+.nav-links > a:hover { background: var(--saffron-pale); color: var(--saffron); }
+.nav-links > a.active { color: var(--saffron); background: var(--saffron-pale); }
+
+/* ---- DROPDOWN WRAPPER ---- */
+.nav-dropdown { position: relative; display: flex; align-items: center; }
+.nav-dropdown > .nav-drop-trigger {
+  display: flex; align-items: center; gap: 5px;
+  padding: clamp(6px,1.5vw,8px) clamp(8px,2vw,14px);
+  border-radius: 8px; font-size: var(--text-sm); font-weight: 500;
+  color: var(--gray-800); transition: all 0.2s ease; cursor: pointer;
+  border: none; background: none; font-family: 'Inter', sans-serif;
+  white-space: nowrap;
+}
+.nav-dropdown > .nav-drop-trigger:hover,
+.nav-dropdown:hover > .nav-drop-trigger { background: var(--saffron-pale); color: var(--saffron); }
+.drop-caret { font-size: 9px; transition: transform 0.25s ease; }
+.nav-dropdown:hover .drop-caret { transform: rotate(180deg); }
+
+/* ---- DROPDOWN PANEL ---- */
+.drop-panel {
+  position: absolute; top: calc(100% + 10px); left: 0;
+  min-width: 230px; background: var(--white);
+  border-radius: 14px; border: 1px solid var(--gray-200);
+  box-shadow: 0 16px 48px rgba(13,43,94,0.16);
+  padding: 8px;
+  opacity: 0; visibility: hidden; pointer-events: none;
+  transform: translateY(-8px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+  z-index: 200;
+}
+.nav-dropdown:hover .drop-panel,
+.nav-dropdown:focus-within .drop-panel {
+  opacity: 1; visibility: visible; pointer-events: all; transform: translateY(0);
+}
+.drop-panel::before {
+  content: ''; position: absolute; top: -6px; left: 20px;
+  width: 12px; height: 12px; background: var(--white);
+  border-left: 1px solid var(--gray-200); border-top: 1px solid var(--gray-200);
+  transform: rotate(45deg); border-radius: 2px 0 0 0;
+}
+.drop-panel-header {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--gray-400); padding: 6px 12px 4px; margin-bottom: 2px;
+}
+.drop-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 12px; border-radius: 10px;
+  font-size: 13px; font-weight: 500; color: var(--gray-800);
+  transition: background 0.18s, color 0.18s; cursor: pointer;
+}
+.drop-item:hover { background: var(--saffron-pale); color: var(--saffron); }
+.drop-item-icon {
+  width: 32px; height: 32px; border-radius: 8px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center; font-size: 15px;
+  background: var(--gray-100); transition: background 0.18s;
+}
+.drop-item:hover .drop-item-icon { background: rgba(255,107,0,0.12); }
+.drop-item-title { font-weight: 600; line-height: 1.2; }
+.drop-item-sub { font-size: 11px; color: var(--gray-400); margin-top: 1px; font-weight: 400; }
+.drop-divider { height: 1px; background: var(--gray-100); margin: 6px 4px; }
+
+/* CTA buttons */
+.nav-cta { background: var(--saffron); color: white !important; padding: clamp(8px,1.5vw,10px) clamp(14px,2.5vw,20px); border-radius: 8px; font-size: var(--text-sm); font-weight: 600; transition: all 0.2s ease; margin-left: 8px; box-shadow: 0 4px 12px rgba(255,107,0,0.3); }
+.nav-cta:hover { background: var(--saffron-light) !important; transform: translateY(-1px); }
+.nav-donate { background: var(--navy); color: white !important; padding: clamp(8px,1.5vw,10px) clamp(14px,2.5vw,20px); border-radius: 8px; font-size: var(--text-sm); font-weight: 600; transition: all 0.2s ease; margin-left: 8px; }
+.nav-donate:hover { background: var(--navy-light) !important; transform: translateY(-1px); }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; border: none; background: none; }
+.hamburger span { display: block; width: 24px; height: 2px; background: var(--navy); transition: all 0.3s; border-radius: 2px; }
+
+/* ======== MOBILE MENU ======== */
+.mobile-menu { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 2000; background: var(--white); overflow-y: auto; }
+.mobile-menu.open { display: flex; flex-direction: column; animation: fadeIn 0.2s ease; }
+.mobile-menu-header { display: flex; justify-content: space-between; align-items: center; padding: clamp(16px,4vw,24px); border-bottom: 1px solid var(--gray-100); }
+.mobile-close { font-size: 28px; cursor: pointer; color: var(--gray-800); background: none; border: none; line-height: 1; }
+.mobile-nav-links { padding: clamp(12px,3vw,16px); display: flex; flex-direction: column; gap: 4px; }
+.mobile-nav-links > a,
+.mobile-nav-links > .mob-drop-wrap > .mob-drop-btn {
+  display: flex; align-items: center; gap: 12px;
+  padding: clamp(14px,3.5vw,18px) clamp(16px,4vw,20px);
+  font-size: clamp(15px,3.5vw,17px); font-weight: 500;
+  border-radius: 12px; color: var(--gray-800);
+  transition: background 0.2s, color 0.2s;
+  width: 100%; border: none; background: none; font-family: 'Inter', sans-serif; cursor: pointer; text-align: left;
+}
+.mobile-nav-links > a:hover,
+.mobile-nav-links > .mob-drop-wrap > .mob-drop-btn:hover { background: var(--saffron-pale); color: var(--saffron); }
+.mob-drop-btn { justify-content: space-between; }
+.mob-drop-btn .mob-caret { font-size: 11px; transition: transform 0.25s; }
+.mob-drop-btn.open .mob-caret { transform: rotate(180deg); }
+.mob-drop-list {
+  display: none; flex-direction: column; gap: 2px;
+  padding: 6px 10px 10px 20px;
+  border-left: 2px solid var(--saffron-pale);
+  margin: 2px 16px 8px 16px; border-radius: 0 0 8px 8px;
+}
+.mob-drop-list.open { display: flex; }
+.mob-drop-list a {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 12px; font-size: 14px; font-weight: 500;
+  color: var(--gray-800); border-radius: 8px; transition: background 0.18s, color 0.18s;
+}
+.mob-drop-list a:hover { background: var(--saffron-pale); color: var(--saffron); }
+.mob-drop-list a span { font-size: 16px; }
+.mobile-nav-links a.cta-mobile { background: var(--saffron); color: white; margin-top: 12px; text-align: center; justify-content: center; }
+.mobile-nav-links a.donate-mobile { background: var(--navy); color: white; text-align: center; justify-content: center; }
+
+/* PAGE INTRO */
+.page-intro { background: var(--navy); color: white; position: relative; overflow: hidden; padding: clamp(56px,10vw,96px) 0 clamp(40px,7vw,64px); }
+.page-intro-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(13,43,94,0.97) 0%, rgba(13,43,94,0.85) 60%, rgba(255,107,0,0.1) 100%); }
+.page-intro-inner { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; padding: 0 clamp(16px,4vw,24px); }
+.breadcrumb { font-size: var(--text-sm); color: rgba(255,255,255,0.55); margin-bottom: 14px; }
+.breadcrumb a { color: rgba(255,255,255,0.75); transition: color 0.2s; }
+.breadcrumb a:hover { color: var(--saffron-light); }
+.breadcrumb span { margin: 0 8px; }
+.page-intro h1 { font-size: var(--text-4xl); color: white; margin-bottom: 10px; }
+.page-intro p { font-size: var(--text-base); color: rgba(255,255,255,0.65); max-width: 600px; line-height: 1.75; }
+
+/* SECTION */
+.section { padding: var(--space-xl) 0; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 clamp(16px,4vw,24px); }
+.section-label { display: inline-block; font-size: var(--text-xs); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--saffron); background: var(--saffron-pale); padding: 5px 14px; border-radius: 50px; margin-bottom: 10px; }
+.section-title { font-size: var(--text-3xl); color: var(--navy); line-height: 1.2; margin-bottom: 12px; }
+.title-line { width: 48px; height: 4px; background: var(--saffron); border-radius: 2px; margin: 12px 0 16px; }
+
+/* CONTACT GRID */
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px,6vw,56px); }
+.contact-items { display: flex; flex-direction: column; gap: clamp(12px,2.5vw,16px); }
+.contact-item { display: flex; align-items: flex-start; gap: clamp(12px,2.5vw,16px); padding: clamp(14px,2.5vw,18px); border-radius: var(--radius); background: var(--white); border: 1px solid var(--gray-200); transition: box-shadow 0.2s, border-color 0.2s; }
+.contact-item:hover { border-color: var(--saffron); box-shadow: var(--shadow-sm); }
+.contact-icon { width: clamp(42px,7vw,48px); height: clamp(42px,7vw,48px); border-radius: 12px; background: var(--saffron-pale); display: flex; align-items: center; justify-content: center; font-size: clamp(18px,3vw,22px); flex-shrink: 0; }
+.contact-text h4 { font-size: var(--text-xs); color: var(--gray-400); font-family: 'Inter', sans-serif; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 5px; }
+.contact-text p, .contact-text a { font-size: var(--text-base); color: var(--navy); font-weight: 600; line-height: 1.5; }
+.contact-text a:hover { color: var(--saffron); }
+
+/* FORM */
+.contact-form-wrap { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-lg); padding: clamp(22px,4vw,38px); box-shadow: var(--shadow-sm); }
+.contact-form-wrap h3 { font-size: var(--text-xl); color: var(--navy); margin-bottom: clamp(18px,3vw,26px); }
+.form-group { margin-bottom: clamp(14px,2.5vw,18px); }
+.form-group label { display: block; font-size: var(--text-sm); font-weight: 600; color: var(--gray-800); margin-bottom: 6px; }
+.form-group input, .form-group textarea { width: 100%; padding: clamp(10px,2vw,13px) clamp(12px,2.5vw,16px); border-radius: 8px; border: 1.5px solid var(--gray-200); font-family: 'Inter', sans-serif; font-size: var(--text-sm); color: var(--gray-800); transition: border-color 0.2s, box-shadow 0.2s; background: var(--white); outline: none; }
+.form-group input:focus, .form-group textarea:focus { border-color: var(--saffron); box-shadow: 0 0 0 3px rgba(255,107,0,0.1); }
+.form-group textarea { resize: vertical; min-height: clamp(120px,18vw,160px); }
+.btn-submit { width: 100%; background: var(--saffron); color: white; border: none; padding: clamp(12px,2.5vw,15px); border-radius: 8px; font-size: var(--text-base); font-weight: 600; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 4px 14px rgba(255,107,0,0.3); }
+.btn-submit:hover { background: var(--saffron-light); transform: translateY(-1px); }
+
+/* RESPONSIVE */
+@media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; } }
+@media (max-width: 768px) {
+  .nav-links, .nav-cta, .nav-donate { display: none !important; }
+  .hamburger { display: flex !important; }
+  .topbar-inner { flex-direction: column; align-items: flex-start; gap: 2px; }
+}
+@media (max-width: 480px) { .topbar-right { display: none; } }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-left">
+      <span>📍 Karahi, Fatehpur Sikri, Agra — 283110</span>
+      <span style="color:rgba(255,255,255,0.3)">|</span>
+    </div>
+    <div class="topbar-right">
+      <a href="tel:9997658330">📞 +91 9997658330</a>
+      <a href="mailto:srpses@gmail.com">✉ srpses@gmail.com</a>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER — index.html wala full dropdown navbar -->
+<header class="header" id="header">
+  <div class="nav-inner">
+    <a href="index.html" class="logo" aria-label="Go to Home">
+      <div class="logo-emblem">
+        <img src="images/logo.png" alt="Shri Ram Public School Logo" onerror="this.parentElement.textContent='SR'">
+      </div>
+      <div class="logo-text">
+        <h1>Shri Ram Public School</h1>
+        <span style="font-size:12px;">Shiksha Samiti - Karahi</span>
+      </div>
+    </a>
+
+    <nav class="nav-links">
+      <a href="about.html">About Us</a>
+
+      <!-- Infrastructure dropdown -->
+      <div class="nav-dropdown">
+        <button class="nav-drop-trigger" aria-haspopup="true" aria-expanded="false">
+          Infrastructure <i class="fas fa-chevron-down drop-caret"></i>
+        </button>
+        <div class="drop-panel">
+          <div class="drop-panel-header">Our Facilities</div>
+          <a class="drop-item" href="infrastructure.html#computer-lab">
+            <div class="drop-item-icon">💻</div>
+            <div class="drop-item-text">
+              <div class="drop-item-title">Computer Lab</div>
+              <div class="drop-item-sub">30+ modern systems</div>
+            </div>
+          </a>
+          <a class="drop-item" href="infrastructure.html#science-lab">
+            <div class="drop-item-icon">🔬</div>
+            <div class="drop-item-text">
+              <div class="drop-item-title">Science Lab</div>
+              <div class="drop-item-sub">Physics, Chemistry & Biology</div>
+            </div>
+          </a>
+          <a class="drop-item" href="infrastructure.html#dance-music">
+            <div class="drop-item-icon">🎭</div>
+            <div class="drop-item-text">
+              <div class="drop-item-title">Dance & Music Hall</div>
+              <div class="drop-item-sub">Cultural activities centre</div>
+            </div>
+          </a>
+          <a class="drop-item" href="infrastructure.html#playground">
+            <div class="drop-item-icon">⚽</div>
+            <div class="drop-item-text">
+              <div class="drop-item-title">Playground</div>
+              <div class="drop-item-sub">Cricket, Football & Athletics</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <a href="gallery.html">Gallery</a>
+
+      <!-- Schemes / Programs dropdown -->
+      <div class="nav-dropdown">
+        <button class="nav-drop-trigger" aria-haspopup="true" aria-expanded="false">
+          Schemes &amp; Programs <i class="fas fa-chevron-down drop-caret"></i>
+        </button>
+        <div class="drop-panel">
+          <div class="drop-panel-header">Government Programs</div>
+          <a class="drop-item" href="schemes.html#nsdc">
+            <div class="drop-item-icon">🏛</div>
+            <div class="drop-item-text">
+              <div class="drop-item-title">NSDC Programme</div>
+              <div class="drop-item-sub">National Skill Development Corp.</div>
+            </div>
+          </a>
+          <a class="drop-item" href="schemes.html#upsdm">
+            <div class="drop-item-icon">🌐</div>
+            <div class="drop-item-text">
+              <div class="drop-item-title">UPSDM Programme</div>
+              <div class="drop-item-sub">UP Skill Dev. Mission</div>
+            </div>
+          </a>
+          <div class="drop-divider"></div>
+          <div class="drop-panel-header">Vocational Certification</div>
+          <a class="drop-item" href="schemes.html#ncvt">
+            <div class="drop-item-icon">📜</div>
+            <div class="drop-item-text">
+              <div class="drop-item-title">NCVT</div>
+              <div class="drop-item-sub">National Council for Voc. Training</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <a href="contact.html" class="active">Contact</a>
+      <a href="donate.html" class="nav-donate">Donate</a>
+      <a href="apply-now.html" class="nav-cta">Apply Now</a>
+    </nav>
+
+    <button class="hamburger" id="hamburger" onclick="openMenu()" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- MOBILE MENU — index.html wala with dropdowns -->
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true">
+  <div class="mobile-menu-header">
+    <a href="index.html" class="logo" onclick="closeMenu()" aria-label="Go to Home">
+      <div class="logo-emblem" style="width:44px;height:44px;font-size:16px;flex-shrink:0;">SR</div>
+      <div class="logo-text"><h1>Shri Ram Public School</h1><span>Shiksha Samiti</span></div>
+    </a>
+    <button class="mobile-close" onclick="closeMenu()">✕</button>
+  </div>
+  <div class="mobile-nav-links">
+    <a href="about.html" onclick="closeMenu()">ℹ️ About Us</a>
+
+    <!-- Infrastructure mobile dropdown -->
+    <div class="mob-drop-wrap">
+      <button class="mob-drop-btn" onclick="toggleMobDrop(this)">
+        <span>🏗️ Infrastructure</span>
+        <i class="fas fa-chevron-down mob-caret"></i>
+      </button>
+      <div class="mob-drop-list">
+        <a href="infrastructure.html#computer-lab" onclick="closeMenu()"><span>💻</span> Computer Lab</a>
+        <a href="infrastructure.html#science-lab" onclick="closeMenu()"><span>🔬</span> Science Lab</a>
+        <a href="infrastructure.html#dance-music" onclick="closeMenu()"><span>🎭</span> Dance & Music Hall</a>
+        <a href="infrastructure.html#playground" onclick="closeMenu()"><span>⚽</span> Playground</a>
+      </div>
+    </div>
+
+    <a href="gallery.html" onclick="closeMenu()">🖼️ Gallery</a>
+
+    <!-- Schemes mobile dropdown -->
+    <div class="mob-drop-wrap">
+      <button class="mob-drop-btn" onclick="toggleMobDrop(this)">
+        <span>📋 Schemes &amp; Programs</span>
+        <i class="fas fa-chevron-down mob-caret"></i>
+      </button>
+      <div class="mob-drop-list">
+        <a href="schemes.html#nsdc" onclick="closeMenu()"><span>🏛</span> NSDC Programme</a>
+        <a href="schemes.html#upsdm" onclick="closeMenu()"><span>🌐</span> UPSDM Programme</a>
+        <a href="schemes.html#ncvt" onclick="closeMenu()"><span>📜</span> NCVT</a>
+      </div>
+    </div>
+
+    <a href="contact.html" onclick="closeMenu()">📞 Contact</a>
+    <a href="donate.html" onclick="closeMenu()" class="donate-mobile">🤝 Donate</a>
+    <a href="apply-now.html" onclick="closeMenu()" class="cta-mobile">✅ Apply Now</a>
+  </div>
+  <div style="padding:20px 16px;margin-top:auto;border-top:1px solid var(--gray-100);">
+    <p style="font-size:13px;color:var(--gray-400);text-align:center;">📞 <a href="tel:9997658330" style="color:var(--saffron);font-weight:600;">+91 9997658330</a></p>
+  </div>
+</div>
+
+<!-- PAGE INTRO -->
+<section class="page-intro">
+  <div class="page-intro-overlay"></div>
+  <div class="page-intro-inner">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a><span>›</span> Contact Us
+    </div>
+    <h1>Contact Us</h1>
+    <p>Reach out to us for admissions, queries, or any information about our society and schools. We're always happy to help.</p>
+  </div>
+</section>
+
+<!-- MAIN CONTACT SECTION -->
+<section class="section">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="reveal-left">
+        <span class="section-label">Get In Touch</span>
+        <h2 class="section-title">We'd Love to<br>Hear From You</h2>
+        <div class="title-line"></div>
+        <p style="font-size:var(--text-base);color:var(--gray-600);line-height:1.8;margin-bottom:clamp(20px,4vw,32px);">
+          Whether you have questions about admissions, our programs, donations, or society membership — our team is ready to assist you.
+        </p>
+        <div class="contact-items">
+          <div class="contact-item">
+            <div class="contact-icon">📞</div>
+            <div class="contact-text">
+              <h4>Phone / WhatsApp</h4>
+              <a href="tel:9997658330">+91 9997658330</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">✉️</div>
+            <div class="contact-text">
+              <h4>Email Address</h4>
+              <a href="mailto:srpses@gmail.com">srpses@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div class="contact-text">
+              <h4>Society Address</h4>
+              <p>Karahi, Fatehpur Sikri, Agra<br>Uttar Pradesh — 283110</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">🕐</div>
+            <div class="contact-text">
+              <h4>Office Hours</h4>
+              <p>Monday – Saturday: 9:00 AM – 5:00 PM</p>
+            </div>
+          </div>
+         </div>
+      </div>
+
+      <!-- FORM -->
+      <div class="reveal-right">
+        <div class="contact-form-wrap">
+          <h3>Send Us a Message</h3>
+          <form id="contactForm" action="#" method="POST">
+            <div class="form-group">
+              <label for="name">Your Name *</label>
+              <input type="text" id="name" name="name" placeholder="Full Name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" placeholder="example@gmail.com" required>
+            </div>
+            <div class="form-group">
+              <label for="message">Your Message *</label>
+              <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
+            </div>
+            <button type="submit" class="btn-submit">📩 Send Message</button>
+          </form>
+        </div>
+
+        <!-- WHATSAPP CTA -->
+        <div style="background:linear-gradient(135deg,#25D366,#1ead56);border-radius:var(--radius-lg);padding:clamp(20px,4vw,28px);margin-top:clamp(16px,3vw,24px);display:flex;align-items:center;gap:16px;color:white;">
+          <div style="font-size:clamp(28px,5vw,40px);flex-shrink:0;">
+            <i class="fa-brands fa-whatsapp"></i>
+          </div>
+          <div>
+            <h4 style="font-size:var(--text-base);font-family:'Inter',sans-serif;font-weight:700;margin-bottom:4px;">Chat on WhatsApp</h4>
+            <p style="font-size:var(--text-sm);opacity:0.9;line-height:1.5;">Get instant responses on WhatsApp. Our team replies within minutes during office hours.</p>
+          </div>
+          <a href="https://wa.me/919997658330" target="_blank" rel="noopener" style="flex-shrink:0;background:white;color:#25D366;padding:10px 18px;border-radius:8px;font-weight:700;font-size:var(--text-sm);white-space:nowrap;">Chat Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER COMPONENT -->
+<div id="site-footer"></div>
+<script src="footer-component.js"></script>
+
+<script>
+/* Mobile menu */
+function openMenu(){document.getElementById('mobileMenu').classList.add('open');document.body.style.overflow='hidden';}
+function closeMenu(){document.getElementById('mobileMenu').classList.remove('open');document.body.style.overflow='';}
+document.getElementById('mobileMenu').addEventListener('click',function(e){if(e.target===this)closeMenu();});
+
+/* Mobile accordion dropdowns */
+function toggleMobDrop(btn){
+  const list=btn.nextElementSibling;
+  const isOpen=list.classList.contains('open');
+  document.querySelectorAll('.mob-drop-list').forEach(l=>l.classList.remove('open'));
+  document.querySelectorAll('.mob-drop-btn').forEach(b=>b.classList.remove('open'));
+  if(!isOpen){list.classList.add('open');btn.classList.add('open');}
+}
+
+/* Header scroll */
+window.addEventListener('scroll',()=>{
+  document.getElementById('header').classList.toggle('scrolled',window.scrollY>60);
+},{passive:true});
+
+/* Scroll reveal */
+const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el=>observer.observe(el));
+
+/* Close dropdowns on Escape */
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape'){
+    document.querySelectorAll('.mob-drop-list').forEach(l=>l.classList.remove('open'));
+    document.querySelectorAll('.mob-drop-btn').forEach(b=>b.classList.remove('open'));
+  }
+});
+</script>
+</body>
+</html>
