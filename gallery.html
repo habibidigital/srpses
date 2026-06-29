@@ -19,6 +19,7 @@
   --shadow-sm:0 2px 8px rgba(13,43,94,0.08);--shadow-md:0 8px 32px rgba(13,43,94,0.14);
   --shadow-hover:0 20px 60px rgba(13,43,94,0.2);
   --radius:12px;--radius-lg:20px;
+  --text-xs:clamp(10px,2vw,12px);--text-sm:clamp(12px,2.5vw,14px);
 }
 html{scroll-behavior:smooth;}
 body{font-family:'Inter',sans-serif;color:var(--gray-800);background:var(--white);overflow-x:hidden;}
@@ -30,13 +31,9 @@ button{font-family:'Inter',sans-serif;cursor:pointer;}
 @keyframes fadeUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
 @keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
 @keyframes scaleIn{from{opacity:0;transform:scale(0.92);}to{opacity:1;transform:scale(1);}}
-@keyframes slideDown{from{opacity:0;transform:translateY(-20px);}to{opacity:1;transform:translateY(0);}}
 @keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
-@keyframes shimmer{0%{background-position:-200% 0;}100%{background-position:200% 0;}}
-@keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
 @keyframes ripple{0%{transform:scale(0);opacity:0.6;}100%{transform:scale(4);opacity:0;}}
-@keyframes rotateBadge{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
-@keyframes popIn{0%{transform:scale(0.5) rotate(-10deg);opacity:0;}70%{transform:scale(1.1) rotate(3deg);}100%{transform:scale(1) rotate(0deg);opacity:1;}}
+@keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
 
 .reveal{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease;}
 .reveal.visible{opacity:1;transform:translateY(0);}
@@ -46,75 +43,155 @@ button{font-family:'Inter',sans-serif;cursor:pointer;}
 .reveal-right.visible{opacity:1;transform:translateX(0);}
 
 /* ===== TOP BAR ===== */
-.topbar{background:var(--navy);color:rgba(255,255,255,0.8);font-size:12px;padding:6px 0;}
+.topbar{background:var(--navy);color:rgba(255,255,255,0.8);font-size:var(--text-xs);padding:6px 0;}
 .topbar-inner{max-width:1200px;margin:0 auto;padding:0 clamp(16px,4vw,24px);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:4px;}
 .topbar a{color:rgba(255,255,255,0.8);transition:color 0.2s;}
 .topbar a:hover{color:var(--saffron-light);}
+.topbar-left,.topbar-right{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
 
-/* ===== HEADER ===== */
-.header{position:sticky;top:0;z-index:1000;background:var(--white);border-bottom:1px solid var(--gray-200);box-shadow:var(--shadow-sm);transition:box-shadow 0.3s;}
+/* ===== HEADER & NAV ===== */
+.header{position:sticky;top:0;z-index:1000;background:var(--white);border-bottom:1px solid var(--gray-200);box-shadow:var(--shadow-sm);transition:box-shadow 0.3s ease;}
 .header.scrolled{box-shadow:var(--shadow-md);}
 .nav-inner{max-width:1200px;margin:0 auto;padding:0 clamp(16px,4vw,24px);display:flex;align-items:center;justify-content:space-between;height:clamp(60px,10vw,72px);}
-.logo{display:flex;align-items:center;gap:clamp(10px,2vw,14px);}
-.logo-emblem{width:clamp(44px,8vw,56px);height:clamp(44px,8vw,56px);border-radius:50%;flex-shrink:0;background:linear-gradient(135deg,var(--saffron),var(--navy));display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:clamp(16px,3vw,22px);font-weight:700;color:white;box-shadow:0 4px 16px rgba(255,107,0,0.3);}
-.logo-emblem img{width:100%;height:100%;border-radius:50%;object-fit:cover;}
-.logo-text h1{font-size:clamp(12px,2.5vw,15px);color:var(--navy);font-weight:700;}
-.logo-text span{font-size:11px;color:var(--gray-600);font-family:'Inter',sans-serif;}
+.logo{display:flex;align-items:center;gap:clamp(10px,2vw,14px);min-width:0;}
+.logo-emblem{width:clamp(44px,8vw,56px);height:clamp(44px,8vw,56px);border-radius:50%;flex-shrink:0;background:linear-gradient(135deg,var(--saffron),var(--navy));display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:clamp(16px,3vw,22px);font-weight:700;color:white;box-shadow:0 4px 16px rgba(255,107,0,0.3);overflow:hidden;}
+.logo-emblem img{width:100%;height:100%;object-fit:cover;border-radius:50%;}
+.logo-text h1{font-size:clamp(12px,2.5vw,15px);color:var(--navy);font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.logo-text span{font-size:clamp(10px,2vw,11px);color:var(--gray-600);font-family:'Inter',sans-serif;font-weight:400;}
 .nav-links{display:flex;align-items:center;gap:2px;}
-.nav-links a{padding:8px 12px;border-radius:8px;font-size:14px;font-weight:500;color:var(--gray-800);transition:all 0.2s;}
-.nav-links a:hover{background:var(--saffron-pale);color:var(--saffron);}
-.nav-links a.active{color:var(--saffron);background:var(--saffron-pale);}
-.nav-cta{background:var(--saffron)!important;color:white!important;padding:10px 20px!important;border-radius:8px!important;font-weight:600!important;box-shadow:0 4px 12px rgba(255,107,0,0.3)!important;margin-left:8px!important;}
-.nav-cta:hover{background:var(--saffron-light)!important;transform:translateY(-1px)!important;}
-.nav-donate{background:var(--navy)!important;color:white!important;padding:10px 20px!important;border-radius:8px!important;font-weight:600!important;margin-left:8px!important;}
+
+/* Plain nav links */
+.nav-links > a{
+  padding:clamp(6px,1.5vw,8px) clamp(8px,2vw,14px);
+  border-radius:8px;font-size:var(--text-sm);font-weight:500;
+  color:var(--gray-800);transition:all 0.2s ease;
+}
+.nav-links > a:hover{background:var(--saffron-pale);color:var(--saffron);}
+.nav-links > a.active{color:var(--saffron);background:var(--saffron-pale);}
+
+/* ---- DROPDOWN WRAPPER ---- */
+.nav-dropdown{position:relative;display:flex;align-items:center;}
+.nav-dropdown > .nav-drop-trigger{
+  display:flex;align-items:center;gap:5px;
+  padding:clamp(6px,1.5vw,8px) clamp(8px,2vw,14px);
+  border-radius:8px;font-size:var(--text-sm);font-weight:500;
+  color:var(--gray-800);transition:all 0.2s ease;cursor:pointer;
+  border:none;background:none;font-family:'Inter',sans-serif;
+  white-space:nowrap;
+}
+.nav-dropdown > .nav-drop-trigger:hover,
+.nav-dropdown:hover > .nav-drop-trigger{background:var(--saffron-pale);color:var(--saffron);}
+.nav-drop-trigger .drop-caret{font-size:9px;transition:transform 0.25s ease;}
+.nav-dropdown:hover .drop-caret{transform:rotate(180deg);}
+
+/* ---- DROPDOWN PANEL ---- */
+.drop-panel{
+  position:absolute;top:calc(100% + 10px);left:0;
+  min-width:230px;background:var(--white);
+  border-radius:14px;border:1px solid var(--gray-200);
+  box-shadow:0 16px 48px rgba(13,43,94,0.16);
+  padding:8px;
+  opacity:0;visibility:hidden;pointer-events:none;
+  transform:translateY(-8px);
+  transition:opacity 0.2s ease,transform 0.2s ease,visibility 0.2s ease;
+  z-index:200;
+}
+.nav-dropdown:hover .drop-panel,
+.nav-dropdown:focus-within .drop-panel{
+  opacity:1;visibility:visible;pointer-events:all;transform:translateY(0);
+}
+.drop-panel::before{
+  content:'';position:absolute;top:-6px;left:20px;
+  width:12px;height:12px;background:var(--white);
+  border-left:1px solid var(--gray-200);border-top:1px solid var(--gray-200);
+  transform:rotate(45deg);border-radius:2px 0 0 0;
+}
+.drop-panel-header{
+  font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--gray-400);padding:6px 12px 4px;margin-bottom:2px;
+}
+.drop-item{
+  display:flex;align-items:center;gap:10px;
+  padding:10px 12px;border-radius:10px;
+  font-size:13px;font-weight:500;color:var(--gray-800);
+  transition:background 0.18s,color 0.18s;cursor:pointer;
+}
+.drop-item:hover{background:var(--saffron-pale);color:var(--saffron);}
+.drop-item-icon{
+  width:32px;height:32px;border-radius:8px;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;font-size:15px;
+  background:var(--gray-100);transition:background 0.18s;
+}
+.drop-item:hover .drop-item-icon{background:rgba(255,107,0,0.12);}
+.drop-item-title{font-weight:600;line-height:1.2;}
+.drop-item-sub{font-size:11px;color:var(--gray-400);margin-top:1px;font-weight:400;}
+.drop-divider{height:1px;background:var(--gray-100);margin:6px 4px;}
+
+/* CTA buttons */
+.nav-cta{background:var(--saffron);color:white!important;padding:clamp(8px,1.5vw,10px) clamp(14px,2.5vw,20px);border-radius:8px;font-size:var(--text-sm);font-weight:600;transition:all 0.2s ease;margin-left:8px;box-shadow:0 4px 12px rgba(255,107,0,0.3);}
+.nav-cta:hover{background:var(--saffron-light)!important;transform:translateY(-1px);}
+.nav-donate{background:var(--navy);color:white!important;padding:clamp(8px,1.5vw,10px) clamp(14px,2.5vw,20px);border-radius:8px;font-size:var(--text-sm);font-weight:600;transition:all 0.2s ease;margin-left:8px;}
+.nav-donate:hover{background:var(--navy-light)!important;transform:translateY(-1px);}
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;border:none;background:none;}
 .hamburger span{display:block;width:24px;height:2px;background:var(--navy);transition:all 0.3s;border-radius:2px;}
 
-/* MOBILE MENU */
+/* ===== MOBILE MENU ===== */
 .mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:2000;background:var(--white);overflow-y:auto;}
 .mobile-menu.open{display:flex;flex-direction:column;animation:fadeIn 0.2s ease;}
 .mobile-menu-header{display:flex;justify-content:space-between;align-items:center;padding:clamp(16px,4vw,24px);border-bottom:1px solid var(--gray-100);}
 .mobile-close{font-size:28px;cursor:pointer;color:var(--gray-800);background:none;border:none;line-height:1;}
-.mobile-nav-links{padding:12px;display:flex;flex-direction:column;gap:4px;}
-.mobile-nav-links a{display:flex;align-items:center;gap:12px;padding:16px 20px;font-size:16px;font-weight:500;border-radius:12px;color:var(--gray-800);transition:background 0.2s,color 0.2s;}
-.mobile-nav-links a:hover{background:var(--saffron-pale);color:var(--saffron);}
+.mobile-nav-links{padding:clamp(12px,3vw,16px);display:flex;flex-direction:column;gap:4px;}
+.mobile-nav-links > a,.mobile-nav-links > .mob-drop-wrap > .mob-drop-btn{
+  display:flex;align-items:center;gap:12px;
+  padding:clamp(14px,3.5vw,18px) clamp(16px,4vw,20px);
+  font-size:clamp(15px,3.5vw,17px);font-weight:500;
+  border-radius:12px;color:var(--gray-800);
+  transition:background 0.2s,color 0.2s;
+  width:100%;border:none;background:none;font-family:'Inter',sans-serif;cursor:pointer;text-align:left;
+}
+.mobile-nav-links > a:hover,
+.mobile-nav-links > .mob-drop-wrap > .mob-drop-btn:hover{background:var(--saffron-pale);color:var(--saffron);}
+.mob-drop-btn{justify-content:space-between;}
+.mob-drop-btn .mob-caret{font-size:11px;transition:transform 0.25s;}
+.mob-drop-btn.open .mob-caret{transform:rotate(180deg);}
+.mob-drop-list{
+  display:none;flex-direction:column;gap:2px;
+  padding:6px 10px 10px 20px;
+  border-left:2px solid var(--saffron-pale);
+  margin:2px 16px 8px 16px;border-radius:0 0 8px 8px;
+}
+.mob-drop-list.open{display:flex;}
+.mob-drop-list a{
+  display:flex;align-items:center;gap:10px;
+  padding:10px 12px;font-size:14px;font-weight:500;
+  color:var(--gray-800);border-radius:8px;transition:background 0.18s,color 0.18s;
+}
+.mob-drop-list a:hover{background:var(--saffron-pale);color:var(--saffron);}
+.mob-drop-list a span{font-size:16px;}
 .mobile-nav-links a.cta-mobile{background:var(--saffron);color:white;margin-top:12px;text-align:center;justify-content:center;}
 .mobile-nav-links a.donate-mobile{background:var(--navy);color:white;text-align:center;justify-content:center;}
 
-/* ===== HERO / PAGE HEADER ===== */
+/* ===== HERO ===== */
 .page-hero{background:var(--navy);position:relative;overflow:hidden;padding:clamp(60px,10vw,100px) 0 clamp(80px,12vw,120px);}
 .page-hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=1400&q=80') center/cover;opacity:0.08;}
 .page-hero-decor{position:absolute;inset:0;background:linear-gradient(135deg,rgba(13,43,94,0.97) 0%,rgba(13,43,94,0.85) 60%,rgba(255,107,0,0.15) 100%);}
-
-/* floating shapes */
 .shape{position:absolute;border-radius:50%;pointer-events:none;}
 .shape-1{width:300px;height:300px;background:radial-gradient(circle,rgba(255,107,0,0.12),transparent 70%);top:-80px;right:-60px;animation:float 6s ease-in-out infinite;}
 .shape-2{width:200px;height:200px;background:radial-gradient(circle,rgba(255,255,255,0.05),transparent 70%);bottom:20px;left:5%;animation:float 8s ease-in-out infinite 2s;}
 .shape-3{width:140px;height:140px;background:radial-gradient(circle,rgba(255,107,0,0.08),transparent 70%);top:30%;right:20%;animation:float 7s ease-in-out infinite 1s;}
-
 .page-hero-inner{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:0 clamp(16px,4vw,24px);text-align:center;}
 .page-hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,107,0,0.15);border:1px solid rgba(255,107,0,0.3);color:var(--saffron-light);padding:7px 16px;border-radius:50px;font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:clamp(14px,2.5vw,20px);animation:fadeUp 0.5s ease both;}
 .page-hero-title{font-size:clamp(32px,7vw,64px);color:white;font-weight:800;line-height:1.1;animation:fadeUp 0.6s ease 0.1s both;}
 .page-hero-title span{color:var(--saffron-light);}
 .page-hero-sub{font-size:clamp(14px,2.5vw,18px);color:rgba(255,255,255,0.6);margin:clamp(14px,2vw,18px) auto 0;max-width:540px;line-height:1.7;animation:fadeUp 0.6s ease 0.2s both;}
-
-/* wave bottom */
 .hero-wave{position:absolute;bottom:0;left:0;right:0;line-height:0;}
 .hero-wave svg{display:block;width:100%;height:clamp(40px,7vw,70px);}
-
-/* ===== STATS STRIP ===== */
-.stats-strip{background:var(--saffron);padding:clamp(20px,4vw,32px) 0;}
-.stats-strip-inner{max-width:1200px;margin:0 auto;padding:0 clamp(16px,4vw,24px);display:flex;justify-content:center;gap:clamp(20px,5vw,60px);flex-wrap:wrap;}
-.strip-stat{text-align:center;color:white;}
-.strip-stat .n{font-family:'Playfair Display',serif;font-size:clamp(26px,5vw,38px);font-weight:700;line-height:1;}
-.strip-stat .l{font-size:12px;opacity:0.8;margin-top:4px;text-transform:uppercase;letter-spacing:0.06em;}
 
 /* ===== FILTER BAR ===== */
 .filter-section{padding:clamp(32px,5vw,56px) 0 clamp(16px,3vw,24px);}
 .container{max-width:1200px;margin:0 auto;padding:0 clamp(16px,4vw,24px);}
 .filter-bar{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:clamp(24px,4vw,40px);}
 .filter-btn{padding:clamp(8px,1.5vw,10px) clamp(16px,3vw,22px);border-radius:50px;font-size:clamp(12px,2vw,14px);font-weight:600;border:2px solid var(--gray-200);background:white;color:var(--gray-600);transition:all 0.25s ease;position:relative;overflow:hidden;}
-.filter-btn::after{content:'';position:absolute;inset:0;background:var(--saffron);transform:scaleX(0);transform-origin:left;transition:transform 0.25s ease;z-index:-1;}
 .filter-btn:hover{border-color:var(--saffron);color:var(--saffron);}
 .filter-btn.active{background:var(--saffron);border-color:var(--saffron);color:white;box-shadow:0 4px 16px rgba(255,107,0,0.35);}
 .filter-btn .count{display:inline-block;background:rgba(255,255,255,0.25);color:inherit;font-size:11px;font-weight:700;padding:1px 7px;border-radius:50px;margin-left:6px;}
@@ -127,34 +204,14 @@ button{font-family:'Inter',sans-serif;cursor:pointer;}
 .title-line{width:48px;height:4px;background:linear-gradient(90deg,var(--saffron),var(--saffron-light));border-radius:2px;margin:10px 0 0;}
 
 /* ===== GALLERY GRID ===== */
-.gallery-grid{
-  columns:4 280px;
-  column-gap:clamp(10px,2vw,18px);
-  margin-bottom:clamp(40px,6vw,72px);
-}
-.gallery-item{
-  break-inside:avoid;
-  margin-bottom:clamp(10px,2vw,18px);
-  position:relative;
-  overflow:hidden;
-  border-radius:clamp(10px,2vw,16px);
-  cursor:pointer;
-  display:block;
-  box-shadow:var(--shadow-sm);
-  transition:transform 0.35s cubic-bezier(0.34,1.56,0.64,1),box-shadow 0.35s ease;
-  opacity:0;
-  transform:translateY(20px) scale(0.97);
-  animation:scaleIn 0.5s ease forwards;
-}
+.gallery-grid{columns:4 280px;column-gap:clamp(10px,2vw,18px);margin-bottom:clamp(40px,6vw,72px);}
+.gallery-item{break-inside:avoid;margin-bottom:clamp(10px,2vw,18px);position:relative;overflow:hidden;border-radius:clamp(10px,2vw,16px);cursor:pointer;display:block;box-shadow:var(--shadow-sm);transition:transform 0.35s cubic-bezier(0.34,1.56,0.64,1),box-shadow 0.35s ease;opacity:0;transform:translateY(20px) scale(0.97);animation:scaleIn 0.5s ease forwards;}
 .gallery-item.hidden{display:none;}
 .gallery-item:hover{transform:translateY(-6px) scale(1.02);box-shadow:var(--shadow-hover);}
 .gallery-img{width:100%;height:auto;display:block;transition:transform 0.5s ease;}
 .gallery-item:hover .gallery-img{transform:scale(1.06);}
-
-/* placeholder images with colored backgrounds */
 .gallery-placeholder{width:100%;background:linear-gradient(135deg,var(--navy),var(--navy-light));display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;color:rgba(255,255,255,0.4);font-size:36px;transition:transform 0.5s ease;}
 .gallery-item:hover .gallery-placeholder{transform:scale(1.06);}
-
 .gallery-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(13,43,94,0.92) 0%,rgba(13,43,94,0.3) 50%,transparent 100%);opacity:0;transition:opacity 0.35s ease;display:flex;align-items:flex-end;padding:clamp(12px,2.5vw,20px);}
 .gallery-item:hover .gallery-overlay{opacity:1;}
 .overlay-content{transform:translateY(10px);transition:transform 0.35s ease;width:100%;}
@@ -164,8 +221,6 @@ button{font-family:'Inter',sans-serif;cursor:pointer;}
 .overlay-icons{display:flex;align-items:center;gap:10px;}
 .overlay-icon-btn{width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,0.15);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;color:white;font-size:13px;border:1px solid rgba(255,255,255,0.2);transition:background 0.2s,transform 0.2s;}
 .overlay-icon-btn:hover{background:var(--saffron);transform:scale(1.1);}
-
-/* category badge on corner */
 .cat-badge{position:absolute;top:10px;left:10px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;padding:4px 10px;border-radius:50px;z-index:2;backdrop-filter:blur(8px);}
 .cat-campus{background:rgba(13,43,94,0.85);color:white;}
 .cat-events{background:rgba(255,107,0,0.9);color:white;}
@@ -179,7 +234,6 @@ button{font-family:'Inter',sans-serif;cursor:pointer;}
 .lightbox.open{opacity:1;pointer-events:all;}
 .lb-inner{position:relative;max-width:min(92vw,960px);width:100%;animation:scaleIn 0.35s cubic-bezier(0.34,1.56,0.64,1);}
 .lb-img-wrap{border-radius:clamp(10px,2vw,18px);overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,0.5);position:relative;}
-.lb-img-wrap img, .lb-placeholder{width:100%;height:auto;display:block;max-height:80vh;object-fit:contain;}
 .lb-placeholder{height:min(65vw,520px);background:linear-gradient(135deg,var(--navy),var(--navy-light));display:flex;align-items:center;justify-content:center;font-size:clamp(48px,10vw,80px);color:rgba(255,255,255,0.3);}
 .lb-info{padding:clamp(14px,2.5vw,20px) clamp(16px,3vw,24px);background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:0 0 clamp(10px,2vw,18px) clamp(10px,2vw,18px);margin-top:-2px;}
 .lb-info h3{font-size:clamp(15px,2.5vw,20px);color:white;margin-bottom:4px;}
@@ -198,8 +252,6 @@ button{font-family:'Inter',sans-serif;cursor:pointer;}
 .video-card{border-radius:var(--radius-lg);overflow:hidden;background:white;box-shadow:var(--shadow-sm);transition:all 0.3s;cursor:pointer;border:1px solid var(--gray-200);}
 .video-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-hover);}
 .video-thumb{position:relative;aspect-ratio:16/9;background:linear-gradient(135deg,var(--navy),var(--navy-light));display:flex;align-items:center;justify-content:center;overflow:hidden;}
-.video-thumb img{width:100%;height:100%;object-fit:cover;transition:transform 0.4s;opacity:0.7;}
-.video-card:hover .video-thumb img{transform:scale(1.08);}
 .play-btn{position:absolute;width:clamp(44px,8vw,60px);height:clamp(44px,8vw,60px);border-radius:50%;background:white;display:flex;align-items:center;justify-content:center;z-index:2;transition:transform 0.3s,box-shadow 0.3s;box-shadow:0 8px 24px rgba(0,0,0,0.3);}
 .play-btn i{color:var(--saffron);font-size:clamp(16px,3vw,22px);margin-left:3px;}
 .video-card:hover .play-btn{transform:scale(1.12);box-shadow:0 12px 32px rgba(0,0,0,0.4);}
@@ -213,14 +265,6 @@ button{font-family:'Inter',sans-serif;cursor:pointer;}
 .marquee-inner{display:flex;white-space:nowrap;animation:marquee 25s linear infinite;}
 .marquee-item{padding:0 clamp(24px,5vw,40px);flex-shrink:0;}
 
-/* ===== LOAD MORE ===== */
-.load-more-wrap{text-align:center;padding:clamp(20px,4vw,36px) 0;}
-.load-more-btn{padding:clamp(12px,2.5vw,16px) clamp(28px,5vw,44px);border-radius:50px;background:transparent;border:2px solid var(--saffron);color:var(--saffron);font-size:clamp(13px,2.2vw,15px);font-weight:700;transition:all 0.3s;position:relative;overflow:hidden;letter-spacing:0.03em;}
-.load-more-btn::before{content:'';position:absolute;inset:0;background:var(--saffron);transform:translateY(100%);transition:transform 0.3s;}
-.load-more-btn:hover{color:white;}
-.load-more-btn:hover::before{transform:translateY(0);}
-.load-more-btn span{position:relative;z-index:1;}
-
 /* ===== MEMORY BOARD ===== */
 .memory-section{background:var(--navy);padding:clamp(56px,8vw,90px) 0;overflow:hidden;position:relative;}
 .memory-glow{position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(255,107,0,0.12),transparent 70%);top:-100px;right:-100px;pointer-events:none;}
@@ -231,13 +275,19 @@ button{font-family:'Inter',sans-serif;cursor:pointer;}
 .memory-strip::-webkit-scrollbar{display:none;}
 .memory-card{flex-shrink:0;width:clamp(180px,28vw,240px);border-radius:var(--radius-lg);overflow:hidden;position:relative;aspect-ratio:3/4;cursor:pointer;transition:transform 0.35s ease,box-shadow 0.35s ease;}
 .memory-card:hover{transform:translateY(-8px) rotate(-1deg);box-shadow:0 20px 50px rgba(0,0,0,0.4);}
-.memory-card-bg{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.5s ease;}
-.memory-card:hover .memory-card-bg{transform:scale(1.08);}
 .memory-card-bg-placeholder{width:100%;height:100%;background:linear-gradient(135deg,var(--navy-light),rgba(255,107,0,0.3));display:flex;align-items:center;justify-content:center;font-size:40px;color:rgba(255,255,255,0.3);transition:transform 0.5s ease;}
 .memory-card:hover .memory-card-bg-placeholder{transform:scale(1.08);}
 .memory-label{position:absolute;bottom:0;left:0;right:0;padding:clamp(12px,2vw,16px);background:linear-gradient(to top,rgba(13,43,94,0.9),transparent);color:white;font-size:clamp(11px,2vw,13px);font-weight:600;}
 .memory-label span{display:block;font-size:10px;color:var(--saffron-light);font-weight:500;margin-bottom:2px;}
 .memory-scroll-hint{color:rgba(255,255,255,0.3);font-size:12px;margin-top:12px;display:flex;align-items:center;gap:6px;}
+
+/* ===== LOAD MORE ===== */
+.load-more-wrap{text-align:center;padding:clamp(20px,4vw,36px) 0;}
+.load-more-btn{padding:clamp(12px,2.5vw,16px) clamp(28px,5vw,44px);border-radius:50px;background:transparent;border:2px solid var(--saffron);color:var(--saffron);font-size:clamp(13px,2.2vw,15px);font-weight:700;transition:all 0.3s;position:relative;overflow:hidden;letter-spacing:0.03em;}
+.load-more-btn::before{content:'';position:absolute;inset:0;background:var(--saffron);transform:translateY(100%);transition:transform 0.3s;}
+.load-more-btn:hover{color:white;}
+.load-more-btn:hover::before{transform:translateY(0);}
+.load-more-btn span{position:relative;z-index:1;}
 
 /* ===== UPLOAD CTA ===== */
 .upload-cta{background:linear-gradient(135deg,var(--saffron-pale),#EEF4FF);padding:clamp(48px,7vw,80px) 0;}
@@ -249,7 +299,7 @@ button{font-family:'Inter',sans-serif;cursor:pointer;}
 .upload-btn{display:inline-flex;align-items:center;gap:10px;background:var(--saffron);color:white;padding:clamp(12px,2.5vw,16px) clamp(24px,4vw,36px);border-radius:10px;font-size:clamp(13px,2vw,15px);font-weight:700;transition:all 0.25s;box-shadow:0 6px 20px rgba(255,107,0,0.35);}
 .upload-btn:hover{background:var(--saffron-light);transform:translateY(-2px);}
 
-/* ===== FOOTER PLACEHOLDER ===== */
+/* ===== FOOTER ===== */
 .footer-simple{background:var(--navy);color:rgba(255,255,255,0.5);text-align:center;padding:clamp(24px,4vw,36px);font-size:13px;}
 .footer-simple a{color:var(--saffron-light);}
 
@@ -276,10 +326,11 @@ button{font-family:'Inter',sans-serif;cursor:pointer;}
 <!-- TOP BAR -->
 <div class="topbar">
   <div class="topbar-inner">
-    <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+    <div class="topbar-left">
       <span>📍 Karahi, Fatehpur Sikri, Agra — 283110</span>
+      <span style="color:rgba(255,255,255,0.3)">|</span>
     </div>
-    <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+    <div class="topbar-right">
       <a href="tel:9997658330">📞 +91 9997658330</a>
       <a href="mailto:srpses@gmail.com">✉ srpses@gmail.com</a>
     </div>
@@ -289,24 +340,98 @@ button{font-family:'Inter',sans-serif;cursor:pointer;}
 <!-- HEADER -->
 <header class="header" id="header">
   <div class="nav-inner">
-    <div class="logo">
+    <a href="index.html" class="logo" aria-label="Go to Home">
       <div class="logo-emblem">
-        <img src="images/logo.png" alt="Logo" onerror="this.parentElement.textContent='SR'">
+        <img src="images/logo.png" alt="Shri Ram Public School Logo" onerror="this.parentElement.textContent='SR'">
       </div>
       <div class="logo-text">
         <h1>Shri Ram Public School</h1>
         <span>Shiksha Samiti - Karahi</span>
       </div>
-    </div>
+    </a>
+
     <nav class="nav-links">
-      <a href="index.html">Home</a>
+     
       <a href="about.html">About Us</a>
-      <a href="infrastructure.html">Infrastructure</a>
+
+      <!-- Infrastructure dropdown -->
+      <div class="nav-dropdown">
+        <button class="nav-drop-trigger" aria-haspopup="true" aria-expanded="false">
+          Infrastructure <i class="fas fa-chevron-down drop-caret"></i>
+        </button>
+        <div class="drop-panel">
+          <div class="drop-panel-header">Our Facilities</div>
+          <a class="drop-item" href="infrastructure.html#computer-lab">
+            <div class="drop-item-icon">💻</div>
+            <div class="drop-item-text">
+              <div class="drop-item-title">Computer Lab</div>
+              <div class="drop-item-sub">30+ modern systems</div>
+            </div>
+          </a>
+          <a class="drop-item" href="infrastructure.html#science-lab">
+            <div class="drop-item-icon">🔬</div>
+            <div class="drop-item-text">
+              <div class="drop-item-title">Science Lab</div>
+              <div class="drop-item-sub">Physics, Chemistry &amp; Biology</div>
+            </div>
+          </a>
+          <a class="drop-item" href="infrastructure.html#dance-music">
+            <div class="drop-item-icon">🎭</div>
+            <div class="drop-item-text">
+              <div class="drop-item-title">Dance &amp; Music Hall</div>
+              <div class="drop-item-sub">Cultural activities centre</div>
+            </div>
+          </a>
+          <a class="drop-item" href="infrastructure.html#playground">
+            <div class="drop-item-icon">⚽</div>
+            <div class="drop-item-text">
+              <div class="drop-item-title">Playground</div>
+              <div class="drop-item-sub">Cricket, Football &amp; Athletics</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
       <a href="gallery.html" class="active">Gallery</a>
+
+      <!-- Schemes / Programs dropdown -->
+      <div class="nav-dropdown">
+        <button class="nav-drop-trigger" aria-haspopup="true" aria-expanded="false">
+          Schemes &amp; Programs <i class="fas fa-chevron-down drop-caret"></i>
+        </button>
+        <div class="drop-panel">
+          <div class="drop-panel-header">Government Programs</div>
+          <a class="drop-item" href="schemes.html#nsdc">
+            <div class="drop-item-icon">🏛</div>
+            <div class="drop-item-text">
+              <div class="drop-item-title">NSDC Programme</div>
+              <div class="drop-item-sub">National Skill Development Corp.</div>
+            </div>
+          </a>
+          <a class="drop-item" href="schemes.html#upsdm">
+            <div class="drop-item-icon">🌐</div>
+            <div class="drop-item-text">
+              <div class="drop-item-title">UPSDM Programme</div>
+              <div class="drop-item-sub">UP Skill Dev. Mission</div>
+            </div>
+          </a>
+          <div class="drop-divider"></div>
+          <div class="drop-panel-header">Vocational Certification</div>
+          <a class="drop-item" href="schemes.html#ncvt">
+            <div class="drop-item-icon">📜</div>
+            <div class="drop-item-text">
+              <div class="drop-item-title">NCVT</div>
+              <div class="drop-item-sub">National Council for Voc. Training</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
       <a href="contact.html">Contact</a>
       <a href="donate.html" class="nav-donate">Donate</a>
       <a href="apply-now.html" class="nav-cta">Apply Now</a>
     </nav>
+
     <button class="hamburger" id="hamburger" onclick="openMenu()" aria-label="Open menu">
       <span></span><span></span><span></span>
     </button>
@@ -316,23 +441,51 @@ button{font-family:'Inter',sans-serif;cursor:pointer;}
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true">
   <div class="mobile-menu-header">
-    <div class="logo">
-      <div class="logo-emblem">SR</div>
+    <a href="index.html" class="logo" onclick="closeMenu()" aria-label="Go to Home">
+      <div class="logo-emblem" style="width:44px;height:44px;font-size:16px;flex-shrink:0;">SR</div>
       <div class="logo-text"><h1>Shri Ram Public School</h1><span>Shiksha Samiti</span></div>
-    </div>
+    </a>
     <button class="mobile-close" onclick="closeMenu()">✕</button>
   </div>
   <div class="mobile-nav-links">
-    <a href="index.html" onclick="closeMenu()">🏠 Home</a>
+   
     <a href="about.html" onclick="closeMenu()">ℹ️ About Us</a>
-    <a href="infrastructure.html" onclick="closeMenu()">🏗️ Infrastructure</a>
+
+    <!-- Infrastructure mobile dropdown -->
+    <div class="mob-drop-wrap">
+      <button class="mob-drop-btn" onclick="toggleMobDrop(this)">
+        <span>🏗️ Infrastructure</span>
+        <i class="fas fa-chevron-down mob-caret"></i>
+      </button>
+      <div class="mob-drop-list">
+        <a href="infrastructure.html#computer-lab" onclick="closeMenu()"><span>💻</span> Computer Lab</a>
+        <a href="infrastructure.html#science-lab" onclick="closeMenu()"><span>🔬</span> Science Lab</a>
+        <a href="infrastructure.html#dance-music" onclick="closeMenu()"><span>🎭</span> Dance &amp; Music Hall</a>
+        <a href="infrastructure.html#playground" onclick="closeMenu()"><span>⚽</span> Playground</a>
+      </div>
+    </div>
+
     <a href="gallery.html" onclick="closeMenu()">🖼️ Gallery</a>
+
+    <!-- Schemes mobile dropdown -->
+    <div class="mob-drop-wrap">
+      <button class="mob-drop-btn" onclick="toggleMobDrop(this)">
+        <span>📋 Schemes &amp; Programs</span>
+        <i class="fas fa-chevron-down mob-caret"></i>
+      </button>
+      <div class="mob-drop-list">
+        <a href="schemes.html#nsdc" onclick="closeMenu()"><span>🏛</span> NSDC Programme</a>
+        <a href="schemes.html#upsdm" onclick="closeMenu()"><span>🌐</span> UPSDM Programme</a>
+        <a href="schemes.html#ncvt" onclick="closeMenu()"><span>📜</span> NCVT</a>
+      </div>
+    </div>
+
     <a href="contact.html" onclick="closeMenu()">📞 Contact</a>
     <a href="donate.html" onclick="closeMenu()" class="donate-mobile">🤝 Donate</a>
     <a href="apply-now.html" onclick="closeMenu()" class="cta-mobile">✅ Apply Now</a>
   </div>
-  <div style="padding:20px 16px;margin-top:auto;border-top:1px solid var(--gray-100);text-align:center;">
-    <p style="font-size:13px;color:var(--gray-400);">📞 <a href="tel:9997658330" style="color:var(--saffron);font-weight:600;">+91 9997658330</a></p>
+  <div style="padding:20px 16px;margin-top:auto;border-top:1px solid var(--gray-100);">
+    <p style="font-size:13px;color:var(--gray-400);text-align:center;">📞 <a href="tel:9997658330" style="color:var(--saffron);font-weight:600;">+91 9997658330</a></p>
   </div>
 </div>
 
@@ -355,19 +508,15 @@ button{font-family:'Inter',sans-serif;cursor:pointer;}
   </div>
 </section>
 
-
 <!-- MAIN GALLERY SECTION -->
 <section class="filter-section">
   <div class="container">
-
-    <!-- Section Header -->
     <div class="section-header reveal">
       <span class="section-label">Browse by Category</span>
       <h2 class="section-title">All Gallery Photos</h2>
       <div class="title-line"></div>
     </div>
 
-    <!-- Filter Buttons -->
     <div class="filter-bar reveal" id="filterBar">
       <button class="filter-btn active" data-filter="all">All <span class="count" id="cnt-all">24</span></button>
       <button class="filter-btn" data-filter="campus">🏫 Campus <span class="count">6</span></button>
@@ -378,380 +527,159 @@ button{font-family:'Inter',sans-serif;cursor:pointer;}
       <button class="filter-btn" data-filter="iti">🔧 ITI <span class="count">2</span></button>
     </div>
 
-    <!-- Gallery Masonry Grid -->
     <div class="gallery-grid" id="galleryGrid">
 
-      <!-- Campus Photos -->
       <div class="gallery-item" data-cat="campus" data-title="School Entrance Gate" data-subtitle="Shri Ram Inter College, Karahi" style="animation-delay:0.05s">
         <img src="images/s1.jpeg" alt="Main School Building" class="gallery-img" onerror="this.parentElement.innerHTML=this.parentElement.innerHTML+'<div class=\'gallery-placeholder\' style=\'min-height:200px\'>🏫</div>';this.remove();">
         <span class="cat-badge cat-campus">Campus</span>
-        <div class="gallery-overlay">
-          <div class="overlay-content">
-            <div class="overlay-tag">Campus</div>
-            <div class="overlay-title">School Entrance Gate</div>
-            <div class="overlay-icons">
-              <button class="overlay-icon-btn" onclick="openLightbox(event,0)"><i class="fas fa-expand"></i></button>
-              <button class="overlay-icon-btn"><i class="fas fa-heart"></i></button>
-            </div>
-          </div>
-        </div>
+        <div class="gallery-overlay"><div class="overlay-content"><div class="overlay-tag">Campus</div><div class="overlay-title">School Entrance Gate</div><div class="overlay-icons"><button class="overlay-icon-btn" onclick="openLightbox(event,0)"><i class="fas fa-expand"></i></button><button class="overlay-icon-btn"><i class="fas fa-heart"></i></button></div></div></div>
       </div>
 
       <div class="gallery-item" data-cat="campus" data-title="Main School Building" data-subtitle="S.R. Public High School" style="animation-delay:0.1s">
-        <img src="images/s2.jpeg" alt="School Campus" class="gallery-img" onerror="this.outerHTML='<div class=\'gallery-placeholder\' style=\'min-height:260px\'>🏛</div>'">
+        <img src="images/s2.jpeg" alt="School Campus" class="gallery-img">
         <span class="cat-badge cat-campus">Campus</span>
-        <div class="gallery-overlay">
-          <div class="overlay-content">
-            <div class="overlay-tag">Campus</div>
-            <div class="overlay-title">Main School Building</div>
-            <div class="overlay-icons">
-              <button class="overlay-icon-btn" onclick="openLightbox(event,1)"><i class="fas fa-expand"></i></button>
-              <button class="overlay-icon-btn"><i class="fas fa-heart"></i></button>
-            </div>
-          </div>
-        </div>
+        <div class="gallery-overlay"><div class="overlay-content"><div class="overlay-tag">Campus</div><div class="overlay-title">Main School Building</div><div class="overlay-icons"><button class="overlay-icon-btn" onclick="openLightbox(event,1)"><i class="fas fa-expand"></i></button><button class="overlay-icon-btn"><i class="fas fa-heart"></i></button></div></div></div>
       </div>
 
       <div class="gallery-item" data-cat="campus" data-title="School Campus View" data-subtitle="Karahi, Fatehpur Sikri" style="animation-delay:0.15s">
-        <img src="images/s3.jpeg" alt="School Gate" class="gallery-img" onerror="this.outerHTML='<div class=\'gallery-placeholder\' style=\'min-height:180px\'>🚪</div>'">
+        <img src="images/s3.jpeg" alt="School Gate" class="gallery-img">
         <span class="cat-badge cat-campus">Campus</span>
-        <div class="gallery-overlay">
-          <div class="overlay-content">
-            <div class="overlay-tag">Campus</div>
-            <div class="overlay-title">School Campus View</div>
-            <div class="overlay-icons">
-              <button class="overlay-icon-btn" onclick="openLightbox(event,2)"><i class="fas fa-expand"></i></button>
-              <button class="overlay-icon-btn"><i class="fas fa-heart"></i></button>
-            </div>
-          </div>
-        </div>
+        <div class="gallery-overlay"><div class="overlay-content"><div class="overlay-tag">Campus</div><div class="overlay-title">School Campus View</div><div class="overlay-icons"><button class="overlay-icon-btn" onclick="openLightbox(event,2)"><i class="fas fa-expand"></i></button><button class="overlay-icon-btn"><i class="fas fa-heart"></i></button></div></div></div>
       </div>
 
-      <!-- Coloured placeholder tiles to fill grid beautifully -->
       <div class="gallery-item" data-cat="events" data-title="Annual Prize Distribution" data-subtitle="Session 2024-25" style="animation-delay:0.2s">
         <div class="gallery-placeholder" style="min-height:240px;background:linear-gradient(135deg,#FF6B00,#FF8C33);">🏆</div>
         <span class="cat-badge cat-events">Events</span>
-        <div class="gallery-overlay">
-          <div class="overlay-content">
-            <div class="overlay-tag">Events</div>
-            <div class="overlay-title">Annual Prize Distribution</div>
-            <div class="overlay-icons">
-              <button class="overlay-icon-btn" onclick="openLightbox(event,3)"><i class="fas fa-expand"></i></button>
-              <button class="overlay-icon-btn"><i class="fas fa-heart"></i></button>
-            </div>
-          </div>
-        </div>
+        <div class="gallery-overlay"><div class="overlay-content"><div class="overlay-tag">Events</div><div class="overlay-title">Annual Prize Distribution</div><div class="overlay-icons"><button class="overlay-icon-btn" onclick="openLightbox(event,3)"><i class="fas fa-expand"></i></button><button class="overlay-icon-btn"><i class="fas fa-heart"></i></button></div></div></div>
       </div>
 
       <div class="gallery-item" data-cat="sports" data-title="Inter-School Cricket Match" data-subtitle="Sports Day 2024" style="animation-delay:0.25s">
         <div class="gallery-placeholder" style="min-height:200px;background:linear-gradient(135deg,#1A6B35,#2A9B50);">🏏</div>
         <span class="cat-badge cat-sports">Sports</span>
-        <div class="gallery-overlay">
-          <div class="overlay-content">
-            <div class="overlay-tag">Sports</div>
-            <div class="overlay-title">Inter-School Cricket Match</div>
-            <div class="overlay-icons">
-              <button class="overlay-icon-btn" onclick="openLightbox(event,4)"><i class="fas fa-expand"></i></button>
-              <button class="overlay-icon-btn"><i class="fas fa-heart"></i></button>
-            </div>
-          </div>
-        </div>
+        <div class="gallery-overlay"><div class="overlay-content"><div class="overlay-tag">Sports</div><div class="overlay-title">Inter-School Cricket Match</div><div class="overlay-icons"><button class="overlay-icon-btn" onclick="openLightbox(event,4)"><i class="fas fa-expand"></i></button><button class="overlay-icon-btn"><i class="fas fa-heart"></i></button></div></div></div>
       </div>
 
       <div class="gallery-item" data-cat="culture" data-title="Annual Cultural Programme" data-subtitle="Republic Day Celebrations" style="animation-delay:0.3s">
         <div class="gallery-placeholder" style="min-height:280px;background:linear-gradient(135deg,#C8940A,#E8B020);">🎭</div>
         <span class="cat-badge cat-culture">Cultural</span>
-        <div class="gallery-overlay">
-          <div class="overlay-content">
-            <div class="overlay-tag">Cultural</div>
-            <div class="overlay-title">Annual Cultural Programme</div>
-            <div class="overlay-icons">
-              <button class="overlay-icon-btn" onclick="openLightbox(event,5)"><i class="fas fa-expand"></i></button>
-              <button class="overlay-icon-btn"><i class="fas fa-heart"></i></button>
-            </div>
-          </div>
-        </div>
+        <div class="gallery-overlay"><div class="overlay-content"><div class="overlay-tag">Cultural</div><div class="overlay-title">Annual Cultural Programme</div><div class="overlay-icons"><button class="overlay-icon-btn" onclick="openLightbox(event,5)"><i class="fas fa-expand"></i></button><button class="overlay-icon-btn"><i class="fas fa-heart"></i></button></div></div></div>
       </div>
 
       <div class="gallery-item" data-cat="campus" data-title="Computer Laboratory" data-subtitle="State-of-the-art Facilities" style="animation-delay:0.35s">
         <div class="gallery-placeholder" style="min-height:190px;background:linear-gradient(135deg,#1A3F80,#2A5FB0);">💻</div>
         <span class="cat-badge cat-campus">Campus</span>
-        <div class="gallery-overlay">
-          <div class="overlay-content">
-            <div class="overlay-tag">Campus</div>
-            <div class="overlay-title">Computer Laboratory</div>
-            <div class="overlay-icons">
-              <button class="overlay-icon-btn" onclick="openLightbox(event,6)"><i class="fas fa-expand"></i></button>
-              <button class="overlay-icon-btn"><i class="fas fa-heart"></i></button>
-            </div>
-          </div>
-        </div>
+        <div class="gallery-overlay"><div class="overlay-content"><div class="overlay-tag">Campus</div><div class="overlay-title">Computer Laboratory</div><div class="overlay-icons"><button class="overlay-icon-btn" onclick="openLightbox(event,6)"><i class="fas fa-expand"></i></button><button class="overlay-icon-btn"><i class="fas fa-heart"></i></button></div></div></div>
       </div>
 
       <div class="gallery-item" data-cat="events" data-title="Independence Day Parade" data-subtitle="15 August 2024" style="animation-delay:0.4s">
         <div class="gallery-placeholder" style="min-height:230px;background:linear-gradient(135deg,#FF6B00,#0D2B5E);">🇮🇳</div>
         <span class="cat-badge cat-events">Events</span>
-        <div class="gallery-overlay">
-          <div class="overlay-content">
-            <div class="overlay-tag">Events</div>
-            <div class="overlay-title">Independence Day Parade</div>
-            <div class="overlay-icons">
-              <button class="overlay-icon-btn" onclick="openLightbox(event,7)"><i class="fas fa-expand"></i></button>
-              <button class="overlay-icon-btn"><i class="fas fa-heart"></i></button>
-            </div>
-          </div>
-        </div>
+        <div class="gallery-overlay"><div class="overlay-content"><div class="overlay-tag">Events</div><div class="overlay-title">Independence Day Parade</div><div class="overlay-icons"><button class="overlay-icon-btn" onclick="openLightbox(event,7)"><i class="fas fa-expand"></i></button><button class="overlay-icon-btn"><i class="fas fa-heart"></i></button></div></div></div>
       </div>
 
       <div class="gallery-item" data-cat="academics" data-title="Science Exhibition" data-subtitle="Innovative Student Projects" style="animation-delay:0.45s">
         <div class="gallery-placeholder" style="min-height:210px;background:linear-gradient(135deg,#5A3CAA,#8B5CF6);">🔬</div>
         <span class="cat-badge cat-academics">Academics</span>
-        <div class="gallery-overlay">
-          <div class="overlay-content">
-            <div class="overlay-tag">Academics</div>
-            <div class="overlay-title">Science Exhibition</div>
-            <div class="overlay-icons">
-              <button class="overlay-icon-btn" onclick="openLightbox(event,8)"><i class="fas fa-expand"></i></button>
-              <button class="overlay-icon-btn"><i class="fas fa-heart"></i></button>
-            </div>
-          </div>
-        </div>
+        <div class="gallery-overlay"><div class="overlay-content"><div class="overlay-tag">Academics</div><div class="overlay-title">Science Exhibition</div><div class="overlay-icons"><button class="overlay-icon-btn" onclick="openLightbox(event,8)"><i class="fas fa-expand"></i></button><button class="overlay-icon-btn"><i class="fas fa-heart"></i></button></div></div></div>
       </div>
 
       <div class="gallery-item" data-cat="iti" data-title="ITI Workshop — Electrician Trade" data-subtitle="Shri Ram ITI, Karahi" style="animation-delay:0.5s">
-        <img src="images/s6.jpeg" alt="ITI Workshop" class="gallery-img" onerror="this.outerHTML='<div class=\'gallery-placeholder\' style=\'min-height:220px;background:linear-gradient(135deg,#222831,#444f5e)\'>⚡</div>'">
+        <img src="images/s6.jpeg" alt="ITI Workshop" class="gallery-img">
         <span class="cat-badge cat-iti">ITI</span>
-        <div class="gallery-overlay">
-          <div class="overlay-content">
-            <div class="overlay-tag">ITI</div>
-            <div class="overlay-title">ITI Workshop — Electrician</div>
-            <div class="overlay-icons">
-              <button class="overlay-icon-btn" onclick="openLightbox(event,9)"><i class="fas fa-expand"></i></button>
-              <button class="overlay-icon-btn"><i class="fas fa-heart"></i></button>
-            </div>
-          </div>
-        </div>
+        <div class="gallery-overlay"><div class="overlay-content"><div class="overlay-tag">ITI</div><div class="overlay-title">ITI Workshop — Electrician</div><div class="overlay-icons"><button class="overlay-icon-btn" onclick="openLightbox(event,9)"><i class="fas fa-expand"></i></button><button class="overlay-icon-btn"><i class="fas fa-heart"></i></button></div></div></div>
       </div>
 
       <div class="gallery-item" data-cat="sports" data-title="Athletic Day — Running Race" data-subtitle="Annual Sports Meet 2024" style="animation-delay:0.55s">
         <div class="gallery-placeholder" style="min-height:195px;background:linear-gradient(135deg,#1A6B35,#0D2B5E);">🏃</div>
         <span class="cat-badge cat-sports">Sports</span>
-        <div class="gallery-overlay">
-          <div class="overlay-content">
-            <div class="overlay-tag">Sports</div>
-            <div class="overlay-title">Athletic Day — Running Race</div>
-            <div class="overlay-icons">
-              <button class="overlay-icon-btn" onclick="openLightbox(event,10)"><i class="fas fa-expand"></i></button>
-              <button class="overlay-icon-btn"><i class="fas fa-heart"></i></button>
-            </div>
-          </div>
-        </div>
+        <div class="gallery-overlay"><div class="overlay-content"><div class="overlay-tag">Sports</div><div class="overlay-title">Athletic Day — Running Race</div><div class="overlay-icons"><button class="overlay-icon-btn" onclick="openLightbox(event,10)"><i class="fas fa-expand"></i></button><button class="overlay-icon-btn"><i class="fas fa-heart"></i></button></div></div></div>
       </div>
 
       <div class="gallery-item" data-cat="culture" data-title="Classical Dance Performance" data-subtitle="Annual Cultural Fest 2024" style="animation-delay:0.6s">
         <div class="gallery-placeholder" style="min-height:250px;background:linear-gradient(135deg,#C8940A,#FF6B00);">💃</div>
         <span class="cat-badge cat-culture">Cultural</span>
-        <div class="gallery-overlay">
-          <div class="overlay-content">
-            <div class="overlay-tag">Cultural</div>
-            <div class="overlay-title">Classical Dance Performance</div>
-            <div class="overlay-icons">
-              <button class="overlay-icon-btn" onclick="openLightbox(event,11)"><i class="fas fa-expand"></i></button>
-              <button class="overlay-icon-btn"><i class="fas fa-heart"></i></button>
-            </div>
-          </div>
-        </div>
+        <div class="gallery-overlay"><div class="overlay-content"><div class="overlay-tag">Cultural</div><div class="overlay-title">Classical Dance Performance</div><div class="overlay-icons"><button class="overlay-icon-btn" onclick="openLightbox(event,11)"><i class="fas fa-expand"></i></button><button class="overlay-icon-btn"><i class="fas fa-heart"></i></button></div></div></div>
       </div>
 
       <div class="gallery-item" data-cat="campus" data-title="School Library" data-subtitle="Reading Room &amp; Resource Centre" style="animation-delay:0.65s">
         <div class="gallery-placeholder" style="min-height:185px;background:linear-gradient(135deg,#4A2040,#8B3A8A);">📚</div>
         <span class="cat-badge cat-campus">Campus</span>
-        <div class="gallery-overlay">
-          <div class="overlay-content">
-            <div class="overlay-tag">Campus</div>
-            <div class="overlay-title">School Library</div>
-            <div class="overlay-icons">
-              <button class="overlay-icon-btn" onclick="openLightbox(event,12)"><i class="fas fa-expand"></i></button>
-              <button class="overlay-icon-btn"><i class="fas fa-heart"></i></button>
-            </div>
-          </div>
-        </div>
+        <div class="gallery-overlay"><div class="overlay-content"><div class="overlay-tag">Campus</div><div class="overlay-title">School Library</div><div class="overlay-icons"><button class="overlay-icon-btn" onclick="openLightbox(event,12)"><i class="fas fa-expand"></i></button><button class="overlay-icon-btn"><i class="fas fa-heart"></i></button></div></div></div>
       </div>
 
       <div class="gallery-item" data-cat="events" data-title="Teachers' Day Celebration" data-subtitle="5 September 2024" style="animation-delay:0.7s">
         <div class="gallery-placeholder" style="min-height:220px;background:linear-gradient(135deg,#0D2B5E,#C8940A);">👩‍🏫</div>
         <span class="cat-badge cat-events">Events</span>
-        <div class="gallery-overlay">
-          <div class="overlay-content">
-            <div class="overlay-tag">Events</div>
-            <div class="overlay-title">Teachers' Day Celebration</div>
-            <div class="overlay-icons">
-              <button class="overlay-icon-btn" onclick="openLightbox(event,13)"><i class="fas fa-expand"></i></button>
-              <button class="overlay-icon-btn"><i class="fas fa-heart"></i></button>
-            </div>
-          </div>
-        </div>
+        <div class="gallery-overlay"><div class="overlay-content"><div class="overlay-tag">Events</div><div class="overlay-title">Teachers' Day Celebration</div><div class="overlay-icons"><button class="overlay-icon-btn" onclick="openLightbox(event,13)"><i class="fas fa-expand"></i></button><button class="overlay-icon-btn"><i class="fas fa-heart"></i></button></div></div></div>
       </div>
 
       <div class="gallery-item" data-cat="sports" data-title="Volleyball Championship" data-subtitle="Inter-School Tournament" style="animation-delay:0.75s">
         <div class="gallery-placeholder" style="min-height:200px;background:linear-gradient(135deg,#2A5FB0,#1A6B35);">🏐</div>
         <span class="cat-badge cat-sports">Sports</span>
-        <div class="gallery-overlay">
-          <div class="overlay-content">
-            <div class="overlay-tag">Sports</div>
-            <div class="overlay-title">Volleyball Championship</div>
-            <div class="overlay-icons">
-              <button class="overlay-icon-btn" onclick="openLightbox(event,14)"><i class="fas fa-expand"></i></button>
-              <button class="overlay-icon-btn"><i class="fas fa-heart"></i></button>
-            </div>
-          </div>
-        </div>
+        <div class="gallery-overlay"><div class="overlay-content"><div class="overlay-tag">Sports</div><div class="overlay-title">Volleyball Championship</div><div class="overlay-icons"><button class="overlay-icon-btn" onclick="openLightbox(event,14)"><i class="fas fa-expand"></i></button><button class="overlay-icon-btn"><i class="fas fa-heart"></i></button></div></div></div>
       </div>
 
       <div class="gallery-item" data-cat="academics" data-title="Board Topper Felicitation" data-subtitle="Class X &amp; XII Result 2024" style="animation-delay:0.8s">
         <div class="gallery-placeholder" style="min-height:240px;background:linear-gradient(135deg,#FF6B00,#C8940A);">🥇</div>
         <span class="cat-badge cat-academics">Academics</span>
-        <div class="gallery-overlay">
-          <div class="overlay-content">
-            <div class="overlay-tag">Academics</div>
-            <div class="overlay-title">Board Topper Felicitation</div>
-            <div class="overlay-icons">
-              <button class="overlay-icon-btn" onclick="openLightbox(event,15)"><i class="fas fa-expand"></i></button>
-              <button class="overlay-icon-btn"><i class="fas fa-heart"></i></button>
-            </div>
-          </div>
-        </div>
+        <div class="gallery-overlay"><div class="overlay-content"><div class="overlay-tag">Academics</div><div class="overlay-title">Board Topper Felicitation</div><div class="overlay-icons"><button class="overlay-icon-btn" onclick="openLightbox(event,15)"><i class="fas fa-expand"></i></button><button class="overlay-icon-btn"><i class="fas fa-heart"></i></button></div></div></div>
       </div>
 
       <div class="gallery-item" data-cat="iti" data-title="ITI Fitter Trade Workshop" data-subtitle="Hands-on Skills Training" style="animation-delay:0.85s">
         <div class="gallery-placeholder" style="min-height:200px;background:linear-gradient(135deg,#333,#555);">🔩</div>
         <span class="cat-badge cat-iti">ITI</span>
-        <div class="gallery-overlay">
-          <div class="overlay-content">
-            <div class="overlay-tag">ITI</div>
-            <div class="overlay-title">ITI Fitter Trade Workshop</div>
-            <div class="overlay-icons">
-              <button class="overlay-icon-btn" onclick="openLightbox(event,16)"><i class="fas fa-expand"></i></button>
-              <button class="overlay-icon-btn"><i class="fas fa-heart"></i></button>
-            </div>
-          </div>
-        </div>
+        <div class="gallery-overlay"><div class="overlay-content"><div class="overlay-tag">ITI</div><div class="overlay-title">ITI Fitter Trade Workshop</div><div class="overlay-icons"><button class="overlay-icon-btn" onclick="openLightbox(event,16)"><i class="fas fa-expand"></i></button><button class="overlay-icon-btn"><i class="fas fa-heart"></i></button></div></div></div>
       </div>
 
       <div class="gallery-item" data-cat="culture" data-title="Fancy Dress Competition" data-subtitle="Children's Day Celebration" style="animation-delay:0.9s">
         <div class="gallery-placeholder" style="min-height:215px;background:linear-gradient(135deg,#8B5CF6,#FF6B00);">🎨</div>
         <span class="cat-badge cat-culture">Cultural</span>
-        <div class="gallery-overlay">
-          <div class="overlay-content">
-            <div class="overlay-tag">Cultural</div>
-            <div class="overlay-title">Fancy Dress Competition</div>
-            <div class="overlay-icons">
-              <button class="overlay-icon-btn" onclick="openLightbox(event,17)"><i class="fas fa-expand"></i></button>
-              <button class="overlay-icon-btn"><i class="fas fa-heart"></i></button>
-            </div>
-          </div>
-        </div>
+        <div class="gallery-overlay"><div class="overlay-content"><div class="overlay-tag">Cultural</div><div class="overlay-title">Fancy Dress Competition</div><div class="overlay-icons"><button class="overlay-icon-btn" onclick="openLightbox(event,17)"><i class="fas fa-expand"></i></button><button class="overlay-icon-btn"><i class="fas fa-heart"></i></button></div></div></div>
       </div>
 
       <div class="gallery-item" data-cat="events" data-title="Republic Day Flag Hoisting" data-subtitle="26 January 2025" style="animation-delay:0.95s">
         <div class="gallery-placeholder" style="min-height:200px;background:linear-gradient(135deg,#FF6B00,#1A6B35);">🚩</div>
         <span class="cat-badge cat-events">Events</span>
-        <div class="gallery-overlay">
-          <div class="overlay-content">
-            <div class="overlay-tag">Events</div>
-            <div class="overlay-title">Republic Day Flag Hoisting</div>
-            <div class="overlay-icons">
-              <button class="overlay-icon-btn" onclick="openLightbox(event,18)"><i class="fas fa-expand"></i></button>
-              <button class="overlay-icon-btn"><i class="fas fa-heart"></i></button>
-            </div>
-          </div>
-        </div>
+        <div class="gallery-overlay"><div class="overlay-content"><div class="overlay-tag">Events</div><div class="overlay-title">Republic Day Flag Hoisting</div><div class="overlay-icons"><button class="overlay-icon-btn" onclick="openLightbox(event,18)"><i class="fas fa-expand"></i></button><button class="overlay-icon-btn"><i class="fas fa-heart"></i></button></div></div></div>
       </div>
 
       <div class="gallery-item" data-cat="campus" data-title="School Ground &amp; Garden" data-subtitle="Green Environment Initiative" style="animation-delay:1s">
         <div class="gallery-placeholder" style="min-height:195px;background:linear-gradient(135deg,#1A6B35,#4A9B20);">🌿</div>
         <span class="cat-badge cat-campus">Campus</span>
-        <div class="gallery-overlay">
-          <div class="overlay-content">
-            <div class="overlay-tag">Campus</div>
-            <div class="overlay-title">School Ground &amp; Garden</div>
-            <div class="overlay-icons">
-              <button class="overlay-icon-btn" onclick="openLightbox(event,19)"><i class="fas fa-expand"></i></button>
-              <button class="overlay-icon-btn"><i class="fas fa-heart"></i></button>
-            </div>
-          </div>
-        </div>
+        <div class="gallery-overlay"><div class="overlay-content"><div class="overlay-tag">Campus</div><div class="overlay-title">School Ground &amp; Garden</div><div class="overlay-icons"><button class="overlay-icon-btn" onclick="openLightbox(event,19)"><i class="fas fa-expand"></i></button><button class="overlay-icon-btn"><i class="fas fa-heart"></i></button></div></div></div>
       </div>
 
       <div class="gallery-item" data-cat="events" data-title="Annual Function 2025" data-subtitle="Chief Guest: District Education Officer" style="animation-delay:1.05s">
         <div class="gallery-placeholder" style="min-height:230px;background:linear-gradient(135deg,#0D2B5E,#FF6B00);">🎊</div>
         <span class="cat-badge cat-events">Events</span>
-        <div class="gallery-overlay">
-          <div class="overlay-content">
-            <div class="overlay-tag">Events</div>
-            <div class="overlay-title">Annual Function 2025</div>
-            <div class="overlay-icons">
-              <button class="overlay-icon-btn" onclick="openLightbox(event,20)"><i class="fas fa-expand"></i></button>
-              <button class="overlay-icon-btn"><i class="fas fa-heart"></i></button>
-            </div>
-          </div>
-        </div>
+        <div class="gallery-overlay"><div class="overlay-content"><div class="overlay-tag">Events</div><div class="overlay-title">Annual Function 2025</div><div class="overlay-icons"><button class="overlay-icon-btn" onclick="openLightbox(event,20)"><i class="fas fa-expand"></i></button><button class="overlay-icon-btn"><i class="fas fa-heart"></i></button></div></div></div>
       </div>
 
       <div class="gallery-item" data-cat="sports" data-title="Kabaddi Team Practice" data-subtitle="District Level Preparation" style="animation-delay:1.1s">
         <div class="gallery-placeholder" style="min-height:205px;background:linear-gradient(135deg,#4A1020,#C8940A);">🤼</div>
         <span class="cat-badge cat-sports">Sports</span>
-        <div class="gallery-overlay">
-          <div class="overlay-content">
-            <div class="overlay-tag">Sports</div>
-            <div class="overlay-title">Kabaddi Team Practice</div>
-            <div class="overlay-icons">
-              <button class="overlay-icon-btn" onclick="openLightbox(event,21)"><i class="fas fa-expand"></i></button>
-              <button class="overlay-icon-btn"><i class="fas fa-heart"></i></button>
-            </div>
-          </div>
-        </div>
+        <div class="gallery-overlay"><div class="overlay-content"><div class="overlay-tag">Sports</div><div class="overlay-title">Kabaddi Team Practice</div><div class="overlay-icons"><button class="overlay-icon-btn" onclick="openLightbox(event,21)"><i class="fas fa-expand"></i></button><button class="overlay-icon-btn"><i class="fas fa-heart"></i></button></div></div></div>
       </div>
 
       <div class="gallery-item" data-cat="campus" data-title="School Assembly Ground" data-subtitle="Morning Prayer &amp; Assembly" style="animation-delay:1.15s">
         <div class="gallery-placeholder" style="min-height:190px;background:linear-gradient(135deg,#0D2B5E,#1A3F80);">🙏</div>
         <span class="cat-badge cat-campus">Campus</span>
-        <div class="gallery-overlay">
-          <div class="overlay-content">
-            <div class="overlay-tag">Campus</div>
-            <div class="overlay-title">School Assembly Ground</div>
-            <div class="overlay-icons">
-              <button class="overlay-icon-btn" onclick="openLightbox(event,22)"><i class="fas fa-expand"></i></button>
-              <button class="overlay-icon-btn"><i class="fas fa-heart"></i></button>
-            </div>
-          </div>
-        </div>
+        <div class="gallery-overlay"><div class="overlay-content"><div class="overlay-tag">Campus</div><div class="overlay-title">School Assembly Ground</div><div class="overlay-icons"><button class="overlay-icon-btn" onclick="openLightbox(event,22)"><i class="fas fa-expand"></i></button><button class="overlay-icon-btn"><i class="fas fa-heart"></i></button></div></div></div>
       </div>
 
       <div class="gallery-item" data-cat="culture" data-title="Singing Competition" data-subtitle="Best Singer of the Year 2024" style="animation-delay:1.2s">
         <div class="gallery-placeholder" style="min-height:220px;background:linear-gradient(135deg,#8B5CF6,#1A3F80);">🎤</div>
         <span class="cat-badge cat-culture">Cultural</span>
-        <div class="gallery-overlay">
-          <div class="overlay-content">
-            <div class="overlay-tag">Cultural</div>
-            <div class="overlay-title">Singing Competition</div>
-            <div class="overlay-icons">
-              <button class="overlay-icon-btn" onclick="openLightbox(event,23)"><i class="fas fa-expand"></i></button>
-              <button class="overlay-icon-btn"><i class="fas fa-heart"></i></button>
-            </div>
-          </div>
-        </div>
+        <div class="gallery-overlay"><div class="overlay-content"><div class="overlay-tag">Cultural</div><div class="overlay-title">Singing Competition</div><div class="overlay-icons"><button class="overlay-icon-btn" onclick="openLightbox(event,23)"><i class="fas fa-expand"></i></button><button class="overlay-icon-btn"><i class="fas fa-heart"></i></button></div></div></div>
       </div>
 
     </div>
-    <!-- /gallery-grid -->
 
     <div class="load-more-wrap">
       <button class="load-more-btn" id="loadMoreBtn" onclick="loadMore()">
         <span>Load More Photos &nbsp;<i class="fas fa-chevron-down"></i></span>
       </button>
     </div>
-
   </div>
 </section>
 
@@ -766,34 +694,13 @@ button{font-family:'Inter',sans-serif;cursor:pointer;}
       <p class="memory-sub">From our founding in 2012 to today — every year has left its mark.</p>
     </div>
     <div class="memory-strip" id="memoryStrip">
-      <div class="memory-card reveal" style="animation-delay:0.1s">
-        <div class="memory-card-bg-placeholder">🏗️</div>
-        <div class="memory-label"><span>2012</span>School Founded</div>
-      </div>
-      <div class="memory-card reveal" style="animation-delay:0.2s">
-        <div class="memory-card-bg-placeholder" style="background:linear-gradient(135deg,#FF6B00,#FF8C33);">🎓</div>
-        <div class="memory-label"><span>2015</span>First Board Results</div>
-      </div>
-      <div class="memory-card reveal" style="animation-delay:0.3s">
-        <div class="memory-card-bg-placeholder" style="background:linear-gradient(135deg,#1A6B35,#2A9B50);">🏆</div>
-        <div class="memory-label"><span>2018</span>District Sports Winners</div>
-      </div>
-      <div class="memory-card reveal" style="animation-delay:0.4s">
-        <div class="memory-card-bg-placeholder" style="background:linear-gradient(135deg,#C8940A,#E8B020);">📖</div>
-        <div class="memory-label"><span>2020</span>ITI College Launched</div>
-      </div>
-      <div class="memory-card reveal" style="animation-delay:0.5s">
-        <div class="memory-card-bg-placeholder" style="background:linear-gradient(135deg,#5A3CAA,#8B5CF6);">💻</div>
-        <div class="memory-label"><span>2022</span>New Computer Lab</div>
-      </div>
-      <div class="memory-card reveal" style="animation-delay:0.6s">
-        <div class="memory-card-bg-placeholder" style="background:linear-gradient(135deg,#FF6B00,#0D2B5E);">🎖️</div>
-        <div class="memory-label"><span>2024</span>98% Board Pass Rate</div>
-      </div>
-      <div class="memory-card reveal" style="animation-delay:0.7s">
-        <div class="memory-card-bg-placeholder" style="background:linear-gradient(135deg,#1A3F80,#FF6B00);">🌟</div>
-        <div class="memory-label"><span>2025</span>1200+ Students</div>
-      </div>
+      <div class="memory-card reveal" style="animation-delay:0.1s"><div class="memory-card-bg-placeholder">🏗️</div><div class="memory-label"><span>2012</span>School Founded</div></div>
+      <div class="memory-card reveal" style="animation-delay:0.2s"><div class="memory-card-bg-placeholder" style="background:linear-gradient(135deg,#FF6B00,#FF8C33);">🎓</div><div class="memory-label"><span>2015</span>First Board Results</div></div>
+      <div class="memory-card reveal" style="animation-delay:0.3s"><div class="memory-card-bg-placeholder" style="background:linear-gradient(135deg,#1A6B35,#2A9B50);">🏆</div><div class="memory-label"><span>2018</span>District Sports Winners</div></div>
+      <div class="memory-card reveal" style="animation-delay:0.4s"><div class="memory-card-bg-placeholder" style="background:linear-gradient(135deg,#C8940A,#E8B020);">📖</div><div class="memory-label"><span>2020</span>ITI College Launched</div></div>
+      <div class="memory-card reveal" style="animation-delay:0.5s"><div class="memory-card-bg-placeholder" style="background:linear-gradient(135deg,#5A3CAA,#8B5CF6);">💻</div><div class="memory-label"><span>2022</span>New Computer Lab</div></div>
+      <div class="memory-card reveal" style="animation-delay:0.6s"><div class="memory-card-bg-placeholder" style="background:linear-gradient(135deg,#FF6B00,#0D2B5E);">🎖️</div><div class="memory-label"><span>2024</span>98% Board Pass Rate</div></div>
+      <div class="memory-card reveal" style="animation-delay:0.7s"><div class="memory-card-bg-placeholder" style="background:linear-gradient(135deg,#1A3F80,#FF6B00);">🌟</div><div class="memory-label"><span>2025</span>1200+ Students</div></div>
     </div>
     <p class="memory-scroll-hint"><i class="fas fa-arrow-right"></i> Scroll to explore milestones</p>
   </div>
@@ -809,37 +716,16 @@ button{font-family:'Inter',sans-serif;cursor:pointer;}
     </div>
     <div class="video-grid">
       <div class="video-card reveal">
-        <div class="video-thumb">
-          <div style="position:absolute;inset:0;background:linear-gradient(135deg,#0D2B5E,#FF6B00);opacity:0.8;"></div>
-          <div class="ripple-ring"></div>
-          <div class="play-btn"><i class="fas fa-play"></i></div>
-        </div>
-        <div class="video-body">
-          <h4>Annual Function 2024 Highlights</h4>
-          <p style="font-size:12px;color:var(--gray-400);">Duration: 12:40 • Uploaded March 2024</p>
-        </div>
+        <div class="video-thumb"><div style="position:absolute;inset:0;background:linear-gradient(135deg,#0D2B5E,#FF6B00);opacity:0.8;"></div><div class="ripple-ring"></div><div class="play-btn"><i class="fas fa-play"></i></div></div>
+        <div class="video-body"><h4>Annual Function 2024 Highlights</h4><p style="font-size:12px;color:var(--gray-400);">Duration: 12:40 • Uploaded March 2024</p></div>
       </div>
       <div class="video-card reveal">
-        <div class="video-thumb">
-          <div style="position:absolute;inset:0;background:linear-gradient(135deg,#1A6B35,#C8940A);opacity:0.8;"></div>
-          <div class="ripple-ring"></div>
-          <div class="play-btn"><i class="fas fa-play"></i></div>
-        </div>
-        <div class="video-body">
-          <h4>Sports Day 2024 — Full Event</h4>
-          <p style="font-size:12px;color:var(--gray-400);">Duration: 28:15 • Uploaded Nov 2024</p>
-        </div>
+        <div class="video-thumb"><div style="position:absolute;inset:0;background:linear-gradient(135deg,#1A6B35,#C8940A);opacity:0.8;"></div><div class="ripple-ring"></div><div class="play-btn"><i class="fas fa-play"></i></div></div>
+        <div class="video-body"><h4>Sports Day 2024 — Full Event</h4><p style="font-size:12px;color:var(--gray-400);">Duration: 28:15 • Uploaded Nov 2024</p></div>
       </div>
       <div class="video-card reveal">
-        <div class="video-thumb">
-          <div style="position:absolute;inset:0;background:linear-gradient(135deg,#5A3CAA,#FF6B00);opacity:0.8;"></div>
-          <div class="ripple-ring"></div>
-          <div class="play-btn"><i class="fas fa-play"></i></div>
-        </div>
-        <div class="video-body">
-          <h4>Cultural Fest — Dance &amp; Music</h4>
-          <p style="font-size:12px;color:var(--gray-400);">Duration: 18:50 • Uploaded Jan 2025</p>
-        </div>
+        <div class="video-thumb"><div style="position:absolute;inset:0;background:linear-gradient(135deg,#5A3CAA,#FF6B00);opacity:0.8;"></div><div class="ripple-ring"></div><div class="play-btn"><i class="fas fa-play"></i></div></div>
+        <div class="video-body"><h4>Cultural Fest — Dance &amp; Music</h4><p style="font-size:12px;color:var(--gray-400);">Duration: 18:50 • Uploaded Jan 2025</p></div>
       </div>
     </div>
   </div>
@@ -852,14 +738,12 @@ button{font-family:'Inter',sans-serif;cursor:pointer;}
       <div class="upload-icon">📤</div>
       <h3>Share Your School Memories</h3>
       <p>Are you a student, parent, or alumni of Shri Ram Public School Shiksha Samiti? Share your special moments with our community! Submit your photos and we'll feature them in our gallery.</p>
-      <a href="contact.html" class="upload-btn">
-        <i class="fas fa-paper-plane"></i> Submit Your Photos
-      </a>
+      <a href="contact.html" class="upload-btn"><i class="fas fa-paper-plane"></i> Submit Your Photos</a>
     </div>
   </div>
 </section>
 
-<!-- SIMPLE FOOTER -->
+<!-- FOOTER -->
 <div class="footer-simple">
   <p>© 2025 Shri Ram Public School Shiksha Samiti, Karahi, Fatehpur Sikri, Agra — 283110</p>
   <p style="margin-top:6px;">📞 <a href="tel:9997658330">+91 9997658330</a> &nbsp;|&nbsp; ✉ <a href="mailto:srpses@gmail.com">srpses@gmail.com</a></p>
@@ -871,38 +755,41 @@ button{font-family:'Inter',sans-serif;cursor:pointer;}
   <div class="lb-inner">
     <button class="lb-nav lb-prev" onclick="lbNavigate(-1)" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
     <button class="lb-nav lb-next" onclick="lbNavigate(1)" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
-    <div class="lb-img-wrap" id="lbImgWrap">
-      <div class="lb-placeholder" id="lbPlaceholder">🖼️</div>
-    </div>
-    <div class="lb-info">
-      <h3 id="lbTitle">Photo Title</h3>
-      <p id="lbSub">Subtitle</p>
-    </div>
+    <div class="lb-img-wrap" id="lbImgWrap"><div class="lb-placeholder" id="lbPlaceholder">🖼️</div></div>
+    <div class="lb-info"><h3 id="lbTitle">Photo Title</h3><p id="lbSub">Subtitle</p></div>
     <div class="lb-counter" id="lbCounter">1 / 24</div>
   </div>
 </div>
 
 <script>
-/* ===== MOBILE MENU ===== */
+/* Mobile menu */
 function openMenu(){document.getElementById('mobileMenu').classList.add('open');document.body.style.overflow='hidden';}
 function closeMenu(){document.getElementById('mobileMenu').classList.remove('open');document.body.style.overflow='';}
 document.getElementById('mobileMenu').addEventListener('click',function(e){if(e.target===this)closeMenu();});
 
-/* ===== HEADER SCROLL ===== */
+/* Mobile accordion dropdowns */
+function toggleMobDrop(btn){
+  const list=btn.nextElementSibling;
+  const isOpen=list.classList.contains('open');
+  document.querySelectorAll('.mob-drop-list').forEach(l=>l.classList.remove('open'));
+  document.querySelectorAll('.mob-drop-btn').forEach(b=>b.classList.remove('open'));
+  if(!isOpen){list.classList.add('open');btn.classList.add('open');}
+}
+
+/* Header scroll */
 window.addEventListener('scroll',()=>{
   document.getElementById('header').classList.toggle('scrolled',window.scrollY>60);
 },{passive:true});
 
-/* ===== SCROLL REVEAL ===== */
+/* Scroll reveal */
 const revealObserver=new IntersectionObserver((entries)=>{
   entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});
 },{threshold:0.1,rootMargin:'0px 0px -30px 0px'});
 document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el=>revealObserver.observe(el));
 
-/* ===== GALLERY FILTER ===== */
+/* Gallery Filter */
 const filterBtns=document.querySelectorAll('.filter-btn');
 const galleryItems=document.querySelectorAll('.gallery-item');
-
 filterBtns.forEach(btn=>{
   btn.addEventListener('click',()=>{
     filterBtns.forEach(b=>b.classList.remove('active'));
@@ -910,11 +797,10 @@ filterBtns.forEach(btn=>{
     const filter=btn.dataset.filter;
     let delay=0;
     galleryItems.forEach(item=>{
-      const cat=item.dataset.cat;
-      if(filter==='all'||cat===filter){
+      if(filter==='all'||item.dataset.cat===filter){
         item.classList.remove('hidden');
         item.style.animation='none';
-        item.offsetHeight; // force reflow
+        item.offsetHeight;
         item.style.animation=`scaleIn 0.4s ease ${delay}s forwards`;
         item.style.opacity='0';
         delay+=0.04;
@@ -925,11 +811,10 @@ filterBtns.forEach(btn=>{
   });
 });
 
-/* ===== LIGHTBOX ===== */
+/* Lightbox */
 let currentLbIndex=0;
 const lbItems=[];
-
-galleryItems.forEach((item,i)=>{
+galleryItems.forEach((item)=>{
   const img=item.querySelector('img');
   const title=item.dataset.title||'School Photo';
   const subtitle=item.dataset.subtitle||'Shri Ram Public School Shiksha Samiti';
@@ -937,26 +822,12 @@ galleryItems.forEach((item,i)=>{
   const bg=item.querySelector('.gallery-placeholder')?.style.background||'';
   lbItems.push({src:img?img.src:null,title,subtitle,emoji,bg});
 });
-
-document.querySelectorAll('.overlay-icon-btn').forEach((btn,i)=>{
-  if(btn.querySelector('.fa-expand')){
-    btn.addEventListener('click',(e)=>{
-      e.stopPropagation();
-      const item=btn.closest('.gallery-item');
-      const idx=Array.from(galleryItems).indexOf(item);
-      openLightbox(e,idx);
-    });
-  }
-});
-
 galleryItems.forEach((item,i)=>{
   item.addEventListener('click',()=>openLightbox({stopPropagation:()=>{}},i));
 });
-
 function openLightbox(e,idx){
   if(typeof e.stopPropagation==='function')e.stopPropagation();
-  currentLbIndex=idx;
-  renderLb();
+  currentLbIndex=idx;renderLb();
   document.getElementById('lightbox').classList.add('open');
   document.body.style.overflow='hidden';
 }
@@ -965,10 +836,7 @@ function closeLightbox(){
   document.body.style.overflow='';
 }
 function lbNavigate(dir){
-  const visible=Array.from(galleryItems).filter(i=>!i.classList.contains('hidden'));
-  const visibleIdx=visible.findIndex((_,i)=>i===currentLbIndex%visible.length);
-  currentLbIndex=(currentLbIndex+dir+lbItems.length)%lbItems.length;
-  renderLb();
+  currentLbIndex=(currentLbIndex+dir+lbItems.length)%lbItems.length;renderLb();
 }
 function renderLb(){
   const d=lbItems[currentLbIndex];
@@ -982,9 +850,7 @@ function renderLb(){
   document.getElementById('lbSub').textContent=d.subtitle;
   document.getElementById('lbCounter').textContent=`${currentLbIndex+1} / ${lbItems.length}`;
 }
-document.getElementById('lightbox').addEventListener('click',function(e){
-  if(e.target===this)closeLightbox();
-});
+document.getElementById('lightbox').addEventListener('click',function(e){if(e.target===this)closeLightbox();});
 document.addEventListener('keydown',e=>{
   if(!document.getElementById('lightbox').classList.contains('open'))return;
   if(e.key==='Escape')closeLightbox();
@@ -992,21 +858,22 @@ document.addEventListener('keydown',e=>{
   if(e.key==='ArrowRight')lbNavigate(1);
 });
 
-/* ===== LOAD MORE ===== */
+/* Load More */
 function loadMore(){
   const btn=document.getElementById('loadMoreBtn');
   btn.innerHTML='<span><i class="fas fa-spinner fa-spin"></i> Loading...</span>';
   setTimeout(()=>{
     btn.innerHTML='<span>✅ All Photos Loaded</span>';
-    btn.disabled=true;
-    btn.style.opacity='0.5';
-    btn.style.cursor='default';
+    btn.disabled=true;btn.style.opacity='0.5';btn.style.cursor='default';
   },1200);
 }
 
-/* ===== GALLERY ITEM ANIMATION ON LOAD ===== */
-galleryItems.forEach((item,i)=>{
-  item.style.animationDelay=`${i*0.05}s`;
+/* Escape key for mobile dropdowns */
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape'){
+    document.querySelectorAll('.mob-drop-list').forEach(l=>l.classList.remove('open'));
+    document.querySelectorAll('.mob-drop-btn').forEach(b=>b.classList.remove('open'));
+  }
 });
 </script>
 </body>
