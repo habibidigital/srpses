@@ -464,6 +464,29 @@ button{font-family:'Inter',sans-serif;}
 .news-body p{font-size:var(--text-sm);color:var(--gray-600);line-height:1.7;}
 .news-link{display:inline-flex;align-items:center;gap:4px;font-size:var(--text-sm);font-weight:600;color:var(--saffron);margin-top:12px;}
 
+/* GALLERY PREVIEW */
+.gallery-preview-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,2.5vw,20px);}
+.gallery-preview-item{position:relative;border-radius:var(--radius-lg);overflow:hidden;aspect-ratio:1/1;box-shadow:var(--shadow-sm);cursor:pointer;transform:translateY(0) scale(1);transition:transform 0.45s cubic-bezier(0.22,1,0.36,1),box-shadow 0.45s ease;}
+.gallery-preview-item:hover{transform:translateY(-6px) scale(1.02);box-shadow:var(--shadow-md);}
+.gallery-preview-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s cubic-bezier(0.22,1,0.36,1);}
+.gallery-preview-item:hover img{transform:scale(1.12);}
+.gallery-preview-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,43,94,0) 40%,rgba(13,43,94,0.75) 100%);opacity:0;transition:opacity 0.35s ease;display:flex;align-items:flex-end;padding:clamp(12px,2.5vw,18px);}
+.gallery-preview-item:hover .gallery-preview-overlay{opacity:1;}
+.gallery-preview-overlay span{color:white;font-size:var(--text-sm);font-weight:600;display:flex;align-items:center;gap:6px;transform:translateY(8px);transition:transform 0.35s ease;}
+.gallery-preview-item:hover .gallery-preview-overlay span{transform:translateY(0);}
+.gallery-view-more-wrap{display:flex;justify-content:center;margin-top:clamp(28px,5vw,40px);}
+.gallery-view-more-btn{display:inline-flex;align-items:center;gap:10px;background:var(--saffron);color:white;padding:clamp(12px,2.5vw,15px) clamp(28px,5vw,40px);border-radius:50px;font-size:var(--text-base);font-weight:600;box-shadow:0 8px 24px rgba(255,107,0,0.35);transition:all 0.3s ease;position:relative;overflow:hidden;}
+.gallery-view-more-btn:hover{background:var(--saffron-light);transform:translateY(-3px);box-shadow:0 12px 30px rgba(255,107,0,0.45);}
+.gallery-view-more-btn i{transition:transform 0.3s ease;}
+.gallery-view-more-btn:hover i{transform:translateX(5px);}
+
+@media(max-width:900px){
+  .gallery-preview-grid{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:480px){
+  .gallery-preview-grid{gap:10px;}
+}
+
 /* RESPONSIVE */
 @media(max-width:900px){
   .hero-content{grid-template-columns:1fr;}
@@ -844,6 +867,39 @@ button{font-family:'Inter',sans-serif;}
         <div class="news-date-strip"><span class="news-date-num">10</span> Apr 2025 | Notice</div>
         <div class="news-body"><div class="news-type">📋 Meeting</div><h3>Annual General Meeting — Society Members</h3><p>The Annual General Meeting of Shri Ram Public School Shiksha Samiti will be held. All registered members are requested to attend.</p><a href="#" class="news-link">View Notice →</a></div>
       </article>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY PREVIEW SECTION -->
+<section class="section section-alt" id="gallery" aria-labelledby="gallery-heading">
+  <div class="container">
+    <div class="section-head reveal" style="text-align:center;">
+      <span class="section-label">Campus Moments</span>
+      <h2 class="section-title" id="gallery-heading">Our Gallery</h2>
+      <div class="title-line" style="margin:12px auto 0;"></div>
+      <p class="section-sub" style="margin:0 auto;">A glimpse into campus life, events, and achievements at Shri Ram Public School Shiksha Samiti.</p>
+    </div>
+    <div class="gallery-preview-grid">
+      <a href="gallery.html" class="gallery-preview-item reveal" style="transition-delay:0.05s;">
+        <img src="images/k1.jpeg" alt="Shri Ram Public School campus glimpse 1" loading="lazy">
+        <div class="gallery-preview-overlay"><span><i class="fas fa-images" aria-hidden="true"></i> View Gallery</span></div>
+      </a>
+      <a href="gallery.html" class="gallery-preview-item reveal" style="transition-delay:0.15s;">
+        <img src="images/k2.jpeg" alt="Shri Ram Public School campus glimpse 2" loading="lazy">
+        <div class="gallery-preview-overlay"><span><i class="fas fa-images" aria-hidden="true"></i> View Gallery</span></div>
+      </a>
+      <a href="gallery.html" class="gallery-preview-item reveal" style="transition-delay:0.25s;">
+        <img src="images/k3.jpeg" alt="Shri Ram Public School campus glimpse 3" loading="lazy">
+        <div class="gallery-preview-overlay"><span><i class="fas fa-images" aria-hidden="true"></i> View Gallery</span></div>
+      </a>
+      <a href="gallery.html" class="gallery-preview-item reveal" style="transition-delay:0.35s;">
+        <img src="images/k4.jpeg" alt="Shri Ram Public School campus glimpse 4" loading="lazy">
+        <div class="gallery-preview-overlay"><span><i class="fas fa-images" aria-hidden="true"></i> View Gallery</span></div>
+      </a>
+    </div>
+    <div class="gallery-view-more-wrap">
+      <a href="gallery.html" class="gallery-view-more-btn">View More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
     </div>
   </div>
 </section>
