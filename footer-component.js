@@ -278,7 +278,7 @@
             <div class="sr-footer-emblem">SR</div>
             <div class="sr-footer-brand-name">
               <h3>Shri Ram Public School</h3>
-              <span>Shiksha Samiti</span>
+              <span>Shiksha Samiti - Karahi</span>
             </div>
           </div>
           <p class="sr-footer-desc">
