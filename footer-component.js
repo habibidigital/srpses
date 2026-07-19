@@ -275,7 +275,9 @@
         <!-- Brand Column -->
         <div class="sr-footer-brand">
           <div class="sr-footer-logo">
-            <div class="sr-footer-emblem">SR</div>
+            <div class="sr-footer-emblem">
+            <img src="images/logo.png" alt="Shri Ram Public School Shiksha Samiti Logo" width="56" height="56" onerror="this.parentElement.textContent='SR'">
+            </div>
             <div class="sr-footer-brand-name">
               <h3>Shri Ram Public School</h3>
               <span>Shiksha Samiti - Karahi</span>
